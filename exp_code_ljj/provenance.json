@@ -1,0 +1,85 @@
+{
+  "experiment": "Qwen2.5 Dialogue-SFT paper10k five-round main table",
+  "copied_artifacts": [
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/paper10k/data/isr_sft.jsonl",
+      "copied_to": "data/isr_sft.jsonl",
+      "bytes": 310951457,
+      "sha256": "0de302a33f3a0b4295821a97b003f6eaada9763045e242a39489b272574c926f"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/paper10k/data/preference_seeds.jsonl",
+      "copied_to": "data/preference_seeds.jsonl",
+      "bytes": 6605214,
+      "sha256": "bbca38aac517828285b3ca43adbad2671afc4d465a8fd6feb4e5cc3f1f558fcf"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/paper10k/data/user_model_sft.jsonl",
+      "copied_to": "data/user_model_sft.jsonl",
+      "bytes": 152842770,
+      "sha256": "9ce67d40a0e413a93f6d45067581dc09c7f7ec7f90e26300428602147ec4f554"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/data/dialogue_sft.jsonl",
+      "copied_to": "data/dialogue_sft.jsonl",
+      "bytes": 145706401,
+      "sha256": "955520437ebf8daae211f0d47d80cba108952837f69a26a850cd982797601f85"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/data/evaluation_points.jsonl",
+      "copied_to": "data/evaluation_points.jsonl",
+      "bytes": 3298776,
+      "sha256": "3454f7be1246d6061865e69f153a53f9478a157978079fd70fef6ad010bb7acd"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/qwen25_dialogue_sft/generation_5rounds/qwen25_zero_shot.jsonl",
+      "copied_to": "artifacts/generation_5rounds/qwen25_zero_shot.jsonl",
+      "archive_path": "artifacts/generation_5rounds/legacy/qwen25_zero_shot.jsonl",
+      "bytes": 10560669,
+      "sha256": "eb3170e4998c3accd5f4c387822a43c46472b0fa22c5f82e66e259b342f685e5"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/qwen25_dialogue_sft/generation_5rounds/qwen25_dialogue_sft.jsonl",
+      "copied_to": "artifacts/generation_5rounds/qwen25_dialogue_sft.jsonl",
+      "archive_path": "artifacts/generation_5rounds/legacy/qwen25_dialogue_sft.jsonl",
+      "bytes": 11174954,
+      "sha256": "e500646a3abc5e2e6f4503b0aa15cbba6107fd4bfa91eba70673d0957f0e1509"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/qwen25_dialogue_sft/evaluation_persugpt/qwen25_zero_shot.jsonl",
+      "copied_to": "artifacts/success_judgments/persugpt/qwen25_zero_shot.jsonl",
+      "bytes": 4399376,
+      "sha256": "ccf312eedb7f19abde40c928012f8afbaf8d16e01fa7def0fb3900bf9ba85827"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/qwen25_dialogue_sft/evaluation_persugpt/qwen25_dialogue_sft.jsonl",
+      "copied_to": "artifacts/success_judgments/persugpt/qwen25_dialogue_sft.jsonl",
+      "bytes": 4365429,
+      "sha256": "d0e93ed25f43c9b32f4c76a28957b27710d2eec60209dfe26895e5fe65c01433"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/qwen25_dialogue_sft/evaluation_qwen3_5_9B/qwen25_zero_shot.jsonl",
+      "copied_to": "artifacts/success_judgments/qwen35/qwen25_zero_shot.jsonl",
+      "bytes": 4722618,
+      "sha256": "d14dff7cae5544f5e4982ba0c2bf6dc208d36ba81f237bfcf001c3c4ddb444c1"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/qwen25_dialogue_sft/evaluation_qwen3_5_9B/qwen25_dialogue_sft.jsonl",
+      "copied_to": "artifacts/success_judgments/qwen35/qwen25_dialogue_sft.jsonl",
+      "bytes": 4672942,
+      "sha256": "030d8465d1ae93b715b5554d5b5f585747b288e6a6fec56b82c080c21a08c5a5"
+    },
+    {
+      "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/main_experiment_reproduction/results/main_experiment_table.md",
+      "copied_to": "results/main_experiment_table.md",
+      "bytes": 1305,
+      "sha256": "5456320190ce6c2e0e011a05958a2389b00916a7b5c9d9030596cc2b5032d521"
+    },
+    {
+      "source": "/data1/liujianjian/Persuader/qwen2.5-7b-instruct-dialogue-sft-paper10k/adapter_model.safetensors",
+      "copied_to": "models/dialogue_sft_adapter/adapter_model.safetensors",
+      "bytes": 161533192,
+      "sha256": "308eb9c1bb9c4fc63b6b8e0809229fc1a1e6af5a7c1bac7092906deebcdfba0a"
+    }
+  ]
+}

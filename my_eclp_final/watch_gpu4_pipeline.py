@@ -1,0 +1,212 @@
+#!/usr/bin/env python3
+"""Keep the GPU4 experiment supervisor alive and record its health.
+
+This watcher never stops or restarts the SFT/RL worker. The experiment
+supervisor owns stage recovery and its checkpoint contract.
+"""
+from __future__ import annotations
+
+from datetime import datetime, timezone
+import fcntl
+import json
+import os
+from pathlib import Path
+import subprocess
+import time
+
+
+ROOT = Path("/app/hzj/liujianjian/ljj-2-paper")
+WORK = ROOT / "eclp_runs_gpu4"
+CODE = ROOT / "my_eclp_final"
+PIPELINE = CODE / "run_gpu4_offline_pipeline.py"
+ENTRY = CODE / "run_gpu4_full_chain.sh"
+AUDIT = CODE / "audit_gpu4_completion.py"
+PYTHON = "/app/hzj/anaconda3/envs/ljj/bin/python"
+STATUS = WORK / "pipeline_status.json"
+WATCH_STATUS = WORK / "watcher_status.json"
+EVENTS = WORK / "watcher_events.jsonl"
+INTERVAL = 60
+
+
+def read_json(path: Path):
+    with path.open(encoding="utf-8") as handle:
+        return json.load(handle)
+
+
+def atomic_json(path: Path, value: dict):
+    temporary = path.with_name(f".{path.name}.{os.getpid()}.tmp")
+    with temporary.open("w", encoding="utf-8") as handle:
+        json.dump(value, handle, ensure_ascii=False, indent=2)
+        handle.write("\n")
+        handle.flush()
+        os.fsync(handle.fileno())
+    os.replace(temporary, path)
+
+
+def event(kind: str, **details):
+    record = {"at": datetime.now(timezone.utc).isoformat(), "kind": kind, **details}
+    with EVENTS.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(record, ensure_ascii=False) + "\n")
+        handle.flush()
+
+
+def pipeline_alive(pid):
+    if not isinstance(pid, int) or pid < 1:
+        return False
+    try:
+        command = (Path("/proc") / str(pid) / "cmdline").read_bytes().split(b"\0")
+        return str(PIPELINE).encode() in command
+    except (FileNotFoundError, PermissionError):
+        return False
+
+
+def stage_child_alive(pid, expected_command):
+    """Recognize the actual stage worker, excluding zombies and reused PIDs."""
+    if not isinstance(pid, int) or pid < 1 or not isinstance(expected_command, list):
+        return False
+    path = Path("/proc") / str(pid)
+    try:
+        stat = (path / "stat").read_text()
+        state = stat[stat.rfind(")") + 2:].split()[0]
+        command = [arg.decode() for arg in (path / "cmdline").read_bytes().split(b"\0") if arg]
+        return state not in {"Z", "X"} and command == expected_command
+    except (FileNotFoundError, PermissionError):
+        return False
+
+
+def last_sft_step():
+    path = WORK / "sft_full/train.jsonl"
+    if not path.exists():
+        return None
+    with path.open("rb") as handle:
+        handle.seek(0, 2)
+        end = handle.tell()
+        handle.seek(max(0, end - 4096))
+        rows = handle.read().splitlines()
+    for row in reversed(rows):
+        try:
+            return json.loads(row)["step"]
+        except (json.JSONDecodeError, KeyError):
+            continue
+    return None
+
+
+def age_seconds(timestamp):
+    if not timestamp:
+        return None
+    try:
+        age = datetime.now(timezone.utc) - datetime.strptime(timestamp, "%Y-%m-%dT%H:%M:%S%z")
+        return max(0, age.total_seconds())
+    except ValueError:
+        return None
+
+
+def run():
+    WORK.mkdir(parents=True, exist_ok=True)
+    lock = (WORK / ".watch_gpu4_pipeline.lock").open("w")
+    try:
+        fcntl.flock(lock, fcntl.LOCK_EX | fcntl.LOCK_NB)
+    except BlockingIOError:
+        return
+    event("watcher_started", watcher_pid=os.getpid())
+    last_restart = 0.0
+    last_sft_step_seen = None
+    last_sft_progress = None
+    while True:
+        try:
+            status = read_json(STATUS) if STATUS.exists() else {}
+            phase = status.get("phase")
+            state = status.get("state")
+            pid = status.get("pipeline_pid")
+            alive = pipeline_alive(pid)
+            heartbeat_age = age_seconds(status.get("updated_at"))
+            warnings = []
+            if alive and heartbeat_age is not None and heartbeat_age > 300:
+                warnings.append("pipeline_heartbeat_over_5_minutes")
+            observed_sft_step = None
+            sft_step_stall_seconds = None
+            if phase and phase.startswith("sft"):
+                observed_sft_step = last_sft_step()
+                if observed_sft_step is not None:
+                    if observed_sft_step != last_sft_step_seen:
+                        last_sft_step_seen = observed_sft_step
+                        last_sft_progress = time.monotonic()
+                    elif last_sft_progress is not None:
+                        sft_step_stall_seconds = time.monotonic() - last_sft_progress
+                        if sft_step_stall_seconds > 1200:
+                            warnings.append("sft_step_unchanged_over_20_minutes")
+            else:
+                last_sft_step_seen = None
+                last_sft_progress = None
+            if state == "failed":
+                event("pipeline_failed", error=status.get("error"), phase=phase)
+                atomic_json(WATCH_STATUS, {"state": "pipeline_failed", "watcher_pid": os.getpid(),
+                                           "pipeline_status": status, "checked_at": datetime.now(timezone.utc).isoformat()})
+                return
+            if state == "complete":
+                log = WORK / "logs/completion_audit.log"
+                try:
+                    with log.open("a", encoding="utf-8") as handle:
+                        result = subprocess.run([PYTHON, str(AUDIT)], cwd=ROOT,
+                                                stdin=subprocess.DEVNULL, stdout=handle,
+                                                stderr=subprocess.STDOUT, timeout=900,
+                                                check=False)
+                except subprocess.TimeoutExpired:
+                    event("completion_audit_timeout", audit_log=str(log))
+                    atomic_json(WATCH_STATUS, {
+                        "state": "completion_audit_failed", "reason": "timeout",
+                        "watcher_pid": os.getpid(), "audit_log": str(log),
+                        "pipeline_status": status,
+                        "checked_at": datetime.now(timezone.utc).isoformat(),
+                    })
+                    return
+                audited = result.returncode == 0 and (WORK / "completion_audit.json").is_file()
+                event("completion_audit_finished", returncode=result.returncode, audited=audited)
+                atomic_json(WATCH_STATUS, {
+                    "state": "audited_complete" if audited else "completion_audit_failed",
+                    "watcher_pid": os.getpid(), "pipeline_status": status,
+                    "audit_log": str(log), "audit_report": str(WORK / "completion_audit.json") if audited else None,
+                    "checked_at": datetime.now(timezone.utc).isoformat(),
+                })
+                return
+            if state == "interrupted":
+                event("pipeline_finished", state=state, phase=phase)
+                atomic_json(WATCH_STATUS, {"state": state, "watcher_pid": os.getpid(),
+                                           "pipeline_status": status, "checked_at": datetime.now(timezone.utc).isoformat()})
+                return
+            if not alive:
+                warnings.append("pipeline_process_absent")
+                # A stage worker can outlive its supervisor. Waiting for that
+                # worker prevents loading a second 7B/14B model on GPU4.
+                orphan_alive = (phase != "sft_adopted" and
+                                stage_child_alive(status.get("child_pid"), status.get("command")))
+                if orphan_alive:
+                    warnings.append("orphaned_stage_child_running")
+                elif time.monotonic() - last_restart >= 180:
+                    with (WORK / "logs/offline_pipeline.log").open("a", encoding="utf-8") as handle:
+                        child = subprocess.Popen([str(ENTRY)], cwd=ROOT, stdin=subprocess.DEVNULL,
+                                                 stdout=handle, stderr=subprocess.STDOUT,
+                                                 start_new_session=True)
+                    last_restart = time.monotonic()
+                    event("pipeline_restarted", previous_pid=pid, new_pid=child.pid, previous_phase=phase)
+            atomic_json(WATCH_STATUS, {
+                "state": "watching", "watcher_pid": os.getpid(),
+                "checked_at": datetime.now(timezone.utc).isoformat(),
+                "pipeline_pid": pid, "pipeline_alive": alive,
+                "pipeline_phase": phase, "pipeline_state": state,
+                "stage_child_pid": status.get("child_pid"),
+                "heartbeat_age_seconds": heartbeat_age,
+                "sft_step": observed_sft_step,
+                "sft_step_stall_seconds": sft_step_stall_seconds,
+                "warnings": warnings,
+            })
+            for warning in warnings:
+                if warning != "pipeline_process_absent":
+                    event("health_warning", warning=warning, phase=phase)
+        except Exception as error:
+            event("watcher_error", error=f"{type(error).__name__}: {error}")
+        time.sleep(INTERVAL)
+
+
+if __name__ == "__main__":
+    run()

@@ -1,0 +1,16 @@
+# Dependencies for the isolated Llama 3.1 reproduction backend.
+# The installed CUDA build can provide a tighter torch pin when needed.
+torch>=2.2
+transformers>=4.45,<6
+datasets>=3,<6
+accelerate>=1.0,<2
+peft>=0.14,<1
+trl>=1.0,<2
+openai>=1.30,<3
+jieba==0.42.1
+rouge-chinese==1.0.3
+tqdm>=4.66
+matplotlib>=3.8
+
+# Optional: only needed for multi-GPU full-parameter training.
+# deepspeed>=0.15

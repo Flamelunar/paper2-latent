@@ -1,0 +1,15 @@
+.export-work/
+__pycache__/
+*.pyc
+*.log
+*.safetensors
+*.bin
+*.pt
+*.pth
+*.ckpt
+.env
+logs/
+checkpoints/
+wandb/
+exp_code_ljj/data/isr_sft.jsonl
+*.restoring

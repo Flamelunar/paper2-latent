@@ -1,0 +1,7031 @@
+{
+  "meta_llama31": {
+    "baseline1_zero_shot": {
+      "rows": 192,
+      "complete": true,
+      "sha256": "227bc18ef36e80c9549aad58b1ba7ad583ab27281e92f2bb19f7e71f192dce42",
+      "models": [
+        "/app/hzj/models/Meta-Llama-3.1-8B-Instruct"
+      ],
+      "boundary_issues": [
+        {
+          "index": 0,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 24,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 26,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 34,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 41,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 66,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 114,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 158,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 161,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 180,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 186,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 259,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 270,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 317,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 328,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 357,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 358,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 363,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 363,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 384,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 400,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 414,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 498,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 519,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 520,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 588,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 622,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 663,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 670,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 690,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 693,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 715,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 748,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 759,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 762,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 785,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 788,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 816,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 858,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 868,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 902,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 928,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 940,
+          "turn": 10,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        }
+      ],
+      "affected_indexes": [
+        0,
+        24,
+        26,
+        34,
+        41,
+        66,
+        114,
+        158,
+        161,
+        180,
+        186,
+        259,
+        270,
+        317,
+        328,
+        357,
+        358,
+        363,
+        384,
+        400,
+        414,
+        498,
+        519,
+        520,
+        588,
+        622,
+        663,
+        670,
+        690,
+        693,
+        715,
+        748,
+        759,
+        762,
+        785,
+        788,
+        816,
+        858,
+        868,
+        902,
+        928,
+        940
+      ],
+      "policy": "regenerate complete affected scenarios; never trim old history and call it new generation"
+    },
+    "baseline2_dialogue_sft": {
+      "rows": 192,
+      "complete": true,
+      "sha256": "9d3ec2ff249140dd77a2889525ae95c3b0dfe91e2cb3e91fef00b4b4afb2ebf3",
+      "models": [
+        "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline2_dialogue_sft"
+      ],
+      "boundary_issues": [
+        {
+          "index": 4,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 4,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 8,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 20,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 32,
+          "turn": 8,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 35,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 41,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 66,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 89,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 106,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 123,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 129,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 139,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 141,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 147,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 156,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 162,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 180,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 182,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 182,
+          "turn": 8,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 195,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 205,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 210,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 213,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 218,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 220,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 230,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 249,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 253,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 270,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 295,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 298,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 317,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 325,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 328,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 337,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 358,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 363,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 395,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 451,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 455,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 455,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 494,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 495,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 498,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 503,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 519,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 588,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 616,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 623,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 631,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 670,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 678,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 687,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 689,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 690,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 693,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 700,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 712,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 715,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 727,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 743,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 748,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 748,
+          "turn": 7,
+          "role": "persuader",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 750,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 752,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 754,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 762,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 768,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 777,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 787,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 814,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 815,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 816,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 820,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 837,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 841,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 868,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 901,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 948,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 954,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 967,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 973,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 977,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 982,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 991,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 992,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        }
+      ],
+      "affected_indexes": [
+        4,
+        8,
+        20,
+        32,
+        35,
+        41,
+        66,
+        89,
+        106,
+        123,
+        129,
+        139,
+        141,
+        147,
+        156,
+        162,
+        180,
+        182,
+        195,
+        205,
+        210,
+        213,
+        218,
+        220,
+        230,
+        249,
+        253,
+        270,
+        295,
+        298,
+        317,
+        325,
+        328,
+        337,
+        358,
+        363,
+        395,
+        451,
+        455,
+        494,
+        495,
+        498,
+        503,
+        519,
+        588,
+        616,
+        623,
+        631,
+        670,
+        678,
+        687,
+        689,
+        690,
+        693,
+        700,
+        712,
+        715,
+        727,
+        743,
+        748,
+        750,
+        752,
+        754,
+        762,
+        768,
+        777,
+        787,
+        814,
+        815,
+        816,
+        820,
+        832,
+        837,
+        841,
+        868,
+        901,
+        948,
+        954,
+        967,
+        973,
+        977,
+        982,
+        991,
+        992
+      ],
+      "policy": "regenerate complete affected scenarios; never trim old history and call it new generation"
+    },
+    "baseline3_isr_simdpo": {
+      "rows": 192,
+      "complete": true,
+      "sha256": "d75b54ff896ca828627ad5a65b13b9886082cc2e7df45c7a418519e3b54d1f22",
+      "models": [
+        "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline3_simdpo"
+      ],
+      "boundary_issues": [
+        {
+          "index": 0,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 4,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 4,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 7,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 8,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 20,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 24,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 26,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 27,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 32,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 34,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 35,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 41,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 66,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 70,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 74,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 80,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 89,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 91,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 95,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 106,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 112,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 113,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 114,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 123,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 127,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 129,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 139,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 141,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 147,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 154,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 156,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 158,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 161,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 162,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 163,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 163,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 164,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 166,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 180,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 182,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 182,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 186,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 193,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 195,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 202,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 205,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 210,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 211,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 213,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 218,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 220,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 230,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 231,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 243,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 246,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 249,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 253,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 253,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 259,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 270,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 283,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 286,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 295,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 298,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 317,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 325,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 328,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 330,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 337,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 344,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 347,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 353,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 354,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 357,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 358,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 360,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 363,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 368,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 384,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 395,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 400,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 407,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 414,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 438,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 441,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 451,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 453,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 455,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 466,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 467,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 469,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 482,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 486,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 486,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 489,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 494,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 495,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 498,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 501,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 503,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 512,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 516,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 517,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 519,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 520,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 531,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 567,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 572,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 578,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 587,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 588,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 588,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 592,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 593,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 607,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 616,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 622,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 622,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 623,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 631,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 634,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 653,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 653,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 660,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 663,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 668,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 670,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 678,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 680,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 684,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 687,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 689,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 690,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 693,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 700,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 703,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 703,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 704,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 705,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 709,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 712,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 715,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 717,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 720,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 723,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 725,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 727,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 743,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 748,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 749,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 750,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 752,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 754,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 757,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 759,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 762,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 764,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 768,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 777,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 777,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 785,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 787,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 788,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 794,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 802,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 806,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 814,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 815,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 816,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 820,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 821,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 833,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 837,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 841,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 853,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 855,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 857,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 858,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 861,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 868,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 889,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 901,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 902,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 928,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 929,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 940,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 940,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 941,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 948,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 954,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 957,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 967,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 973,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 976,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 977,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 980,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 982,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 988,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 991,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 992,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 996,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        }
+      ],
+      "affected_indexes": [
+        0,
+        4,
+        7,
+        8,
+        20,
+        24,
+        26,
+        27,
+        32,
+        34,
+        35,
+        41,
+        66,
+        70,
+        74,
+        80,
+        89,
+        91,
+        95,
+        106,
+        112,
+        113,
+        114,
+        123,
+        127,
+        129,
+        139,
+        141,
+        147,
+        154,
+        156,
+        158,
+        161,
+        162,
+        163,
+        164,
+        166,
+        180,
+        182,
+        186,
+        193,
+        195,
+        202,
+        205,
+        210,
+        211,
+        213,
+        218,
+        220,
+        230,
+        231,
+        243,
+        246,
+        249,
+        253,
+        259,
+        270,
+        283,
+        286,
+        295,
+        298,
+        317,
+        325,
+        328,
+        330,
+        337,
+        344,
+        347,
+        353,
+        354,
+        357,
+        358,
+        360,
+        363,
+        368,
+        384,
+        395,
+        400,
+        407,
+        414,
+        438,
+        441,
+        451,
+        453,
+        455,
+        466,
+        467,
+        469,
+        482,
+        486,
+        489,
+        494,
+        495,
+        498,
+        501,
+        503,
+        512,
+        516,
+        517,
+        519,
+        520,
+        531,
+        567,
+        572,
+        578,
+        587,
+        588,
+        592,
+        593,
+        607,
+        616,
+        622,
+        623,
+        631,
+        634,
+        653,
+        660,
+        663,
+        668,
+        670,
+        678,
+        680,
+        684,
+        687,
+        689,
+        690,
+        693,
+        700,
+        703,
+        704,
+        705,
+        709,
+        712,
+        715,
+        717,
+        720,
+        723,
+        725,
+        727,
+        743,
+        748,
+        749,
+        750,
+        752,
+        754,
+        757,
+        759,
+        762,
+        764,
+        768,
+        777,
+        785,
+        787,
+        788,
+        794,
+        802,
+        806,
+        814,
+        815,
+        816,
+        820,
+        821,
+        832,
+        833,
+        837,
+        841,
+        853,
+        855,
+        857,
+        858,
+        861,
+        868,
+        889,
+        901,
+        902,
+        928,
+        929,
+        940,
+        941,
+        948,
+        954,
+        957,
+        967,
+        973,
+        976,
+        977,
+        980,
+        982,
+        988,
+        991,
+        992,
+        996
+      ],
+      "policy": "regenerate complete affected scenarios; never trim old history and call it new generation"
+    },
+    "baseline4_ma2p": {
+      "rows": 192,
+      "complete": true,
+      "sha256": "5156dad7d3a35e1ec9ad2879b3d55a3ab171b6c16e1f027604a705f8b4e514c6",
+      "models": [
+        "/app/hzj/models/Meta-Llama-3.1-8B-Instruct"
+      ],
+      "boundary_issues": [
+        {
+          "index": 0,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 8,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 35,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 35,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 95,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 106,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 112,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 113,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 114,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 123,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 127,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 127,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 129,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 139,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 141,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 147,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 154,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 156,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 158,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 161,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 162,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 163,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 164,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 166,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 180,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 180,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 182,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 186,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 193,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 195,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 202,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 205,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 205,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 210,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 211,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 213,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 218,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 220,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 230,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 231,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 243,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 246,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 249,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 253,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 259,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 270,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 283,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 286,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 295,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 298,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 317,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 325,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 328,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 330,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 337,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 344,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 347,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 353,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 354,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 357,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 358,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 360,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 363,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 368,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 384,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 395,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 400,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 407,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 414,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 438,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 441,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 451,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 453,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 455,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 466,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 467,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 469,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 482,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 486,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 489,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 494,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 495,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 498,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 501,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 503,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 512,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 516,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 517,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 519,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 520,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 531,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 567,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 572,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 578,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 587,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 588,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 592,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 593,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 607,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 616,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 622,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 623,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 631,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 634,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 653,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 660,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 663,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 668,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 670,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 678,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 680,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 684,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 687,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 689,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 690,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 693,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 700,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 703,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 704,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 705,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 709,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 712,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 715,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 717,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 720,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 723,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 725,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 727,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 743,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 748,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 749,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 750,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 752,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 754,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 757,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 759,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 762,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 764,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 768,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 777,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 785,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 787,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 788,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 794,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 802,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 806,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 814,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 815,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 816,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 820,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 821,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 833,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 837,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 841,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 853,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 855,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 857,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 858,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 861,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 868,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 889,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 901,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 902,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 928,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 929,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 940,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 941,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 948,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 954,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 957,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 967,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 973,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 976,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 977,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 980,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 982,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 988,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 991,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 992,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 996,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        }
+      ],
+      "affected_indexes": [
+        0,
+        8,
+        35,
+        95,
+        106,
+        112,
+        113,
+        114,
+        123,
+        127,
+        129,
+        139,
+        141,
+        147,
+        154,
+        156,
+        158,
+        161,
+        162,
+        163,
+        164,
+        166,
+        180,
+        182,
+        186,
+        193,
+        195,
+        202,
+        205,
+        210,
+        211,
+        213,
+        218,
+        220,
+        230,
+        231,
+        243,
+        246,
+        249,
+        253,
+        259,
+        270,
+        283,
+        286,
+        295,
+        298,
+        317,
+        325,
+        328,
+        330,
+        337,
+        344,
+        347,
+        353,
+        354,
+        357,
+        358,
+        360,
+        363,
+        368,
+        384,
+        395,
+        400,
+        407,
+        414,
+        438,
+        441,
+        451,
+        453,
+        455,
+        466,
+        467,
+        469,
+        482,
+        486,
+        489,
+        494,
+        495,
+        498,
+        501,
+        503,
+        512,
+        516,
+        517,
+        519,
+        520,
+        531,
+        567,
+        572,
+        578,
+        587,
+        588,
+        592,
+        593,
+        607,
+        616,
+        622,
+        623,
+        631,
+        634,
+        653,
+        660,
+        663,
+        668,
+        670,
+        678,
+        680,
+        684,
+        687,
+        689,
+        690,
+        693,
+        700,
+        703,
+        704,
+        705,
+        709,
+        712,
+        715,
+        717,
+        720,
+        723,
+        725,
+        727,
+        743,
+        748,
+        749,
+        750,
+        752,
+        754,
+        757,
+        759,
+        762,
+        764,
+        768,
+        777,
+        785,
+        787,
+        788,
+        794,
+        802,
+        806,
+        814,
+        815,
+        816,
+        820,
+        821,
+        832,
+        833,
+        837,
+        841,
+        853,
+        855,
+        857,
+        858,
+        861,
+        868,
+        889,
+        901,
+        902,
+        928,
+        929,
+        940,
+        941,
+        948,
+        954,
+        957,
+        967,
+        973,
+        976,
+        977,
+        980,
+        982,
+        988,
+        991,
+        992,
+        996
+      ],
+      "policy": "regenerate complete affected scenarios; never trim old history and call it new generation"
+    }
+  },
+  "deepseek_r1_qwen14b": {
+    "baseline1_zero_shot": {
+      "rows": 192,
+      "complete": true,
+      "sha256": "1a342576c3e5f5e572b3203ee7678de83b1bcef7f343e6c24030bb6c94165db1",
+      "models": [
+        "/app/hzj/models/DeepSeek-R1-Distill-Qwen-14B"
+      ],
+      "boundary_issues": [
+        {
+          "index": 4,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 26,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 32,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 41,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 89,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 106,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 112,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 129,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 139,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 161,
+          "turn": 8,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 186,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 210,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 213,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 218,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 220,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 243,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 283,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 286,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 328,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 337,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 363,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 400,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 451,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 466,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 467,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 467,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 486,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 498,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 587,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 592,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 631,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 634,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 653,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 670,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 690,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 750,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 754,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 754,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 788,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 837,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 841,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 889,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 901,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 928,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 940,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 941,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 973,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 976,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 992,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 996,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        }
+      ],
+      "affected_indexes": [
+        4,
+        26,
+        32,
+        41,
+        89,
+        106,
+        112,
+        129,
+        139,
+        161,
+        186,
+        210,
+        213,
+        218,
+        220,
+        243,
+        283,
+        286,
+        328,
+        337,
+        363,
+        400,
+        451,
+        466,
+        467,
+        486,
+        498,
+        587,
+        592,
+        631,
+        634,
+        653,
+        670,
+        690,
+        750,
+        754,
+        788,
+        832,
+        837,
+        841,
+        889,
+        901,
+        928,
+        940,
+        941,
+        973,
+        976,
+        992,
+        996
+      ],
+      "policy": "regenerate complete affected scenarios; never trim old history and call it new generation"
+    },
+    "baseline2_dialogue_sft": {
+      "rows": 192,
+      "complete": true,
+      "sha256": "f8a96eb6f0d5203ab194f58e476aace376964df7cbfc0147d797a45ada80c147",
+      "models": [
+        "/app/hzj/liujianjian/persuader_atapter_save/deepseek_r1_qwen14b/baseline2_dialogue_sft"
+      ],
+      "boundary_issues": [
+        {
+          "index": 0,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 4,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 4,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 7,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 8,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 8,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 20,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 24,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 26,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 27,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 32,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 35,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 41,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 41,
+          "turn": 8,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 66,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 70,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 91,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 91,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 95,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 106,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 106,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 112,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 113,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 114,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 114,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 123,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 127,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 129,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 139,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 141,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 154,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 156,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 156,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 158,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 161,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 162,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 163,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 164,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 180,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 182,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 186,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 193,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 195,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 202,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 210,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 211,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 211,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 213,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 218,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 220,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 243,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 246,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 253,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 259,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 259,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 270,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 283,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 286,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 295,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 298,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 298,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 317,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 325,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 328,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 330,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 337,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 344,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 347,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 353,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 354,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 357,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 358,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 360,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 360,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 363,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 368,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 384,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 384,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 395,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 400,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 414,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 438,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 451,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 453,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 453,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 453,
+          "turn": 8,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 455,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 466,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 466,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 466,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 467,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 469,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 482,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 486,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 489,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 494,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 495,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 495,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 498,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 501,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 512,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 516,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 517,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 519,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 520,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 531,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 567,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 572,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 578,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 587,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 588,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 588,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 607,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 622,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 631,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 634,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 634,
+          "turn": 8,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 653,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 660,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 670,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 678,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 678,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 678,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 680,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 687,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 690,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 693,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 704,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 705,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 709,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 709,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 712,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 715,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 717,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 717,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 720,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 723,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 727,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 727,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 743,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 743,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 749,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 749,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 752,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 754,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 754,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 757,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 757,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 785,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 785,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 787,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 787,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 788,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 794,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 806,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 814,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 814,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 815,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 816,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 820,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 821,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 833,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 833,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 837,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 841,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 841,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 853,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 857,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "Role label remained in public speech"
+        },
+        {
+          "index": 858,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 858,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 861,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 889,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 889,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 901,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 902,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 902,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 928,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 929,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 940,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 941,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 948,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 948,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 954,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 954,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 957,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 967,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 973,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 976,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 977,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 982,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 988,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 991,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 992,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 992,
+          "turn": 8,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        }
+      ],
+      "affected_indexes": [
+        0,
+        4,
+        7,
+        8,
+        20,
+        24,
+        26,
+        27,
+        32,
+        35,
+        41,
+        66,
+        70,
+        91,
+        95,
+        106,
+        112,
+        113,
+        114,
+        123,
+        127,
+        129,
+        139,
+        141,
+        154,
+        156,
+        158,
+        161,
+        162,
+        163,
+        164,
+        180,
+        182,
+        186,
+        193,
+        195,
+        202,
+        210,
+        211,
+        213,
+        218,
+        220,
+        243,
+        246,
+        253,
+        259,
+        270,
+        283,
+        286,
+        295,
+        298,
+        317,
+        325,
+        328,
+        330,
+        337,
+        344,
+        347,
+        353,
+        354,
+        357,
+        358,
+        360,
+        363,
+        368,
+        384,
+        395,
+        400,
+        414,
+        438,
+        451,
+        453,
+        455,
+        466,
+        467,
+        469,
+        482,
+        486,
+        489,
+        494,
+        495,
+        498,
+        501,
+        512,
+        516,
+        517,
+        519,
+        520,
+        531,
+        567,
+        572,
+        578,
+        587,
+        588,
+        607,
+        622,
+        631,
+        634,
+        653,
+        660,
+        670,
+        678,
+        680,
+        687,
+        690,
+        693,
+        704,
+        705,
+        709,
+        712,
+        715,
+        717,
+        720,
+        723,
+        727,
+        743,
+        749,
+        752,
+        754,
+        757,
+        785,
+        787,
+        788,
+        794,
+        806,
+        814,
+        815,
+        816,
+        820,
+        821,
+        832,
+        833,
+        837,
+        841,
+        853,
+        857,
+        858,
+        861,
+        889,
+        901,
+        902,
+        928,
+        929,
+        940,
+        941,
+        948,
+        954,
+        957,
+        967,
+        973,
+        976,
+        977,
+        982,
+        988,
+        991,
+        992
+      ],
+      "policy": "regenerate complete affected scenarios; never trim old history and call it new generation"
+    },
+    "baseline3_isr_simdpo": {
+      "rows": 192,
+      "complete": true,
+      "sha256": "48c86fcde85ff1f8e95f61fe02f8a228936b4ebdad21fba97ac32d09d0688b17",
+      "models": [
+        "/app/hzj/liujianjian/persuader_atapter_save/deepseek_r1_qwen14b/baseline3_simdpo"
+      ],
+      "boundary_issues": [
+        {
+          "index": 0,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 4,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 7,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 8,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 20,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 24,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 26,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 27,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 32,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 34,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 35,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 41,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 66,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 70,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 74,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 80,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 89,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 91,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 95,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 106,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 112,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 113,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 114,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 123,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 127,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 129,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 139,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 141,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 147,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 154,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 156,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 158,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 161,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 162,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 163,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 164,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 166,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 180,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 182,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 186,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 193,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 195,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 202,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 205,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 210,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 211,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 211,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 213,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 213,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 218,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 220,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 220,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 230,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 231,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 243,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 246,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 249,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 253,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 253,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 259,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 259,
+          "turn": 6,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 270,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 283,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 286,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 295,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 298,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 317,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 325,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 328,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 330,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 337,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 344,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 347,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 347,
+          "turn": 8,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 353,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 354,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 357,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 358,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 360,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 363,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 368,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 384,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 395,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 400,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 400,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 407,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 414,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 441,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 451,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 453,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 455,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 466,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 467,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 469,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 482,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 486,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 489,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 494,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 495,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 498,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 501,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 503,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 512,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 516,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 517,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 519,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 520,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 531,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 567,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 572,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 578,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 587,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 588,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 592,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 593,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 607,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 616,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 622,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 623,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 631,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 634,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 634,
+          "turn": 4,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 653,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 660,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 663,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 670,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 678,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 680,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 684,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 687,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 689,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 690,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 693,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 700,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 703,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 704,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 705,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 709,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 712,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 715,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 717,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 720,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 723,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 725,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 727,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 743,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 748,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 749,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 750,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 752,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 754,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 757,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 759,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 762,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 764,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 768,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 777,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 785,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 787,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 788,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 794,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 802,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 806,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 814,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 815,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 816,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 820,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 821,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 832,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 833,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 837,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 841,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 855,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 857,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 858,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 861,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 868,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 889,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 901,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 902,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 928,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 929,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 940,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 941,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 948,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 954,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 957,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 967,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 973,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 976,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 977,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 980,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 982,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 988,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 991,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 992,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 996,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        }
+      ],
+      "affected_indexes": [
+        0,
+        4,
+        7,
+        8,
+        20,
+        24,
+        26,
+        27,
+        32,
+        34,
+        35,
+        41,
+        66,
+        70,
+        74,
+        80,
+        89,
+        91,
+        95,
+        106,
+        112,
+        113,
+        114,
+        123,
+        127,
+        129,
+        139,
+        141,
+        147,
+        154,
+        156,
+        158,
+        161,
+        162,
+        163,
+        164,
+        166,
+        180,
+        182,
+        186,
+        193,
+        195,
+        202,
+        205,
+        210,
+        211,
+        213,
+        218,
+        220,
+        230,
+        231,
+        243,
+        246,
+        249,
+        253,
+        259,
+        270,
+        283,
+        286,
+        295,
+        298,
+        317,
+        325,
+        328,
+        330,
+        337,
+        344,
+        347,
+        353,
+        354,
+        357,
+        358,
+        360,
+        363,
+        368,
+        384,
+        395,
+        400,
+        407,
+        414,
+        441,
+        451,
+        453,
+        455,
+        466,
+        467,
+        469,
+        482,
+        486,
+        489,
+        494,
+        495,
+        498,
+        501,
+        503,
+        512,
+        516,
+        517,
+        519,
+        520,
+        531,
+        567,
+        572,
+        578,
+        587,
+        588,
+        592,
+        593,
+        607,
+        616,
+        622,
+        623,
+        631,
+        634,
+        653,
+        660,
+        663,
+        670,
+        678,
+        680,
+        684,
+        687,
+        689,
+        690,
+        693,
+        700,
+        703,
+        704,
+        705,
+        709,
+        712,
+        715,
+        717,
+        720,
+        723,
+        725,
+        727,
+        743,
+        748,
+        749,
+        750,
+        752,
+        754,
+        757,
+        759,
+        762,
+        764,
+        768,
+        777,
+        785,
+        787,
+        788,
+        794,
+        802,
+        806,
+        814,
+        815,
+        816,
+        820,
+        821,
+        832,
+        833,
+        837,
+        841,
+        855,
+        857,
+        858,
+        861,
+        868,
+        889,
+        901,
+        902,
+        928,
+        929,
+        940,
+        941,
+        948,
+        954,
+        957,
+        967,
+        973,
+        976,
+        977,
+        980,
+        982,
+        988,
+        991,
+        992,
+        996
+      ],
+      "policy": "regenerate complete affected scenarios; never trim old history and call it new generation"
+    },
+    "baseline4_ma2p": {
+      "rows": 38,
+      "complete": false,
+      "sha256": "2a23d187c4314d7ec9771a1be59cd8cac77f223ebeeacd19c19c090f470798c0",
+      "models": [
+        "/app/hzj/models/DeepSeek-R1-Distill-Qwen-14B"
+      ],
+      "boundary_issues": [
+        {
+          "index": 0,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 4,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 7,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 8,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 20,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 24,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 26,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 27,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 32,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 34,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 35,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 41,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 66,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 70,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 74,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 80,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 89,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 91,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 95,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 106,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 112,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 113,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 114,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 123,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 127,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 129,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 139,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 141,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 147,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 154,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 156,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 158,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 161,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 162,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 163,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 164,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 166,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        },
+        {
+          "index": 180,
+          "turn": 2,
+          "role": "persuadee",
+          "reason": "public speech boundary"
+        }
+      ],
+      "affected_indexes": [
+        0,
+        4,
+        7,
+        8,
+        20,
+        24,
+        26,
+        27,
+        32,
+        34,
+        35,
+        41,
+        66,
+        70,
+        74,
+        80,
+        89,
+        91,
+        95,
+        106,
+        112,
+        113,
+        114,
+        123,
+        127,
+        129,
+        139,
+        141,
+        147,
+        154,
+        156,
+        158,
+        161,
+        162,
+        163,
+        164,
+        166,
+        180
+      ],
+      "policy": "regenerate complete affected scenarios; never trim old history and call it new generation"
+    }
+  }
+}

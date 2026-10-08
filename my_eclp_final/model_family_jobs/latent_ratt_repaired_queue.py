@@ -1,0 +1,324 @@
+#!/usr/bin/env python3
+"""Resume the Llama LatentRATT baseline on GPU4 after the active fresh campaign."""
+from __future__ import annotations
+
+import hashlib
+import json
+import os
+from pathlib import Path
+import subprocess
+import sys
+import time
+
+
+ROOT = Path("/app/hzj/liujianjian/ljj-2-paper")
+MODEL = Path("/app/hzj/models/Meta-Llama-3.1-8B-Instruct")
+SIMULATOR = Path("/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged")
+GPU = 4
+BASE = Path("/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline5_latentratt")
+OUT = ROOT / "exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007/meta_llama31"
+QUEUE = OUT / "latentratt_queue"
+LOGS = ROOT / "baseline5_latentRATT/logs/repaired192_meta_llama31"
+TRAINER = ROOT / "my_eclp_final/model_family_jobs/train_with_budget.py"
+GENERATOR = ROOT / "my_eclp_final/model_family_jobs/generate_latent_family.py"
+EVALUATOR = ROOT / "my_eclp_final/seven_methods_192/evaluate.py"
+REPORTER = ROOT / "my_eclp_final/model_family_jobs/report_family.py"
+DATA = ROOT / "exp_code_ljj/data/isr_sft.jsonl"
+SELECTION = ROOT / "exp_code_ljj/data/test_selection_192.json"
+POINTS = ROOT / "exp_code_ljj/data/evaluation_points.jsonl"
+FRESH_GENERATION = OUT / "generation_run.json"
+METHODS = ("zero_shot_repaired", "dialogue_sft", "persugpt", "ma2p_repaired", "our_direct")
+JUDGES = ("selene8b", "qwen3_14b")
+PYTHON = "/app/hzj/anaconda3/envs/ljj/bin/python"
+
+
+def sha256(path: Path) -> str:
+    h = hashlib.sha256()
+    with path.open("rb") as handle:
+        for block in iter(lambda: handle.read(1024 * 1024), b""):
+            h.update(block)
+    return h.hexdigest()
+
+
+def read_json(path: Path) -> dict:
+    return json.loads(path.read_text(encoding="utf-8"))
+
+
+def atomic_json(path: Path, payload: dict) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    temp = path.with_name(path.name + f".tmp-{os.getpid()}")
+    temp.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    temp.replace(path)
+
+
+def update(stage: str, **extra) -> None:
+    atomic_json(QUEUE / "status.json", {"updated": time.time(), "gpu": GPU, "stage": stage, **extra})
+
+
+def active_campaigns() -> list[int]:
+    active = []
+    for entry in Path("/proc").iterdir():
+        if not entry.name.isdigit():
+            continue
+        pid = int(entry.name)
+        if pid == os.getpid():
+            continue
+        try:
+            command = (entry / "cmdline").read_bytes().decode(errors="replace")
+        except OSError:
+            continue
+        if "llama_fresh_campaign.py" in command:
+            active.append(pid)
+    return active
+
+
+def gpu_free_mib() -> int:
+    raw = subprocess.check_output(
+        ["nvidia-smi", "--id=4", "--query-gpu=memory.free", "--format=csv,noheader,nounits"],
+        text=True,
+    ).strip()
+    return int(raw)
+
+
+def wait_for_gpu(min_free_gib: int, stage: str) -> None:
+    while True:
+        free = gpu_free_mib()
+        if free >= min_free_gib * 1024:
+            return
+        update(stage, free_mib=free, required_mib=min_free_gib * 1024)
+        time.sleep(60)
+
+
+def run(command: list[str], log_path: Path, *, stage: str) -> None:
+    log_path.parent.mkdir(parents=True, exist_ok=True)
+    env = os.environ.copy()
+    env["CUDA_VISIBLE_DEVICES"] = str(GPU)
+    env["CUDA_DEVICE_ORDER"] = "PCI_BUS_ID"
+    update(stage, command=command, log=str(log_path))
+    with log_path.open("ab", buffering=0) as log:
+        completed = subprocess.run(command, cwd=ROOT, env=env, stdout=log, stderr=subprocess.STDOUT)
+    if completed.returncode:
+        raise RuntimeError(f"{stage} exited {completed.returncode}; see {log_path}")
+
+
+def verify_active_suite() -> None:
+    work = OUT
+    missing = []
+    for method in METHODS:
+        generation = work / "generators" / method / "generation" / f"{method}_summary.json"
+        if not generation.exists() or not read_json(generation).get("complete"):
+            missing.append(f"generation:{method}")
+        for judge in JUDGES:
+            summary = work / "judges" / judge / "evaluation" / method / "summary.json"
+            if not summary.exists():
+                missing.append(f"evaluation:{judge}:{method}")
+            else:
+                value = read_json(summary)
+                if not value.get("complete") or value.get("n") != 192:
+                    missing.append(f"evaluation:{judge}:{method}")
+    if missing:
+        raise RuntimeError("Fresh campaign ended before required methods completed: " + ", ".join(missing))
+
+
+def latest_training_checkpoint(output: Path, stage: str) -> Path | None:
+    candidates = []
+    paths = [output / "run_config.json"]
+    paths.extend(output.glob("checkpoint-*/run_config.json"))
+    paths.extend(output.glob("oom-step-*/run_config.json"))
+    for config_path in paths:
+        if not config_path.is_file():
+            continue
+        config = read_json(config_path)
+        if (config.get("stage") == stage and config.get("model") == str(MODEL)
+                and config.get("train_rows") == 59868 and config.get("train_sha256") == sha256(DATA)):
+            state = config_path.parent / "training_state.pt"
+            adapter = config_path.parent / "adapter/adapter_config.json"
+            attention = config_path.parent / "attention.pt"
+            if state.is_file() and adapter.is_file() and attention.is_file():
+                candidates.append((int(config.get("completed_steps", -1)), config_path.parent))
+    return max(candidates, key=lambda item: item[0])[1] if candidates else None
+
+
+def assert_training_config(config: dict, stage: str, *, complete: bool | None = None) -> None:
+    if (config.get("stage") != stage or config.get("model") != str(MODEL)
+            or config.get("train_rows") != 59868 or config.get("train_sha256") != sha256(DATA)):
+        raise RuntimeError(f"LatentRATT {stage} checkpoint does not match the complete Llama ISR run")
+    if complete is not None and config.get("training_complete") is not complete:
+        raise RuntimeError(f"LatentRATT {stage} checkpoint has unexpected completion state")
+
+
+def verify_latent_checkpoint(path: Path) -> dict:
+    config = read_json(path / "run_config.json")
+    if (config.get("stage") != "rl" or config.get("model") != str(MODEL)
+            or config.get("training_complete") is not True or config.get("train_rows") != 59868
+            or config.get("train_sha256") != sha256(DATA)):
+        raise RuntimeError("LatentRATT RL checkpoint does not match the complete Llama ISR run")
+    for relative in ("adapter/adapter_config.json", "attention.pt"):
+        if not (path / relative).is_file():
+            raise RuntimeError(f"Incomplete LatentRATT checkpoint: {relative}")
+    return config
+
+
+def train_latentratt() -> Path:
+    train_config = read_json(ROOT / "eclp_runs_meta_llama31_20261007/config.json")
+    if train_config.get("base_model") != str(MODEL):
+        raise RuntimeError("The selected Llama backbone differs from the active ECLP family")
+    sft_dir = BASE / "sft"
+    rl_dir = BASE / "rl"
+    if (sft_dir / "run_config.json").exists() and read_json(sft_dir / "run_config.json").get("training_complete") is True:
+        assert_training_config(read_json(sft_dir / "run_config.json"), "sft", complete=True)
+        sft_checkpoint = sft_dir
+    else:
+        checkpoint = latest_training_checkpoint(sft_dir, "sft")
+        if checkpoint is None:
+            raise RuntimeError("No resumable Llama LatentRATT SFT checkpoint matches the full ISR data")
+        sft_config = read_json(checkpoint / "run_config.json")
+        if sft_config.get("training_complete") is True:
+            assert_training_config(sft_config, "sft", complete=True)
+            sft_checkpoint = checkpoint
+        else:
+            assert_training_config(sft_config, "sft", complete=False)
+            wait_for_gpu(46, "waiting_for_gpu_before_sft_resume")
+            command = [
+                PYTHON, "-u", str(TRAINER), "--entry", "latent", "--physical-gpu", "4",
+                "--memory-cap-gib", "42", "--", "sft", "--model", str(MODEL),
+                "--device", "cuda:0", "--train-file", str(DATA), "--checkpoint", str(checkpoint),
+                "--resume-training-state", str(checkpoint / "training_state.pt"),
+                "--output", str(sft_dir), "--epochs", "1", "--max-prompt-tokens", "1536",
+                "--max-target-tokens", "256", "--gradient-accumulation", "16",
+                "--batch-size", "2", "--group-size", "4", "--sigma", "1.5",
+                "--rationale-weight", "0.2", "--learning-rate", "0.0001",
+                "--save-steps", "100", "--log-steps", "10", "--seed", "42",
+            ]
+            run(command, LOGS / "sft.log", stage="resuming_latentratt_sft_on_gpu4")
+            sft_config = read_json(sft_dir / "run_config.json")
+            if sft_config.get("training_complete") is not True:
+                raise RuntimeError("LatentRATT SFT exited without completing its single full data pass")
+            sft_checkpoint = sft_dir
+
+    rl_summary = rl_dir / "run_config.json"
+    if rl_summary.exists() and read_json(rl_summary).get("training_complete") is True:
+        verify_latent_checkpoint(rl_dir)
+    else:
+        resume = latest_training_checkpoint(rl_dir, "rl")
+        rl_input = sft_checkpoint
+        resume_args = []
+        if resume is not None:
+            resume_config = read_json(resume / "run_config.json")
+            assert_training_config(resume_config, "rl", complete=False)
+            rl_input = resume
+            resume_args = ["--resume-training-state", str(resume / "training_state.pt")]
+        wait_for_gpu(46, "waiting_for_gpu_before_latentratt_rl")
+        command = [
+            PYTHON, "-u", str(TRAINER), "--entry", "latent", "--physical-gpu", "4",
+            "--memory-cap-gib", "42", "--", "rl", "--model", str(MODEL),
+            "--device", "cuda:0", "--train-file", str(DATA), "--checkpoint", str(rl_input),
+            *resume_args,
+            "--output", str(rl_dir), "--epochs", "1", "--max-prompt-tokens", "1536",
+            "--max-target-tokens", "256", "--gradient-accumulation", "16",
+            "--batch-size", "2", "--group-size", "4", "--sigma", "1.5",
+            "--rationale-weight", "0.2", "--learning-rate", "0.00001",
+            "--save-steps", "100", "--log-steps", "10", "--seed", "42",
+        ]
+        run(command, LOGS / "rl.log", stage="training_latentratt_rl_on_gpu4")
+    verify_latent_checkpoint(rl_dir)
+    return rl_dir
+
+
+def generate_and_evaluate(checkpoint: Path) -> None:
+    selection = read_json(SELECTION)
+    points = [json.loads(line) for line in POINTS.read_text(encoding="utf-8").splitlines() if line.strip()]
+    source_order = sorted(selection["original_indexes"], key=lambda index: hashlib.sha256(
+        ("matched-v2-pilot-42:" + points[index]["scenario_id"]).encode()).hexdigest())
+    current_order = read_json(FRESH_GENERATION)["expected_indexes"]
+    if source_order != current_order or len(source_order) != 192:
+        raise RuntimeError("LatentRATT scenario order does not match the repaired fixed-192 contract")
+
+    output = OUT / "generators/latentratt"
+    generation = output / "generation/latentratt.jsonl"
+    generation_summary = output / "generation/latentratt_summary.json"
+    if not generation_summary.exists() or not read_json(generation_summary).get("complete"):
+        wait_for_gpu(58, "waiting_for_gpu_before_latentratt_generation")
+        command = [
+            PYTHON, "-u", str(GENERATOR), "--repo-root", str(ROOT), "--output", str(output),
+            "--physical-gpu", "4", "--family", "meta_llama31", "--checkpoint", str(checkpoint),
+            "--memory-cap-gib", "54",
+        ]
+        run(command, LOGS / "generation.log", stage="generating_latentratt_fixed192_on_gpu4")
+    generated = json.loads(generation_summary.read_text())
+    if generated.get("n") != 192 or not generated.get("complete"):
+        raise RuntimeError("LatentRATT generation is not complete on all fixed-192 scenarios")
+
+    link = OUT / "generation/latentratt.jsonl"
+    link.parent.mkdir(parents=True, exist_ok=True)
+    if link.exists() or link.is_symlink():
+        if link.resolve() != generation.resolve():
+            raise RuntimeError(f"Refusing to replace an unrelated LatentRATT generation path: {link}")
+    else:
+        link.symlink_to(os.path.relpath(generation, link.parent))
+
+    for judge in JUDGES:
+        summary = OUT / "judges" / judge / "evaluation/latentratt/summary.json"
+        if summary.exists():
+            old = read_json(summary)
+            if old.get("complete") and old.get("source_generation_sha256") == sha256(generation):
+                continue
+            if old.get("complete"):
+                raise RuntimeError(f"Existing {judge} LatentRATT score belongs to different dialogue data")
+        wait_for_gpu(36 if judge == "qwen3_14b" else 26, f"waiting_for_gpu_before_{judge}_latent_eval")
+        command = [
+            PYTHON, "-u", str(EVALUATOR), "--repo-root", str(ROOT), "--output", str(OUT),
+            "--physical-gpu", "4", "--method", "latentratt", "--judge", judge,
+            "--limit", "192", "--batch-size", "4",
+            "--memory-cap-gib", "32" if judge == "qwen3_14b" else "22",
+        ]
+        run(command, LOGS / f"evaluate_{judge}.log", stage=f"evaluating_latentratt_{judge}_on_gpu4")
+        subprocess.run([PYTHON, str(REPORTER), "--family", "meta_llama31"], cwd=ROOT, check=True)
+        result = read_json(summary)
+        if result.get("n") != 192 or not result.get("complete"):
+            raise RuntimeError(f"{judge} LatentRATT judge pass is incomplete")
+
+
+def main() -> None:
+    QUEUE.mkdir(parents=True, exist_ok=True)
+    LOGS.mkdir(parents=True, exist_ok=True)
+    atomic_json(QUEUE / "contract.json", {
+        "family": "meta_llama31", "fixed_test_n": 192, "gpu": 4,
+        "prerequisite_methods": list(METHODS), "prerequisite_judges": list(JUDGES),
+        "train_rows": 59868, "training": "resume one SFT epoch, then one LatentRATT LR-GRPO pass",
+        "generation": "fresh five-round dialogues, empty initial history, goal-blind persuadee",
+        "source_data_sha256": sha256(DATA), "selection_sha256": sha256(SELECTION),
+        "latent_generation_source_sha256": sha256(GENERATOR),
+    })
+
+    while True:
+        active = active_campaigns()
+        if not active:
+            break
+        update("waiting_for_five_method_fresh_campaign", active_pids=active)
+        time.sleep(60)
+    verify_active_suite()
+
+    eclp_rl = ROOT / "eclp_runs_meta_llama31_20261007/offline_rl/summary.json"
+    while not eclp_rl.exists() or not read_json(eclp_rl).get("complete"):
+        update("waiting_for_eclp_offline_rl_checkpoint")
+        time.sleep(60)
+
+    checkpoint = train_latentratt()
+    update("latentratt_training_complete", checkpoint=str(checkpoint),
+           checkpoint_config=read_json(checkpoint / "run_config.json"))
+    generate_and_evaluate(checkpoint)
+
+    audit = read_json(ROOT / "exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007/table_completion_audit.json")
+    if not audit.get("complete"):
+        raise RuntimeError("Llama fresh-192 table audit is not complete after LatentRATT evaluation")
+    update("complete", table=str(ROOT / "exp_code_ljj/results/main_experiment_table_llama31.md"),
+           table_audit=audit)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except Exception as exc:
+        update("failed", error=repr(exc))
+        raise

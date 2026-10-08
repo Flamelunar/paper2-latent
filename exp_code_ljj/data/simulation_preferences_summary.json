@@ -1,0 +1,25 @@
+{
+  "protocol": "persugpt_simulation_table5_reconstruction_v3_staged_batched",
+  "rows": 2000,
+  "simulation_rounds_k": 4,
+  "path_generation_batch_sizes": {
+    "16": 2000
+  },
+  "path_semantics": "Each reward prefix contains the initial candidate, a persuadee reply, and for later rounds one additional persuader/persuadee exchange.",
+  "weights": [
+    4.0,
+    3.0,
+    2.0,
+    1.0
+  ],
+  "persuader_url": "local://cuda:2",
+  "persuader_model": "/data1/liujianjian/Persuader/qwen2.5-7B-Instruct-ISR-sft",
+  "user_url": "local://cuda:2",
+  "user_model": "/data1/liujianjian/Persuadee/Qwen3.5-9B-persuadee/merged",
+  "judge_url": "local://cuda:2",
+  "judge_model": "/data1/liujianjian/model/Qwen3.5-9B",
+  "persuader_compute_dtype": "bfloat16",
+  "user_compute_dtype": "bfloat16",
+  "judge_compute_dtype": "bfloat16",
+  "disclosure": "The paper does not publish k or numerical w_j values. This run uses the recorded configurable reconstruction values."
+}

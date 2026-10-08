@@ -1,0 +1,9 @@
+# 批处理加速验证记录
+
+2026-10-06：Python静态编译通过；远程数据/checkpoint合同校验通过。
+
+远程 preflight_batch.py 使用30步相同logits验证独立随机流：双条与逐条抽样结果一致，不因邻居场景改变。使用小型Qwen2实际generate测试不同长度左padding，普通input_ids和inputs_embeds两种接口的双条与逐条结果一致。此验证不等于大模型BF16输出逐token一致。
+
+串行任务已核对命令和PID后停止，保存20条Zero-shot与1条MA2P，snapshot及SHA256在旧运行目录 switch_batch2_snapshot。原先两项GPU0训练继续保持SIGSTOP。已启动加速版durable supervisor（初始PID2089899），先在真实模型上验证前两个场景接口，再补齐20并判分、扩展192。
+
+真实模型批量接口、显存峰值和速度尚待首批落盘确认；运行进度与失败信息写入新运行目录的supervisor_state.json及阶段日志。

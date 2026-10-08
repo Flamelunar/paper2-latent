@@ -1,0 +1,26 @@
+[
+  {
+    "kind": "train",
+    "name": "meta_llama31",
+    "pid": 308131,
+    "log": "/app/hzj/liujianjian/ljj-2-paper/my_eclp_final/model_family_jobs/train_meta_llama31.log"
+  },
+  {
+    "kind": "train",
+    "name": "deepseek_r1_qwen14b",
+    "pid": 308132,
+    "log": "/app/hzj/liujianjian/ljj-2-paper/my_eclp_final/model_family_jobs/train_deepseek_r1_qwen14b.log"
+  },
+  {
+    "kind": "eval",
+    "name": "selene8b",
+    "pid": 308133,
+    "log": "/app/hzj/liujianjian/ljj-2-paper/my_eclp_final/model_family_jobs/eval_selene8b.log"
+  },
+  {
+    "kind": "eval",
+    "name": "qwen3_14b",
+    "pid": 308134,
+    "log": "/app/hzj/liujianjian/ljj-2-paper/my_eclp_final/model_family_jobs/eval_qwen3_14b.log"
+  }
+]

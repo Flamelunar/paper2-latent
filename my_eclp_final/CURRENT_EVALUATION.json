@@ -1,0 +1,22 @@
+{
+  "revision": "seven_methods_192_target_grounded_20261006",
+  "entry": "supervise_parallel.py",
+  "generation": [
+    "zero_shot_repaired",
+    "ma2p_repaired",
+    "our_analysis",
+    "our_direct"
+  ],
+  "historical_generation_reuse": [
+    "dialogue_sft",
+    "persugpt",
+    "latentratt"
+  ],
+  "judges": [
+    "selene8b",
+    "qwen3_14b"
+  ],
+  "success_prompt": "protocol.py:GOAL_RULE",
+  "win_prompt": "win_rules.json",
+  "fixed_subset": "exp_code_ljj/data/test_selection_192.json"
+}

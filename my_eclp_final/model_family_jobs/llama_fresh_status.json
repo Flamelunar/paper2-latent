@@ -1,0 +1,29 @@
+{
+  "time": 1791469361.696587,
+  "gpu": 4,
+  "scope": "meta_llama31",
+  "stage": "running",
+  "pid": 3000712,
+  "command": [
+    "/app/hzj/anaconda3/envs/ljj/bin/python",
+    "-u",
+    "/app/hzj/liujianjian/ljj-2-paper/my_eclp_final/seven_methods_192/evaluate.py",
+    "--repo-root",
+    "/app/hzj/liujianjian/ljj-2-paper",
+    "--output",
+    "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007/meta_llama31",
+    "--physical-gpu",
+    "4",
+    "--method",
+    "our_direct",
+    "--judge",
+    "selene8b",
+    "--limit",
+    "192",
+    "--batch-size",
+    "4",
+    "--memory-cap-gib",
+    "22"
+  ],
+  "log": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007/meta_llama31/judges/selene8b/our_direct.fresh.log"
+}
