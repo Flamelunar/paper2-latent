@@ -18,3 +18,7 @@
 Llama和DeepSeek各有150个SFT保存点，它们含optimizer状态，占用较大。整理未删除中间checkpoint或optimizer状态；保留它们用于恢复和历史复现。
 
 基座、模拟器和Judge一般在外部 /app/hzj/models 或配置指定的位置，未移入本项目。exp_code_ljj/models原目录只有Model.md，不代表项目没有训练权重。
+
+## GitHub 快照
+
+上述保存点数描述原服务器。本公开仓库只发布清单中的最终未合并微调权重，下载 weights/README.md 所述 Release 包后，此处相对链接才会指向实际文件。历史保存点与 optimizer 状态没有上传。权重文件和包的实测 SHA-256 见 weights/manifest.json。
