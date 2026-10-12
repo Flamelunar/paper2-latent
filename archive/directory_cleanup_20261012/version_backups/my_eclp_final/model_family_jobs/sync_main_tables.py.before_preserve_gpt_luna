@@ -1,0 +1,32 @@
+import json,time,os
+from pathlib import Path
+R=Path('/app/hzj/liujianjian/ljj-2-paper'); D=R/'exp_code_ljj/results'
+MARK='\n<!-- latest-live-results -->\n'
+def load(p):
+    return json.loads(p.read_text()) if p.exists() else {}
+def update():
+    p=D/'main_experiment_table_llama31.md'
+    pilot=D/'llama_two_stage_full192_live.md'
+    if not pilot.exists():pilot=D/'llama_two_stage_pilot_comparison.md'
+    if pilot.exists() and not (R/'exp_code_ljj/artifacts/llama_two_stage_pilot_20261009/meta_llama31/PUBLISHED.json').exists():
+        base=p.read_text().split(MARK)[0]
+        section='\n## 最新生成接口与实时诊断结果\n\n上方192条Our分数属于旧的单阶段接口，不代表当前两阶段版本。当前Our先生成私有简短理由，再生成公开劝说回复；私有内容不进入模拟器、公开历史或Judge。以下使用修复后的成功判定与位置中立提示词，不能与上方旧协议分数直接混比；完整192条完成后再替换对应正式行。\n\n'+pilot.read_text()
+        text=base+MARK+section
+        if p.read_text()!=text:p.write_text(text)
+    if (R/'exp_code_ljj/artifacts/deepseek_two_stage_eval_v3_192_20261009/deepseek_r1_qwen14b/PUBLISHED.json').exists():return
+    p=D/'main_experiment_table_deepseek14b.md'
+    checkpoints=R/'eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007'
+    steps=[int(x.name.split('-')[-1]) for x in checkpoints.glob('checkpoint-*') if x.is_dir()]
+    step=max(steps,default=0)
+    text=p.read_text().split(MARK)[0]
+    import re
+    text=re.sub(r'待训练完成（SFT已保存第\d+步；生成0/192）',f'待训练完成（SFT已保存第{step}步；生成0/192）',text)
+    text+=MARK+'\n## 当前结果更新状态\n\n已完成的四个基线分数保留在上方正式192条表中。Our与LatentRATT尚无完整生成和评估结果，暂不填入分数。Our后续采用两阶段接口：私有简短理由→公开劝说回复，基线保持各自接口；训练权重不因本次接口修改而改变。\n'
+    live=D/'deepseek_two_stage_full192_live.md'
+    if live.exists():text+='\n'+live.read_text()
+    if p.read_text()!=text:p.write_text(text)
+if __name__=='__main__':
+    update()
+    if '--watch' in __import__('sys').argv:
+        while True:
+            time.sleep(30);update()

@@ -1,0 +1,10 @@
+"""Continue the existing DeepSeek ECLP protocol on newly authorized GPU1."""
+import fcntl,os
+from pathlib import Path
+import supervise_campaign as s
+if __name__=='__main__':
+ work=s.ROOT/'eclp_runs_deepseek_r1_qwen14b_20261007';work.mkdir(parents=True,exist_ok=True)
+ with (work/'.accelerated_training.lock').open('a') as lock:
+  fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+  s.TRAIN_GPU=1
+  s.train_family('deepseek_r1_qwen14b')

@@ -1,0 +1,140 @@
+#!/usr/bin/env python3
+"""Independently audit the completed GPU4 experiment and its two table rows."""
+from __future__ import annotations
+
+from pathlib import Path
+
+from eclp_elpo import points_for_split, verify_checkpoint
+from evaluate_our import JUDGES, METHOD, verify_generation
+from experiment_io import atomic_json, digest, object_hash, read_json, read_jsonl
+from update_our_table import replace_our_rows, row_text, verify_summary
+
+
+ROOT = Path(__file__).resolve().parents[1]
+WORK = ROOT / "eclp_runs_gpu4"
+TABLE = ROOT / "exp_code_ljj/results/main_experiment_table.md"
+
+
+def committed_checkpoint(directory: Path, lock: dict, stage: str, step: int):
+    last = read_json(directory / "last.json")
+    checkpoint = Path(last["checkpoint"])
+    if not checkpoint.resolve().is_relative_to(directory.resolve()):
+        raise ValueError(f"Checkpoint leaves {directory}")
+    meta = verify_checkpoint(checkpoint, lock)
+    if (meta["checkpoint_id"] != last["checkpoint_id"] or
+            meta["stage"] != stage or meta["step"] != step):
+        raise ValueError(f"Unexpected {stage} checkpoint identity or step")
+    return checkpoint, meta
+
+
+def audit_rl_rewards(rl: Path, sft_meta: dict, rl_meta: dict):
+    run = read_json(rl / "run.json")
+    summary = read_json(rl / "summary.json")
+    prepared = points_for_split(WORK / "prepared", "rl_train")
+    expected_ids = [row["scenario_id"] for row in prepared]
+    if (len(expected_ids) != 1800 or len(set(expected_ids)) != 1800 or
+            run["scenario_ids"] != expected_ids or
+            run["source_sha256"] != digest(WORK / "prepared/rl_train.jsonl") or
+            run["initial_checkpoint_id"] != sft_meta["checkpoint_id"] or
+            run["plan"]["rl_epochs"] != 1 or run["plan"]["candidates"] != 4 or
+            run["plan"]["reward"] != "correction" or
+            run["plan"]["correction_weight"] != 0.1 or
+            run["training_dialogue_calls"] != 0 or
+            run["training_judge_calls"] != 0 or
+            run["generated_training_tokens"] != 0):
+        raise ValueError("Offline RL source or no-dialogue contract differs")
+    if (summary.get("complete") is not True or summary.get("contexts") != 1800 or
+            summary.get("unique_scenarios") != 1800 or
+            summary.get("checkpoint_id") != rl_meta["checkpoint_id"] or
+            summary.get("reward_mode") != "correction" or
+            summary.get("policy_changed") is not True or
+            summary.get("executor_unchanged") is not True or
+            any(summary.get(key) != 0 for key in
+                ("new_persuadee_calls", "judge_calls", "generated_training_tokens"))):
+        raise ValueError("Offline RL completion summary differs")
+    if rl_meta["executor_hash"] != sft_meta["executor_hash"]:
+        raise ValueError("Frozen executor changed during RL")
+    if rl_meta["policy_hash"] == sft_meta["policy_hash"]:
+        raise ValueError("RL policy was not updated")
+    reports = []
+    for path_text in summary["blocks"]:
+        commit = Path(path_text)
+        if not commit.resolve().is_relative_to((rl / "blocks").resolve()):
+            raise ValueError("RL block path leaves the experiment")
+        block = read_json(commit)
+        rewards = commit.parent / "rewards.jsonl"
+        if (block["offline_run_hash"] != object_hash(run) or
+                block["parent_sft_checkpoint_id"] != sft_meta["checkpoint_id"] or
+                block["block_rewards_sha256"] != digest(rewards) or
+                block["new_persuadee_calls"] != 0 or block["judge_calls"] != 0 or
+                block["autoregressive_generated_tokens"] != 0):
+            raise ValueError("RL block provenance differs")
+        reports.extend(read_jsonl(rewards))
+    if (len(reports) != 1800 or
+            sorted(row["scenario_id"] for row in reports) != sorted(expected_ids) or
+            any(row.get("policy_samples") != 4 or row.get("reference_action_index") != 0 or
+                row.get("reward_mode") != "correction" or
+                len(row.get("factual_nll", [])) != 5 or
+                len(row.get("counterfactual_nll", [])) != 5 for row in reports) or
+            any(row.get("new_dialogue_calls") != 0 or row.get("judge_calls") != 0 or
+                row.get("generated_tokens") != 0 for row in reports)):
+        raise ValueError("RL reward rows do not cover the original partition exactly")
+    return {"scenarios": len(reports), "blocks": len(summary["blocks"]),
+            "optimizer_updates": summary["optimizer_updates"],
+            "mean_absolute_paired_reward_delta": summary["mean_absolute_paired_reward_delta"]}
+
+
+def main():
+    status = read_json(WORK / "pipeline_status.json")
+    if status.get("state") != "complete":
+        raise RuntimeError(f"Pipeline is still {status.get('state')} / {status.get('phase')}")
+    lock = read_json(WORK / "protocol.lock.json")
+    sft, sft_meta = committed_checkpoint(WORK / "sft_full", lock, "sft", 7484)
+    rl, rl_meta = committed_checkpoint(WORK / "offline_rl", lock, "rl", 1800)
+    rl_evidence = audit_rl_rewards(WORK / "offline_rl", sft_meta, rl_meta)
+    dev = read_json(WORK / "offline_dev_validation.json")
+    if (dev.get("complete") is not True or dev.get("n") != 200 or
+            dev.get("checkpoint_id") != rl_meta["checkpoint_id"] or
+            dev.get("proxy_quality_gate_pass") is not True):
+        raise ValueError("200-case dev gate is incomplete or failed")
+    final = read_json(WORK / "final_checkpoint.json")
+    if (Path(final["checkpoint"]).resolve() != rl.resolve() or
+            final["metadata"]["checkpoint_id"] != rl_meta["checkpoint_id"] or
+            final.get("selected_using_test") is not False):
+        raise ValueError("Final checkpoint does not match the committed RL model")
+    generation = WORK / "test_eclp_offline_lpo"
+    sources = verify_generation(generation, WORK)
+    if len(sources) != 1000:
+        raise ValueError("Expected 1000 complete five-round test generations")
+    summaries = {}
+    for judge in ("selene8b", "qwen3_14b"):
+        directory = WORK / f"test_eval_{judge}"
+        summaries[judge] = verify_summary(directory, generation, WORK, judge)
+        if len(read_jsonl(directory / f"{METHOD}.jsonl")) != 1000:
+            raise ValueError(f"Expected 1000 original {judge} judgment records")
+    expected_rows = {JUDGES[judge]["table_label"]: row_text(summary)
+                     for judge, summary in summaries.items()}
+    table = TABLE.read_text(encoding="utf-8")
+    if replace_our_rows(table, expected_rows) != table:
+        raise ValueError("Our rows in the Qwen2.5 table differ from audited scores")
+    report = {
+        "complete": True, "pipeline_state": status["state"],
+        "sft_checkpoint_id": sft_meta["checkpoint_id"], "sft_steps": sft_meta["step"],
+        "rl_checkpoint_id": rl_meta["checkpoint_id"], "rl": rl_evidence,
+        "dev": {"n": dev["n"], "mean_nll_delta_policy_minus_sft":
+                dev["mean_nll_delta_policy_minus_sft"]},
+        "test_generations": len(sources),
+        "judges": {judge: {"records": 1000, "valid_count": value["valid_count"],
+                            "success_percent": value["success_percent"],
+                            "win_rate": value["win_rate"],
+                            "unresolved_cases": value["unresolved_cases"]}
+                   for judge, value in summaries.items()},
+        "table_sha256": digest(TABLE), "our_rows": expected_rows,
+    }
+    atomic_json(WORK / "completion_audit.json", report)
+    import json
+    print(json.dumps(report, ensure_ascii=False, indent=2))
+
+
+if __name__ == "__main__":
+    main()

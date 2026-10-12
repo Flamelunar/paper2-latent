@@ -1,0 +1,60 @@
+"""Llama-only, all-new dialogues under the repaired zero-shot simulator contract."""
+import json,os,subprocess,time,sys
+from pathlib import Path
+import supervise_campaign as s
+R=s.ROOT;J=s.JOB;F='meta_llama31';W=R/'exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007'/F
+OLD=s.WORK/F
+METHODS=['zero_shot_repaired','dialogue_sft','persugpt','ma2p_repaired','our_direct']
+
+def atomic(p,v):s.atomic(p,v)
+def state(**v):atomic(J/'llama_fresh_status.json',dict(time=time.time(),gpu=4,scope=F,**v))
+def run(cmd,log):
+ while True:
+  free=int(subprocess.check_output(['nvidia-smi','--id=4','--query-gpu=memory.free','--format=csv,noheader,nounits'],text=True).strip())
+  need=44*1024 if 'generate_family.py' in ' '.join(cmd) else 36*1024
+  if free>=need:break
+  state(stage='waiting_memory',free_mib=free,required_mib=need);time.sleep(30)
+ proc=s.launch('llama-fresh',4,cmd,log);state(stage='running',pid=proc.pid,command=cmd,log=str(log))
+ code=proc.wait()
+ if code:raise RuntimeError(f'{log}: exit {code}')
+def report():subprocess.run([s.PY,str(J/'report_family.py'),'--family',F],check=True)
+
+def main():
+ W.mkdir(parents=True,exist_ok=True);(W/'generation').mkdir(exist_ok=True)
+ superseded=R/'exp_code_ljj/artifacts/model_family_fresh192_20261007'/F/'superseded_run.json'
+ if not superseded.exists():
+  atomic(superseded,{'superseded':True,'reason':'simulated persuadee was shown the exact persuasion goal','replacement':str(W),'policy':'preserve old partial rows for audit; do not evaluate or merge them'})
+ manifest=json.loads((OLD/'generation_run.json').read_text())
+ manifest['revision']='model_family_fresh_goal_blind_simulator_20261007'
+ manifest['methods']=METHODS
+ manifest['source_policy']='All listed persuader methods are freshly generated on the fixed 192; no archived dialogues are reused.'
+ manifest['persuadee_prompt_policy']='The simulated persuadee receives only background and observed public dialogue; exact persuasion goal is withheld.'
+ manifest['generation_script_sha256']=__import__('hashlib').sha256((J/'generate_family.py').read_bytes()).hexdigest()
+ p=W/'generation_run.json'
+ if p.exists():assert json.loads(p.read_text())==manifest
+ else:atomic(p,manifest)
+ atomic(W/'fresh_generation_policy.json',{'scope':F,'all_new_methods':METHODS,'zero_shot':'freshly regenerate with the repaired background/history-only actor prompt','simulated_persuadee':'background and observed public dialogue only; exact goal withheld','generation_inputs':'method-native actor; same fixed192, BF16, sampling settings and public speech boundary','historical_rows':'no dialogue inheritance','judge':'same latest main-table prompts and metrics','old_partial_results':'archived diagnostic only, excluded from this run','latentratt':'pending a complete model-specific SFT+RL checkpoint'})
+ report()
+ for method in METHODS:
+  output=W/'generators'/method;done=output/'generation'/f'{method}_summary.json'
+  if method=='our_direct':
+   trained=R/f'eclp_runs_{F}_20261007/offline_rl/summary.json'
+   while not trained.exists() or not json.loads(trained.read_text()).get('complete'):
+    state(stage='waiting_our_training');time.sleep(30)
+   checkpoint=json.loads(trained.read_text())['checkpoint']
+  if not done.exists() or not json.loads(done.read_text()).get('complete'):
+   cmd=[s.PY,'-u',str(J/'generate_family.py'),'--repo-root',str(R),'--output',str(output),'--family',F,'--config',str(R/f'eclp_runs_{F}_20261007/config.json'),'--physical-gpu','4','--method',method,'--limit','192','--memory-cap-gib','44','--fresh-generation','--persuadee-goal-blind']
+   if method=='our_direct':cmd+=['--checkpoint',checkpoint]
+   run(cmd,output/'worker.log')
+  source=output/'generation'/f'{method}.jsonl';p=W/'generation'/f'{method}.jsonl'
+  if not p.exists():p.symlink_to(source)
+  for judge in ['selene8b','qwen3_14b']:
+   summary=W/'judges'/judge/'evaluation'/method/'summary.json'
+   if summary.exists() and json.loads(summary.read_text()).get('complete'):continue
+   cmd=[s.PY,'-u',str(s.CODE/'seven_methods_192/evaluate.py'),'--repo-root',str(R),'--output',str(W),'--physical-gpu','4','--method',method,'--judge',judge,'--limit','192','--batch-size','4','--memory-cap-gib','22' if judge=='selene8b' else '32']
+   run(cmd,W/'judges'/judge/f'{method}.fresh.log');report()
+ state(stage='five_methods_complete_latentratt_pending_formal_training');report()
+
+if __name__=='__main__':
+ try:main()
+ except Exception as e:state(stage='failed',error=repr(e));raise

@@ -1,0 +1,27 @@
+## Main experiment: unified v2 (192 scenarios)
+
+Persuader: (/app/hzj/models/Meta-Llama-3.1-8B-Instruct). Persuadee: (/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged).
+Prompt / calculation revision: `matched_win1_winfull_success_v2_20261005`. Judges and generation use BF16 without quantization or thinking output.
+
+固定测试集 **N=192**：原始测试点 `target_turn == 1` 且 `history == []`，使用 [test_selection_192.json](../data/test_selection_192.json) 中的原始索引。完整 1000 条生成存在且通过索引检查时，直接从中抽取这 192 条；否则只使用固定 192 条生成文件。
+
+| Judge | Method | Persuader model | Parsed / selected N | Success within 5 rounds (%) | Win@1 (%) | Win-Full (%) | Mean rounds (failure=5) | Pending / unresolved |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Selene-1-Mini-Llama-3.1-8B (BF16, unified v2) | Baseline 1: Zero-shot | Meta-Llama-3.1-8B-Instruct | 192/192 | 83.33 (160/192) | 67.71 | 50.78 | 2.443 | 0 |
+| Selene-1-Mini-Llama-3.1-8B (BF16, unified v2) | Baseline 2: Dialogue-SFT | Meta-Llama-3.1-8B-Instruct | 192/192 | 85.42 (164/192) | 46.09 | 21.48 | 2.339 | 0 |
+| Selene-1-Mini-Llama-3.1-8B (BF16, unified v2) | Baseline 3: ISR-SFT + SimDPO | Meta-Llama-3.1-8B-Instruct | 192/192 | 79.17 (152/192) | 67.45 | 24.35 | 2.458 | 0 |
+| Selene-1-Mini-Llama-3.1-8B (BF16, unified v2) | Baseline 4: MA2P | Meta-Llama-3.1-8B-Instruct | 192/192 | 83.33 (160/192) | 22.66 | 12.50 | 2.156 | 0 |
+| Selene-1-Mini-Llama-3.1-8B (BF16, unified v2) | Baseline 5: LatentRATT | Meta-Llama-3.1-8B-Instruct | 待评估 / 192 | - | - | - | - | 192 |
+|  | Our | Meta-Llama-3.1-8B-Instruct | 待评估 / 192 | - | - | - | - | 192 |
+| Qwen3-14B (BF16, unified v2) | Baseline 1: Zero-shot | Meta-Llama-3.1-8B-Instruct | 192/192 | 77.60 (149/192) | 70.31 | 29.04 | 2.854 | 0 |
+| Qwen3-14B (BF16, unified v2) | Baseline 2: Dialogue-SFT | Meta-Llama-3.1-8B-Instruct | 192/192 | 77.60 (149/192) | 42.06 | 1.82 | 2.620 | 0 |
+| Qwen3-14B (BF16, unified v2) | Baseline 3: ISR-SFT + SimDPO | Meta-Llama-3.1-8B-Instruct | 192/192 | 73.44 (141/192) | 81.12 | 5.21 | 2.672 | 0 |
+| Qwen3-14B (BF16, unified v2) | Baseline 4: MA2P | Meta-Llama-3.1-8B-Instruct | 192/192 | 71.35 (137/192) | 26.95 | 12.76 | 2.776 | 0 |
+| Qwen3-14B (BF16, unified v2) | Baseline 5: LatentRATT | Meta-Llama-3.1-8B-Instruct | 待评估 / 192 | - | - | - | - | 192 |
+|  | Our | Meta-Llama-3.1-8B-Instruct | 待评估 / 192 | - | - | - | - | 192 |
+
+成功率为五轮内任一轮接受目标的比例；平均轮数取首次成功轮，失败计5。Win@1 比较首条完整回复；Win-Full 比较全部五轮与原始 golden 全部可用对话；两项均独立匿名换序两次，胜=1、平=0.5、负=0。
+
+指标按完成且全部字段解析成功的场景计算；Parsed/selected 显示实际分母与固定192条，未完成或格式未解决单独列示。小于192的行是部分进度，不作为完整最终结果。严格有限 JSON 解码及最新 v2 重试机制保持不变；技术错误保留日志并停止该任务，不伪造分数。
+
+仅运行 Selene 与 Qwen3-14B；API 评估暂不执行。评估输出：(/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/evaluation_from_start192_fullsource_v2/meta_llama31)。

@@ -1,0 +1,124 @@
+"""All-new DeepSeek fixed192 goal-visible generation and dual judging on GPU4."""
+import fcntl, hashlib, json, os, subprocess, sys, time
+from pathlib import Path
+ROOT=Path('/app/hzj/liujianjian/ljj-2-paper')
+JOB=ROOT/'my_eclp_final/model_family_jobs'
+WORK=ROOT/'exp_code_ljj/artifacts/deepseek_goal_strategy_192_20261008/deepseek_r1_qwen14b'
+PY='/app/hzj/anaconda3/envs/ljj/bin/python'
+METHODS=['zero_shot_repaired','dialogue_sft','persugpt','ma2p_repaired','our_direct','latentratt']
+POLICY='deepseek_goal_all_candidates_our_only_20261008'
+GEN_GPU=0
+TRAIN_GPU=1
+def read(p):return json.loads(p.read_text())
+def atomic(p,v):
+ p.parent.mkdir(parents=True,exist_ok=True);tmp=p.with_name(p.name+f'.tmp-{os.getpid()}');tmp.write_text(json.dumps(v,ensure_ascii=False,indent=2)+'\n');tmp.replace(p)
+def status(stage,**kw):atomic(WORK/'task_status.json',dict(stage=stage,pid=os.getpid(),time=time.time(),gpu=GEN_GPU,**kw))
+def complete(p):return p.is_file() and read(p).get('complete') is True and read(p).get('n')==192
+def report():subprocess.run([PY,str(JOB/'report_family.py'),'--family','deepseek_r1_qwen14b'],check=True)
+def run(cmd,log,need,stage):
+ for attempt in range(1,4):
+  gpu=TRAIN_GPU if stage.startswith('training_') else GEN_GPU
+  while True:
+   free=int(subprocess.check_output(['nvidia-smi',f'--id={gpu}','--query-gpu=memory.free','--format=csv,noheader,nounits'],text=True).strip())
+   if free>=need*1024:break
+   status('waiting_memory',next_stage=stage,free_mib=free,required_mib=need*1024,attempt=attempt);time.sleep(30)
+  env=dict(os.environ,CUDA_VISIBLE_DEVICES=str(gpu),DEEPSEEK_TRAIN_GPU=str(TRAIN_GPU),CUDA_DEVICE_ORDER='PCI_BUS_ID',TOKENIZERS_PARALLELISM='false',OMP_NUM_THREADS='4',DAILYPERSUASION_PROFILE='paper10k')
+  log.parent.mkdir(parents=True,exist_ok=True)
+  offset=log.stat().st_size if log.exists() else 0
+  with log.open('a') as stream:
+   proc=subprocess.Popen(cmd,cwd=ROOT,env=env,stdin=subprocess.DEVNULL,stdout=stream,stderr=subprocess.STDOUT,start_new_session=True)
+   status(stage,worker_pid=proc.pid,runtime_gpu=gpu,command=cmd,log=str(log),attempt=attempt);code=proc.wait()
+  if code==0:return
+  with log.open('rb') as stream:
+   stream.seek(max(offset,log.stat().st_size-65536));recent=stream.read().decode(errors='replace').lower()
+  if 'out of memory' not in recent or attempt==3:
+   raise RuntimeError(f'{stage} exited {code}: {log}')
+  status('retry_wait_after_oom',next_stage=stage,failed_pid=proc.pid,exit_code=code,attempt=attempt,
+         recovery='resume append-only generation, saved judge cache, or committed training checkpoint')
+  time.sleep(30)
+
+def main():
+ WORK.mkdir(parents=True,exist_ok=True)
+ with (WORK/'.controller.lock').open('a') as lock:
+  fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+  selection=read(ROOT/'exp_code_ljj/data/test_selection_192.json')
+  points=[json.loads(x) for x in (ROOT/'exp_code_ljj/data/evaluation_points.jsonl').open() if x.strip()]
+  order=sorted(selection['original_indexes'],key=lambda i:hashlib.sha256(('matched-v2-pilot-42:'+points[i]['scenario_id']).encode()).hexdigest())
+  contract={'revision':POLICY,'input_policy':POLICY,'family':'deepseek_r1_qwen14b','expected_indexes':order,'methods':METHODS,'goal_visible_to_actor':True,'goal_visible_to_persuadee':True,'candidate_strategies_visible_to':['our_direct'],'selected_gold_strategy_visible':False,'generation_gpu':GEN_GPU,'training_gpu':TRAIN_GPU,'authorized_gpus':[0,1,4],'source_policy':'all-new fixed192; no inheritance; training unchanged'}
+  p=WORK/'generation_run.json'
+  if p.exists():assert read(p)==contract
+  else:atomic(p,contract)
+  atomic(WORK/'fresh_generation_policy.json',dict(contract,scope='deepseek_r1_qwen14b',simulated_persuadee='background, exact goal and public conversation',our_strategy_input='scene candidate list only; default pending user clarification'))
+  report()
+  pending=list(METHODS)
+  while pending:
+   moved=False
+   for method in list(pending):
+    out=WORK/'generators'/method;extra=[]
+    if method=='our_direct':
+     trained=ROOT/'eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/summary.json'
+     if not trained.exists() or read(trained).get('complete') is not True:continue
+     extra=['--checkpoint',str(read(trained)['checkpoint'])]
+    elif method=='latentratt':
+     base=Path('/app/hzj/liujianjian/persuader_atapter_save/deepseek_r1_qwen14b/baseline5_latentratt')
+     candidates=[p.parent for p in base.glob('rl/**/run_config.json') if read(p).get('stage')=='rl' and read(p).get('training_complete') is True and read(p).get('train_rows')==59868]
+     if not candidates:continue
+     cp=max(candidates,key=lambda p:(p/'run_config.json').stat().st_mtime)
+     cmd=[PY,'-u',str(JOB/'generate_latent_family.py'),'--repo-root',str(ROOT),'--output',str(out),'--physical-gpu',str(GEN_GPU),'--family','deepseek_r1_qwen14b','--checkpoint',str(cp),'--memory-cap-gib','54']
+    if method!='latentratt':cmd=[PY,'-u',str(JOB/'generate_deepseek_goal_strategy.py'),'--repo-root',str(ROOT),'--output',str(out),'--physical-gpu',str(GEN_GPU),'--family','deepseek_r1_qwen14b','--config',str(ROOT/'eclp_runs_deepseek_r1_qwen14b_20261007/config.json'),'--method',method,'--limit','192','--memory-cap-gib','54','--fresh-generation',*extra]
+    summary=out/'generation'/f'{method}_summary.json'
+    if not complete(summary):
+     adoption=WORK/'adopted_generation_worker.json'
+     if adoption.exists() and read(adoption).get('method')==method:
+      old_worker=read(adoption)['worker_pid']
+      procdir=Path('/proc')/str(old_worker)
+      while procdir.exists():
+       try:
+        if (procdir/'stat').read_text().split()[2]=='Z':break
+        command=(procdir/'cmdline').read_bytes()
+       except FileNotFoundError:break
+       if b'generate_deepseek_goal_strategy.py' not in command:raise RuntimeError('Adopted PID belongs to another program')
+       status('generation_'+method,worker_pid=old_worker,runtime_gpu=GEN_GPU,adopted=True);time.sleep(10)
+     if not complete(summary):run(cmd,out/'worker.log',56,'generation_'+method)
+    assert complete(summary)
+    target=WORK/'generation'/f'{method}.jsonl';target.parent.mkdir(parents=True,exist_ok=True)
+    if not target.exists():target.symlink_to(out/'generation'/f'{method}.jsonl')
+    report()
+    for judge,need,cap in [('selene8b',24,22),('qwen3_14b',36,32)]:
+     if complete(WORK/'judges'/judge/'evaluation'/method/'summary.json'):continue
+     if judge=='selene8b':
+      while not complete(WORK/'judges'/judge/'evaluation'/method/'summary.json'):
+       pipeline=WORK/'selene_pipeline_status.json'
+       if not pipeline.exists():break
+       record=read(pipeline)
+       proc=Path('/proc')/str(record['pid'])
+       if not proc.exists() or record.get('stage')=='failed':raise RuntimeError(f'Selene pipeline stopped: {record}')
+       status('waiting_selene_pipeline',method=method,pipeline_pid=record['pid']);time.sleep(20)
+      if complete(WORK/'judges'/judge/'evaluation'/method/'summary.json'):continue
+     cmd=[PY,'-u',str(ROOT/'my_eclp_final/seven_methods_192/evaluate.py'),'--repo-root',str(ROOT),'--output',str(WORK),'--physical-gpu',str(GEN_GPU),'--method',method,'--judge',judge,'--limit','192','--batch-size','4','--memory-cap-gib',str(cap)]
+     run(cmd,WORK/'judges'/judge/f'{method}.log',need,'evaluation_'+judge+'_'+method);report()
+    pending.remove(method);moved=True
+   if not moved:
+    if 'our_direct' in pending:
+     active=[]
+     for entry in Path('/proc').iterdir():
+      if not entry.name.isdigit():continue
+      try:
+       command=(entry/'cmdline').read_bytes().replace(b'\0',b' ')
+       state=(entry/'stat').read_text().split()[2]
+      except (FileNotFoundError,ProcessLookupError,PermissionError):continue
+      if (b'supervise_campaign.py --train-only deepseek_r1_qwen14b' in command or b'train_deepseek_our.py' in command) and state!='Z':active.append(int(entry.name))
+     if active:
+      status('waiting_existing_our_training',training_pids=active);time.sleep(30)
+     else:
+      cmd=[PY,'-u',str(JOB/'train_deepseek_our.py')]
+      run(cmd,WORK/'our_training.log',62,'training_deepseek_our')
+    elif 'latentratt' in pending:
+     cmd=[PY,'-u',str(JOB/'train_deepseek_latentratt.py')]
+     run(cmd,WORK/'latentratt_training.log',62,'training_deepseek_latentratt')
+    else:
+     status('waiting_model_checkpoints',pending=pending);time.sleep(30)
+  status('complete');report()
+if __name__=='__main__':
+ try:main()
+ except Exception as e:status('failed',error=repr(e));raise

@@ -1,0 +1,55 @@
+## Main experiment: latest target-grounded evaluation (192 scenarios)
+
+Persuader: `DeepSeek-R1-Distill-Qwen-14B`. Persuadee: `/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged`. BF16, no quantization.
+
+固定192条：target_turn==1且原始history为空。所有方法的劝说方和模拟被劝说者均接收精确目标；仅Our额外接收场景候选策略列表，不提供gold已选策略、ISR或未来回复。基线可自行规划策略，MA2P保留三角色K=0流程。
+
+本版本六种方法全部重新生成192条，不复用旧对话。生成使用GPU0，评估使用GPU0或GPU1，训练使用GPU1（2026-10-08用户新增授权）；BF16，训练数据不变。Qwen和Llama保持各自现有设置。Only-Our strategy access是本实验的额外输入条件，跨方法和跨模型对比须明确这一差异。
+
+评估：复用最新 `seven_methods_192/protocol.py` 与 `win_rules.json`，两位Judge完全相同的192个场景、golden和指标。Success要求当前被劝说者接受准确目标，五轮内任一轮成功；Win@1比较首条劝说语句，Win-Full比较全部生成对话与golden全部可用对话。A/B换序用于控制位置偏差，两次credit取平均（胜1、平0.5、负0），不声称为两个独立样本。
+
+本表只读取DeepSeek 20261008新输入合同对应的对话与评估，不合并旧目标不可见或不含候选策略版本。Judge使用现有统一协议。
+
+| Judge | Method | Persuader model | Parsed / selected N | Success within 5 rounds (%) | Win@1 (%) | Win-Full (%) | Mean rounds (failure=5) | Success format unresolved |
+| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 1: Zero-shot | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 55.50 (106/191 evaluable) | 67.32 | 16.93 | 4.393 | 2 |
+| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 2: Dialogue-SFT | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 73.68 (140/190 evaluable) | 76.82 | 20.96 | 4.221 | 6 |
+| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 3: ISR-SFT + SimDPO | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 72.11 (137/190 evaluable) | 64.71 | 11.46 | 4.184 | 2 |
+| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 4: MA2P | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 63.68 (121/190 evaluable) | 66.28 | 23.96 | 4.132 | 2 |
+| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 5: LatentRATT | DeepSeek-R1-Distill-Qwen-14B | 待对应骨干正式训练；生成0/192 | - | - | - | - | - |
+| Selene-1-Mini-Llama-3.1-8B (BF16) | Our: persuasion only | DeepSeek-R1-Distill-Qwen-14B | 待训练完成（SFT已保存第7484步；生成0/192） | - | - | - | - | - |
+| Qwen3-14B (BF16) | Baseline 1: Zero-shot | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 35.94 (69/192 evaluable) | 76.43 | 9.90 | 4.703 | 0 |
+| Qwen3-14B (BF16) | Baseline 2: Dialogue-SFT | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 53.12 (102/192 evaluable) | 92.19 | 19.66 | 4.510 | 0 |
+| Qwen3-14B (BF16) | Baseline 3: ISR-SFT + SimDPO | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 46.35 (89/192 evaluable) | 83.98 | 15.49 | 4.557 | 0 |
+| Qwen3-14B (BF16) | Baseline 4: MA2P | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 40.10 (77/192 evaluable) | 79.17 | 16.41 | 4.552 | 0 |
+| Qwen3-14B (BF16) | Baseline 5: LatentRATT | DeepSeek-R1-Distill-Qwen-14B | 待对应骨干正式训练；生成0/192 | - | - | - | - | - |
+| Qwen3-14B (BF16) | Our: persuasion only | DeepSeek-R1-Distill-Qwen-14B | 待训练完成（SFT已保存第7484步；生成0/192） | - | - | - | - | - |
+
+平均轮数取首次成功轮，未成功且五轮判定完整的场景计5。若判定缺失且无已确认成功，Success及平均轮数分母排除该场景；Win两次换序均解析成功才计入各自分母。`Success format unresolved`为未解析的轮级成功判定数。完整192条才作为正式最终结果。标注partial的分数来自已审计可复用场景的最新评估，样本数不同，不能当作完整192条的横向比较。
+
+结果目录：`/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/deepseek_goal_strategy_192_20261008/deepseek_r1_qwen14b`。各行原始判断、提示词缓存、模型合同、生成来源哈希、换序冲突率及Win未解析数保存在对应Judge目录中；旧表备份为 `main_experiment_table_deepseek14b.md.before_repaired192_20261007`。
+
+<!-- latest-live-results -->
+
+## 当前结果更新状态
+
+已完成的四个基线分数保留在上方正式192条表中。Our与LatentRATT尚无完整生成和评估结果，暂不填入分数。Our后续采用两阶段接口：私有简短理由→公开劝说回复，基线保持各自接口；训练权重不因本次接口修改而改变。
+
+# Llama：Our / PersuGPT 实时进度
+
+固定192条；不足192时为临时分数。训练与权重不变。Success为五轮任一轮明确接受目标；Win含平局credit，换序两次取平均。
+
+| Judge | Method | 已生成 | 已评估 | Success (%) | Win@1 (%) | Win-Full (%) | 平均轮数 | Win@1换序冲突 (%) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| selene8b | zero_shot_repaired | 192/192 | 0/192 | - | - | - | - | - |
+| selene8b | dialogue_sft | 192/192 | 0/192 | - | - | - | - | - |
+| selene8b | persugpt | 192/192 | 0/192 | - | - | - | - | - |
+| selene8b | ma2p_repaired | 192/192 | 0/192 | - | - | - | - | - |
+| selene8b | latentratt | 0/192 | 0/192 | - | - | - | - | - |
+| selene8b | our_direct | 0/192 | 0/192 | - | - | - | - | - |
+| qwen3_14b | zero_shot_repaired | 192/192 | 0/192 | - | - | - | - | - |
+| qwen3_14b | dialogue_sft | 192/192 | 0/192 | - | - | - | - | - |
+| qwen3_14b | persugpt | 192/192 | 0/192 | - | - | - | - | - |
+| qwen3_14b | ma2p_repaired | 192/192 | 0/192 | - | - | - | - | - |
+| qwen3_14b | latentratt | 0/192 | 0/192 | - | - | - | - | - |
+| qwen3_14b | our_direct | 0/192 | 0/192 | - | - | - | - | - |

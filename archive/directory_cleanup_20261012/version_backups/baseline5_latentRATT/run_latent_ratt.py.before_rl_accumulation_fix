@@ -1,0 +1,394 @@
+#!/usr/bin/env python3
+"""Train the persuasion LatentRATT in SFT then LR-GRPO phases."""
+from __future__ import annotations
+
+import argparse
+import json
+import random
+import hashlib
+import re
+import shutil
+import os
+from pathlib import Path
+
+import torch
+from peft import LoraConfig, PeftModel, get_peft_model
+from transformers import AutoModelForCausalLM, AutoTokenizer
+
+from latent_model import LatentPersuader, lr_grpo_loss
+from numerical_checks import VALIDATION_POLICY, require_finite
+from persuasion_data import ISR_FILE, TEST_FILE, iter_training_rows, validate_data, format_prompt
+
+BASE_MODEL = "/app/hzj/models/Qwen2.5-7B-Instruct"
+OUTPUT = Path("/app/hzj/liujianjian/qwen2.5-7b-latentRATT-all-59868")
+CHECKPOINT_NAME = re.compile(r"checkpoint-(\d+)")
+LORA_TARGETS = ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+
+
+def load_model(base: str, *, stage: str, checkpoint: Path | None,
+               device: str = "cuda:2", initial_adapter: Path | None = None):
+    if not torch.cuda.is_available() or not torch.cuda.is_bf16_supported():
+        raise RuntimeError("This run requires a BF16-capable CUDA GPU")
+    device_index = torch.device(device).index
+    if device_index is None or "A100" not in torch.cuda.get_device_name(device_index):
+        raise RuntimeError(f"Full BF16 run requires an A100; got {device}")
+    tokenizer = AutoTokenizer.from_pretrained(base, use_fast=True)
+    model = AutoModelForCausalLM.from_pretrained(
+        base, dtype=torch.bfloat16, low_cpu_mem_usage=True).to(device)
+    model.config.use_cache = False
+    module_names = {name.rsplit(".", 1)[-1] for name, _ in model.named_modules()}
+    missing = sorted(set(LORA_TARGETS) - module_names)
+    if missing:
+        raise ValueError(f"Unsupported LoRA architecture for {base}: missing {missing}")
+    adapter_path = checkpoint / "adapter" if checkpoint else initial_adapter
+    if adapter_path:
+        model = PeftModel.from_pretrained(model, adapter_path,
+                                         is_trainable=stage == "sft")
+    else:
+        model = get_peft_model(model, LoraConfig(
+            r=16, lora_alpha=32, lora_dropout=0.05, bias="none", task_type="CAUSAL_LM",
+            target_modules=LORA_TARGETS,
+        ))
+    if stage != "sft":
+        for parameter in model.parameters():
+            parameter.requires_grad_(False)
+    else:
+        model.gradient_checkpointing_enable()
+        model.enable_input_require_grads()
+    wrapped = LatentPersuader(model)
+    wrapped = wrapped.to(device)
+    if stage == "eval":
+        # Match the shared inference endpoint: adapter matmuls use BF16 while
+        # retaining the transformer's deliberate FP32 RoPE/stability buffers.
+        for name, parameter in wrapped.backbone.named_parameters():
+            if ".lora_" in name and parameter.is_floating_point():
+                parameter.data = parameter.data.to(dtype=torch.bfloat16)
+    if checkpoint:
+        wrapped.attention.load_state_dict(torch.load(checkpoint / "attention.pt", map_location="cpu",
+                                                     weights_only=True))
+    # Keep trainable RL weights and AdamW moments in FP32 under BF16 autocast.
+    if stage == "rl":
+        wrapped.attention.float()
+    wrapped.train(stage == "sft")
+    return tokenizer, wrapped
+
+
+def save_checkpoint(model: LatentPersuader, tokenizer, output: Path, config: dict,
+                    *, optimizer=None, training_state: dict | None = None):
+    output.mkdir(parents=True, exist_ok=True)
+    model.backbone.save_pretrained(output / "adapter")
+    tokenizer.save_pretrained(output / "adapter")
+    torch.save({k: v.cpu() for k, v in model.attention.state_dict().items()}, output / "attention.pt")
+    checkpoint_config = dict(config)
+    if training_state is not None:
+        checkpoint_config.update({
+            "completed_steps": training_state["step"],
+            "data_epoch": training_state["epoch"],
+            "next_data_position": training_state["next_position"],
+        })
+    (output / "run_config.json").write_text(
+        json.dumps(checkpoint_config, indent=2, ensure_ascii=False) + "\n")
+    if optimizer is not None and training_state is not None:
+        payload = dict(training_state)
+        payload["optimizer_state"] = optimizer.state_dict()
+        temporary = output / "training_state.pt.tmp"
+        torch.save(payload, temporary)
+        temporary.replace(output / "training_state.pt")
+        if CHECKPOINT_NAME.fullmatch(output.name):
+            checkpoints = [
+                path for path in output.parent.iterdir()
+                if path.is_dir() and CHECKPOINT_NAME.fullmatch(path.name)
+            ]
+            checkpoints.sort(key=lambda path: int(CHECKPOINT_NAME.fullmatch(path.name).group(1)))
+            for stale in checkpoints[:-3]:
+                shutil.rmtree(stale)
+
+
+def capture_rng_state(device: torch.device) -> dict:
+    return {
+        "python_rng": random.getstate(),
+        "torch_rng": torch.get_rng_state(),
+        "cuda_rng": torch.cuda.get_rng_state(device),
+    }
+
+
+def restore_rng_state(state: dict, device: torch.device) -> None:
+    random.setstate(state["python_rng"])
+    torch.set_rng_state(state["torch_rng"])
+    torch.cuda.set_rng_state(state["cuda_rng"], device=device)
+
+
+def encode(point, target, tokenizer, max_prompt_tokens, max_target_tokens, device):
+    prompt = format_prompt(point, tokenizer, max_prompt_tokens=max_prompt_tokens)
+    answer = tokenizer.encode(target, add_special_tokens=False)[:max_target_tokens - 1]
+    answer.append(tokenizer.eos_token_id)
+    return (torch.tensor([prompt], device=device), torch.tensor([answer], device=device))
+
+
+def run(args):
+    summary = validate_data()
+    print("Validated fixed split:", summary, flush=True)
+    if args.train_file.resolve() != ISR_FILE.resolve():
+        raise ValueError("The full experiment must use the complete source ISR file")
+    digest = hashlib.sha256(args.train_file.read_bytes()).hexdigest()
+    provenance_path = Path(__file__).resolve().parent / "data/isr_all_59868.manifest.json"
+    if not provenance_path.is_file():
+        raise FileNotFoundError(f"Run prepare_full_isr.py first: missing {provenance_path}")
+    provenance = json.loads(provenance_path.read_text(encoding="utf-8"))
+    if digest != provenance["source_sha256"]:
+        raise ValueError("ISR file no longer matches the verified full-data manifest")
+
+    rows = list(iter_training_rows(args.train_file))
+    if len(rows) != 59_868:
+        raise ValueError(f"Expected all 59,868 ISR sessions; found {len(rows)}")
+    scenario_ids = [str(private["scenario_id"]) for _, _, private in rows]
+    train_scenarios = set(scenario_ids)
+    if len(train_scenarios) != 10_000:
+        raise ValueError(f"Expected 10,000 train scenarios; found {len(train_scenarios)}")
+    test_scenarios = {
+        str(json.loads(line)["scenario_id"])
+        for line in TEST_FILE.open(encoding="utf-8")
+    }
+    if train_scenarios & test_scenarios:
+        raise ValueError("Training and test scenarios overlap")
+
+    torch.manual_seed(args.seed)
+    random.seed(args.seed)
+    tokenizer, model = load_model(args.model, stage=args.stage, checkpoint=args.checkpoint,
+                                  device=args.device, initial_adapter=args.initial_adapter)
+    optimizer = torch.optim.AdamW(
+        [p for p in model.parameters() if p.requires_grad],
+        lr=args.learning_rate, weight_decay=0.01)
+    config = vars(args).copy()
+    config = {k: str(v) if isinstance(v, Path) else v for k, v in config.items()}
+    config["train_rows"] = len(rows)
+    config["train_scenarios"] = len(train_scenarios)
+    config["train_data"] = str(args.train_file)
+    config["train_sha256"] = digest
+    config["preference_scenarios_used"] = 0
+    config["method"] = "LatentR3 adaptation: upstream LatentRATT, utterance SFT, negative-PPL LR-GRPO"
+    config.update({
+        "compute_dtype": "bfloat16", "base_weight_dtype": "bfloat16",
+        "rl_parameter_dtype": "float32" if args.stage == "rl" else "bfloat16",
+        "rl_numerical_revision": "fp32_master_adamw_20261008" if args.stage == "rl" else None,
+        "quantization": "none", "thinking_policy": "final_answer_only",
+        "cuda_visible_devices": os.environ.get("CUDA_VISIBLE_DEVICES"),
+        "gpu_name": torch.cuda.get_device_name(model.device),
+        "model_type": model.backbone.config.model_type,
+        "hidden_size": model.backbone.config.hidden_size,
+        "num_hidden_layers": model.backbone.config.num_hidden_layers,
+        "num_attention_heads": model.backbone.config.num_attention_heads,
+        "lora_target_modules": LORA_TARGETS,
+        "training_complete": False,
+        "numerical_validation": VALIDATION_POLICY,
+    })
+    args.output.mkdir(parents=True, exist_ok=True)
+
+    order = list(range(len(rows)))
+    step = 0
+    start_epoch = 0
+    start_position = 0
+    safe_epoch = 0
+    safe_position = 0
+    if args.resume_training_state:
+        state_path = args.resume_training_state
+        state = torch.load(state_path, map_location="cpu", weights_only=False)
+        if state.get("stage") != args.stage or state.get("train_sha256") != digest:
+            raise ValueError("Resume state stage or training-data checksum mismatch")
+        if state.get("train_rows") != len(rows) or state.get("train_scenarios") != len(train_scenarios):
+            raise ValueError("Resume state does not cover the complete ISR corpus")
+        order = state["order"]
+        if sorted(order) != list(range(len(rows))):
+            raise ValueError("Resume state has an invalid data order")
+        optimizer.load_state_dict(state["optimizer_state"])
+        step = int(state["step"])
+        start_epoch = int(state["epoch"])
+        start_position = int(state["next_position"])
+        restore_rng_state(state, model.device)
+        safe_epoch, safe_position = start_epoch, start_position
+        previous_config = json.loads((args.checkpoint / "run_config.json").read_text(encoding="utf-8"))
+        for key in ("last_loss", "last_reward", "last_gradient_norm"):
+            if key in previous_config:
+                config[key] = require_finite(previous_config[key], key)
+
+    def make_state(epoch: int, next_position: int, current_order: list[int], rng_state: dict | None = None) -> dict:
+        result = {
+            "stage": args.stage,
+            "step": step,
+            "epoch": epoch,
+            "next_position": next_position,
+            "order": current_order,
+            "train_rows": len(rows),
+            "train_scenarios": len(train_scenarios),
+            "train_sha256": digest,
+        }
+        result.update(rng_state if rng_state is not None else capture_rng_state(model.device))
+        return result
+
+    safe_rng_state = capture_rng_state(model.device)
+    if args.resume_training_state:
+        safe_rng_state = {key: state[key] for key in ("python_rng", "torch_rng", "cuda_rng")}
+
+    try:
+        for epoch in range(start_epoch, args.epochs):
+            if epoch != start_epoch or not args.resume_training_state:
+                random.shuffle(order)
+                start_position = 0
+                safe_epoch, safe_position = epoch, 0
+                safe_rng_state = capture_rng_state(model.device)
+            optimizer.zero_grad(set_to_none=True)
+            if args.stage == "sft":
+                for position in range(start_position, len(order)):
+                    point, target, private = rows[order[position]]
+                    prompt, answer = encode(point, target, tokenizer, args.max_prompt_tokens,
+                                            args.max_target_tokens, model.device)
+                    with torch.autocast(device_type="cuda", dtype=torch.bfloat16):
+                        public_loss = model.sft_loss(prompt, answer)
+                    require_finite(public_loss, "SFT public loss")
+                    (public_loss / args.gradient_accumulation).backward()
+                    reported_loss = public_loss.detach()
+                    if args.rationale_weight:
+                        if hasattr(model, "private_sft_loss"):
+                            reasoning_target = "Intent to Strategy Reasoning: " + private["reasoning"]
+                            strategy_target = "Selected Strategy: " + private["strategy"]
+                            reasoning_ids = tokenizer.encode(reasoning_target, add_special_tokens=False)[
+                                :args.max_target_tokens - 1]
+                            strategy_ids = tokenizer.encode(strategy_target, add_special_tokens=False)[
+                                :args.max_target_tokens - 1]
+                            reasoning_ids.append(tokenizer.eos_token_id)
+                            strategy_ids.append(tokenizer.eos_token_id)
+                            reasoning = torch.tensor([reasoning_ids], device=model.device)
+                            strategy = torch.tensor([strategy_ids], device=model.device)
+                            with torch.autocast(device_type="cuda", dtype=torch.bfloat16):
+                                teacher_loss = model.private_sft_loss(prompt, reasoning, strategy)
+                        else:
+                            auxiliary = ("Intent to Strategy Reasoning: " + private["reasoning"]
+                                         + "\nSelected Strategy: " + private["strategy"])
+                            _, teacher = encode(point, auxiliary, tokenizer, args.max_prompt_tokens,
+                                                args.max_target_tokens, model.device)
+                            with torch.autocast(device_type="cuda", dtype=torch.bfloat16):
+                                teacher_loss = model.sft_loss(prompt, teacher)
+                        require_finite(teacher_loss, "SFT auxiliary loss")
+                        (args.rationale_weight * teacher_loss / args.gradient_accumulation).backward()
+                        reported_loss = reported_loss + args.rationale_weight * teacher_loss.detach()
+                    if (position + 1) % args.gradient_accumulation != 0 and position + 1 != len(order):
+                        continue
+                    gradient_norm = torch.nn.utils.clip_grad_norm_(
+                        (p for p in model.parameters() if p.requires_grad),
+                        1.0, error_if_nonfinite=True)
+                    config["last_loss"] = require_finite(reported_loss, "SFT total loss")
+                    config["last_gradient_norm"] = require_finite(gradient_norm, "SFT gradient norm")
+                    optimizer.step()
+                    optimizer.zero_grad(set_to_none=True)
+                    step += 1
+                    safe_epoch, safe_position = epoch, position + 1
+                    safe_rng_state = capture_rng_state(model.device)
+                    if step % args.log_steps == 0:
+                        print(f"sft step={step} loss={reported_loss.item():.4f}", flush=True)
+                    if step % args.save_steps == 0:
+                        state = make_state(epoch, safe_position, order, safe_rng_state)
+                        save_checkpoint(model, tokenizer, args.output / f"checkpoint-{step}", config,
+                                        optimizer=optimizer, training_state=state)
+                    if args.max_steps and step >= args.max_steps:
+                        break
+            else:
+                for position in range(start_position, len(order) - 1, args.batch_size):
+                    batch_indices = order[position:position + args.batch_size]
+                    batch = [rows[i] for i in batch_indices]
+                    if len(batch) < 2:
+                        safe_epoch, safe_position = epoch, position + len(batch)
+                        continue
+                    examples = [encode(point, target, tokenizer, args.max_prompt_tokens,
+                                       args.max_target_tokens, model.device) for point, target, _ in batch]
+                    with torch.autocast(device_type="cuda", dtype=torch.bfloat16, cache_enabled=False):
+                        loss, reward = lr_grpo_loss(model, examples, group_size=args.group_size,
+                                                      sigma=args.sigma,
+                                                      backward_per_proposal=True)
+                    config["last_loss"] = require_finite(loss, "LR-GRPO loss")
+                    config["last_reward"] = require_finite(reward, "LR-GRPO reward")
+                    gradient_norm = torch.nn.utils.clip_grad_norm_(
+                        model.attention.parameters(), 1.0, error_if_nonfinite=True)
+                    config["last_gradient_norm"] = require_finite(gradient_norm, "LR-GRPO gradient norm")
+                    optimizer.step()
+                    optimizer.zero_grad(set_to_none=True)
+                    step += 1
+                    safe_epoch, safe_position = epoch, position + len(batch)
+                    safe_rng_state = capture_rng_state(model.device)
+                    if step % args.log_steps == 0:
+                        print(f"rl step={step} loss={loss.item():.4f} reward={reward:.4f}", flush=True)
+                    if step % args.save_steps == 0:
+                        state = make_state(epoch, safe_position, order, safe_rng_state)
+                        save_checkpoint(model, tokenizer, args.output / f"checkpoint-{step}", config,
+                                        optimizer=optimizer, training_state=state)
+                    if args.max_steps and step >= args.max_steps:
+                        break
+            if args.max_steps and step >= args.max_steps:
+                break
+            start_position = 0
+            args.resume_training_state = None
+    except torch.OutOfMemoryError as error:
+        optimizer.zero_grad(set_to_none=True)
+        torch.cuda.empty_cache()
+        state = make_state(safe_epoch, safe_position, order, safe_rng_state)
+        recovery_path = args.output / f"oom-step-{step}"
+        save_checkpoint(model, tokenizer, recovery_path, config,
+                        optimizer=optimizer, training_state=state)
+        print(f"CUDA_OOM_RECOVERY_CHECKPOINT={recovery_path}", flush=True)
+        print(f"CUDA_OUT_OF_MEMORY: {error}", flush=True)
+        return 75
+
+    config["completed_steps"] = step
+    config["training_complete"] = (
+        args.max_steps is None and safe_epoch + 1 == args.epochs
+        and safe_position == len(order)
+    )
+    final_state = make_state(safe_epoch, safe_position, order, safe_rng_state)
+    save_checkpoint(model, tokenizer, args.output, config,
+                    optimizer=optimizer, training_state=final_state)
+    print(f"Saved {args.stage}: {args.output} ({step} optimizer steps)", flush=True)
+    return 0
+
+
+def main():
+    p = argparse.ArgumentParser(description=__doc__)
+    p.add_argument("stage", choices=["sft", "rl"])
+    p.add_argument("--model", default=BASE_MODEL)
+    p.add_argument("--device", default="cuda:2")
+    p.add_argument("--train-file", type=Path, default=ISR_FILE)
+    p.add_argument("--checkpoint", type=Path)
+    p.add_argument("--resume-training-state", type=Path,
+                   help="Resume optimizer, RNG and data cursor from a full checkpoint")
+    p.add_argument("--initial-adapter", type=Path,
+                   help="Optional existing Qwen dialogue SFT adapter for initialization")
+    p.add_argument("--output", type=Path, default=OUTPUT)
+    p.add_argument("--max-steps", type=int)
+    p.add_argument("--epochs", type=int, default=1)
+    p.add_argument("--max-prompt-tokens", type=int, default=1536)
+    p.add_argument("--max-target-tokens", type=int, default=256)
+    p.add_argument("--gradient-accumulation", type=int, default=16)
+    p.add_argument("--batch-size", type=int, default=2)
+    p.add_argument("--group-size", type=int, default=4)
+    p.add_argument("--sigma", type=float, default=1.5)
+    p.add_argument("--rationale-weight", type=float, default=0.2,
+                   help="Auxiliary loss on ISR psychology and strategy during SFT only")
+    p.add_argument("--learning-rate", type=float)
+    p.add_argument("--save-steps", type=int, default=100)
+    p.add_argument("--log-steps", type=int, default=10)
+    p.add_argument("--seed", type=int, default=42)
+    p.add_argument("--validate", action="store_true")
+    args = p.parse_args()
+    if args.stage == "rl" and not args.checkpoint:
+        p.error("RL requires --checkpoint from completed SFT")
+    if args.resume_training_state and not args.checkpoint:
+        p.error("Resuming requires --checkpoint with the matching model weights")
+    if args.checkpoint and args.initial_adapter:
+        p.error("Select --checkpoint or --initial-adapter, not both")
+    if args.learning_rate is None:
+        args.learning_rate = 1e-4 if args.stage == "sft" else 1e-5
+    if args.stage == "rl" and args.batch_size < 2:
+        p.error("LR-GRPO requires --batch-size >= 2")
+    raise SystemExit(run(args))
+
+
+if __name__ == "__main__":
+    main()
