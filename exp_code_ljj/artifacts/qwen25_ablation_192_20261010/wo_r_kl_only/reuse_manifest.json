@@ -1,0 +1,8 @@
+{
+  "diagnostic_sha256": "a563a9652766086cc7f86873ef6fc280d192388262921a14f49ed467776977a3",
+  "same_checkpoint_id": "2c5a4284ea8be24142056dd724508848306aea0a2064f6fd84780f93ed4388f0",
+  "same_generation_config": true,
+  "same_judges_prompts": true,
+  "records_reused_from": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/qwen25_ablation_192_20261010/wo_g",
+  "basis": "verified exact-zero full-budget KL-only; parameters unchanged"
+}

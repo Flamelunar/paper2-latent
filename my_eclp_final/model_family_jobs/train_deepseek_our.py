@@ -28,7 +28,7 @@ def main():
    if code:raise RuntimeError(f'Distributed SFT exited {code}; see {WORK}/sft_retry.log; resume only committed checkpoint')
   assert (out/'checkpoint-007484/checkpoint.json').exists()
   # train_family skips the completed SFT and retains the existing offline-RL contract.
-  s.TRAIN_GPU=1;s.train_family('deepseek_r1_qwen14b')
+  s.TRAIN_GPU=0;s.train_family('deepseek_r1_qwen14b')
 if __name__=='__main__':
  try:main()
  except Exception as e:

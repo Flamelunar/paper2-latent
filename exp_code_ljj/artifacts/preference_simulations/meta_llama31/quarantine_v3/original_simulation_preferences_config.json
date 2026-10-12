@@ -1,0 +1,11 @@
+{
+  "protocol": "persugpt_simulation_table5_reconstruction_v3_staged_batched",
+  "seeds_sha256": "bbca38aac517828285b3ca43adbad2671afc4d465a8fd6feb4e5cc3f1f558fcf",
+  "persuader_url": "local://cuda:0",
+  "persuader_model": "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline3_isr_sft",
+  "user_url": "local://cuda:0",
+  "user_model": "/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged",
+  "judge_url": "local://cuda:0",
+  "judge_model": "/app/hzj/models/Qwen3-14B",
+  "simulation_rounds": 4
+}

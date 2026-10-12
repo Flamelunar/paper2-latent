@@ -1,0 +1,22 @@
+{
+  "expected_count": 1000,
+  "valid_count": 1000,
+  "success_count": 708,
+  "success_percent": 70.8,
+  "win_rate": 61.0,
+  "mean_rounds_or_cap5": 2.883,
+  "unresolved_cases": 0,
+  "success_only_unresolved": 0,
+  "success_lower_bound_all_1000_percent": 70.8,
+  "success_upper_bound_all_1000_percent": 70.8,
+  "denominator": "jointly_parsed_cases; failures_count_as_round_5",
+  "judge": "selene8b",
+  "judge_model": "/app/hzj/models/Selene-1-Mini-Llama-3.1-8B",
+  "prompt_version": "selene_v17",
+  "prompt_revision": "joint_selene_success_reference_v17_v7_strict_goal_acceptance",
+  "evaluation_contract_hash": "a700d151e55b45c1517b80e1024a5d00411be83b45d3bfa597842db6f133ff26",
+  "complete": true,
+  "judgments_sha256": "46ece5b18f45573a8c3a4323e2beae02a26d75c2dbadb12fd2e089cae35d42b1",
+  "generation_sha256": "cea0982c76c7bf125cd0e2ecf775ece9c4a3130fd76981d8db8ce3a91f000ca6",
+  "total_model_calls": 3883
+}

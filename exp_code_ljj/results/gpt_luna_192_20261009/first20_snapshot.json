@@ -1,0 +1,162 @@
+[
+  {
+    "family": "deepseek14b",
+    "method": "dialogue_sft",
+    "n": 20,
+    "success_evaluable_n": 19,
+    "success": 63.1578947368421,
+    "win1_evaluable_n": 20,
+    "win1": 85.0,
+    "rounds": 4.2105263157894735
+  },
+  {
+    "family": "deepseek14b",
+    "method": "ma2p_repaired",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 60.0,
+    "win1_evaluable_n": 20,
+    "win1": 76.25,
+    "rounds": 4.15
+  },
+  {
+    "family": "deepseek14b",
+    "method": "persugpt",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 45.0,
+    "win1_evaluable_n": 20,
+    "win1": 90.0,
+    "rounds": 4.15
+  },
+  {
+    "family": "deepseek14b",
+    "method": "zero_shot_repaired",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 40.0,
+    "win1_evaluable_n": 20,
+    "win1": 82.5,
+    "rounds": 4.35
+  },
+  {
+    "family": "llama31",
+    "method": "dialogue_sft",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 35.0,
+    "win1_evaluable_n": 20,
+    "win1": 35.0,
+    "rounds": 4.7
+  },
+  {
+    "family": "llama31",
+    "method": "latentratt",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 45.0,
+    "win1_evaluable_n": 20,
+    "win1": 37.5,
+    "rounds": 4.45
+  },
+  {
+    "family": "llama31",
+    "method": "ma2p_repaired",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 40.0,
+    "win1_evaluable_n": 20,
+    "win1": 55.00000000000001,
+    "rounds": 4.6
+  },
+  {
+    "family": "llama31",
+    "method": "our_direct",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 40.0,
+    "win1_evaluable_n": 20,
+    "win1": 67.5,
+    "rounds": 4.25
+  },
+  {
+    "family": "llama31",
+    "method": "persugpt",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 40.0,
+    "win1_evaluable_n": 20,
+    "win1": 91.25,
+    "rounds": 4.3
+  },
+  {
+    "family": "llama31",
+    "method": "zero_shot_repaired",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 20.0,
+    "win1_evaluable_n": 20,
+    "win1": 40.0,
+    "rounds": 4.65
+  },
+  {
+    "family": "qwen25",
+    "method": "dialogue_sft",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 35.0,
+    "win1_evaluable_n": 20,
+    "win1": 40.0,
+    "rounds": 4.85
+  },
+  {
+    "family": "qwen25",
+    "method": "latentratt",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 40.0,
+    "win1_evaluable_n": 20,
+    "win1": 41.25,
+    "rounds": 4.6
+  },
+  {
+    "family": "qwen25",
+    "method": "ma2p_repaired",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 45.0,
+    "win1_evaluable_n": 20,
+    "win1": 75.0,
+    "rounds": 4.2
+  },
+  {
+    "family": "qwen25",
+    "method": "our_direct",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 30.0,
+    "win1_evaluable_n": 20,
+    "win1": 48.75,
+    "rounds": 4.6
+  },
+  {
+    "family": "qwen25",
+    "method": "persugpt",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 35.0,
+    "win1_evaluable_n": 20,
+    "win1": 77.5,
+    "rounds": 4.5
+  },
+  {
+    "family": "qwen25",
+    "method": "zero_shot_repaired",
+    "n": 20,
+    "success_evaluable_n": 20,
+    "success": 35.0,
+    "win1_evaluable_n": 20,
+    "win1": 47.5,
+    "rounds": 4.65
+  }
+]

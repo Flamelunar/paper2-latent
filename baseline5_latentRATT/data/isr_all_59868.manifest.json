@@ -1,0 +1,25 @@
+{
+  "source_file": "/home1/liujianjian/2-paper-CoLING/exp_code_ljj/data/isr_sft.jsonl",
+  "source_sha256": "0de302a33f3a0b4295821a97b003f6eaada9763045e242a39489b272574c926f",
+  "training_rows": 59868,
+  "training_scenarios": 10000,
+  "training_mode": "all ISR sessions; no per-scenario sampling",
+  "preference_scenarios_used": 0,
+  "dpo_used": false,
+  "test_file": "/home1/liujianjian/2-paper-CoLING/exp_code_ljj/data/evaluation_points.jsonl",
+  "test_scenarios": 1000,
+  "training_test_overlap": 0,
+  "fixed_split_summary": {
+    "sft_sessions": 59868,
+    "sft_scenarios": 10000,
+    "preference_scenarios": 2000,
+    "test_scenarios": 1000,
+    "sha256": {
+      "dialogue_sft": "955520437ebf8daae211f0d47d80cba108952837f69a26a850cd982797601f85",
+      "isr_sft": "0de302a33f3a0b4295821a97b003f6eaada9763045e242a39489b272574c926f",
+      "user_model_sft": "9ce67d40a0e413a93f6d45067581dc09c7f7ec7f90e26300428602147ec4f554",
+      "preference_seeds": "bbca38aac517828285b3ca43adbad2671afc4d465a8fd6feb4e5cc3f1f558fcf",
+      "evaluation_points": "3454f7be1246d6061865e69f153a53f9478a157978079fd70fef6ad010bb7acd"
+    }
+  }
+}

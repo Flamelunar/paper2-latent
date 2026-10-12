@@ -1,0 +1,411 @@
+{
+  "date": "2026-10-12T14:11:32.732582",
+  "actions": [
+    {
+      "source": "my_eclp_final/watch_gpu4_pipeline.py.before_monotonic_20261003",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/watch_gpu4_pipeline.py.before_monotonic_20261003",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "ba3c719a6333a2574b02b099b47cc7db47ef4e5de5ba598c961329565b9f502e"
+    },
+    {
+      "source": "my_eclp_final/evaluate_our.offline.pending.py",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/evaluate_our.offline.pending.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "4814d5696e223858dc9d5a0fee71efa7387c9d0157b585b4c18935cb81e97891"
+    },
+    {
+      "source": "my_eclp_final/audit_gpu4_completion.py.before_sft_coverage_20261003",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/audit_gpu4_completion.py.before_sft_coverage_20261003",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "2782594171ba8e909f0b73487a85148e59000c30cd1764f4c4a0d7a3cdbcd079"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/deepseek_goal_strategy_campaign.py.before_parallel_judges",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/deepseek_goal_strategy_campaign.py.before_parallel_judges",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "90d59f3643d680b4897dc35810c92d0b0577885f736a79abf6dff197b9ab7884"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/generate_latent_accelerated.before_public_boundary_v3.py",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/generate_latent_accelerated.before_public_boundary_v3.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "048a6dee8ef323e2ef97d2fda51abbe101dca06375734ad3f698edc3a97cbd5e"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/report_family.py.before_deepseek_goal_strategy_20261008",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/report_family.py.before_deepseek_goal_strategy_20261008",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "6d999596b5cfeb8fd83eb646b66a08e6103a1d8ee0b149e39d67a7811274a6f2"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/generate_deepseek_goal_strategy.py.before_bf16_bnb_fix",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/generate_deepseek_goal_strategy.py.before_bf16_bnb_fix",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "1af590b132af2bc0bbd45fc59b58556b5365d0bef4b7004f79c5c004ed563c51"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/train_with_budget.py.before_offline_gpu0",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/train_with_budget.py.before_offline_gpu0",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "6202634e2f480af5d0c7ed1e5df61c289350e1cf2a99d83a5214f062501669ce"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/supervise_deepseek_uniform_two_stage_eval.py.before_preserve_gpt_luna",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/supervise_deepseek_uniform_two_stage_eval.py.before_preserve_gpt_luna",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "0e689a491d8c0bb8d9b9914f6de8d83571744b79437d634a30118e3208259aba"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/llama_fresh_campaign.py.before_recovery_manifest_20261008",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/llama_fresh_campaign.py.before_recovery_manifest_20261008",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "1d65de72159e837e05a3f2027c3af1c3daf98292787fe0a61a8a88e72f3a2263"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/llama_latentratt_accelerated.py.before_fp32_recovery",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/llama_latentratt_accelerated.py.before_fp32_recovery",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "5e1af3f8025fb516e4a38b70997919cebc8124831f765726e1107407907f3cad"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/deepseek_goal_strategy_campaign.py.before_judge_batch8_20261008",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/deepseek_goal_strategy_campaign.py.before_judge_batch8_20261008",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "95ec01977a7f2c7d70427d392e323fc19ad3c92704fa79a3b0e975b40662df71"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/sync_main_tables.py.before_preserve_gpt_luna",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/sync_main_tables.py.before_preserve_gpt_luna",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "69478939fa7e3e57330dbf71d8d51c8ee91085c3382a74a3f97322f8c899c269"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/llama_latentratt_accelerated.py.before_train_only_lr_adjustment",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/llama_latentratt_accelerated.py.before_train_only_lr_adjustment",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "0ced3f5c0693216e5c449ca4354ad24d5b6992057a06dbecf0f8361ac1ab1848"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/train_deepseek_our.py.before_rl_gpu0",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/train_deepseek_our.py.before_rl_gpu0",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "2012426188b93599540831dff83e8e3244ffaad9c5ecdc691e893a04ed0e4ece"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/priority_pending.py.before_generation_gpu14",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/priority_pending.py.before_generation_gpu14",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "1cbc715a40d5328c082cac82a2d1038341f61183c9ebe6337e707e143cc1ae73"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/generate_latent_family.before_public_boundary_v3.py",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/generate_latent_family.before_public_boundary_v3.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "9e3381eeb8031a1d89ff6c123cd39c27b82c4e9c3159ed6897925a9edf004b7c"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/generate_deepseek_goal_strategy.before_two_stage.py",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/generate_deepseek_goal_strategy.before_two_stage.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "2dfa4cc85d00e6646c959234fcc493ecf2c3c10f36bb69d678e41b228e9ca560"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/train_with_budget.py.before_gpu0_latent_20261008",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/train_with_budget.py.before_gpu0_latent_20261008",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "6fe7c7748f0fb91306bcd70caf2964bcba3efa28062bb4b232ac43148d52a817"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/train_deepseek_latentratt.py.before_gpu4_migration_20261008",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/train_deepseek_latentratt.py.before_gpu4_migration_20261008",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "20acf6f6e04ddcdb4590500f5cebf462e8a8db6d06046773de52f31953b5d22b"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/sync_main_tables.py.before_live_generation_counts",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/sync_main_tables.py.before_live_generation_counts",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "3ab653fe3a25a3bed61011170e531fe5d9799c5b608bdae58f93757162f49d1c"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/sync_main_tables.py.before_early_score_display",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/sync_main_tables.py.before_early_score_display",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "3cede3f94cec8c1b7abe818b9ffb98609b5ad5141b2c9394a7dd2fc0e82a9ccc"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/llama_latentratt_accelerated.py.before_lr1e7_20261008",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/llama_latentratt_accelerated.py.before_lr1e7_20261008",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "b75901e9904c4eebec69ce65db9f9a4c02f0b03980d5db27eb106c58341fbe3f"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/train_deepseek_our.py.before_distributed_20261008",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/train_deepseek_our.py.before_distributed_20261008",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "f54b5d1d75e59e19322ec4777e5d05af36ed6516743fabd243e5a2781f433ed2"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/llama_public_repair_v3/evaluate.before_capacity_guard.py",
+      "target": "archive/directory_cleanup_20261012/version_backups/my_eclp_final/model_family_jobs/llama_public_repair_v3/evaluate.before_capacity_guard.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "929dfe91cf7f129ee85078e186c0a7cf70e303df87926dc6ec884bc3d58fa708"
+    },
+    {
+      "source": "exp_code_ljj/results/main_experiment_table_deepseek14b.md.before_repaired192_20261007",
+      "target": "archive/directory_cleanup_20261012/version_backups/exp_code_ljj/results/main_experiment_table_deepseek14b.md.before_repaired192_20261007",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "f1896a484bc3a6b86c8f22abac65c9d08be551def3064d103020b4fb28e0cfeb"
+    },
+    {
+      "source": "exp_code_ljj/results/main_experiment_table_deepseek14b.md.before_gpt_luna_20261010",
+      "target": "archive/directory_cleanup_20261012/version_backups/exp_code_ljj/results/main_experiment_table_deepseek14b.md.before_gpt_luna_20261010",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "c58d782b7690e690f20463a38813c2036f0b5f887a515164d30cb2a49b921b80"
+    },
+    {
+      "source": "exp_code_ljj/results/main_experiment_table_llama31.md.before_public_v3_20261009",
+      "target": "archive/directory_cleanup_20261012/version_backups/exp_code_ljj/results/main_experiment_table_llama31.md.before_public_v3_20261009",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "cab2029ff23d8ab066c485e7cecf56169d7a23805b3363a35c34c9fc4724ad19"
+    },
+    {
+      "source": "exp_code_ljj/results/main_experiment_table_llama31.md.before_uniform_v3_confirmed_20261009",
+      "target": "archive/directory_cleanup_20261012/version_backups/exp_code_ljj/results/main_experiment_table_llama31.md.before_uniform_v3_confirmed_20261009",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "b1e784ce84f8346ffecd217f7e381d6e0e76c3354e8e93d16294b379ad21d864"
+    },
+    {
+      "source": "exp_code_ljj/results/main_experiment_table_llama31.md.before_repaired192_20261007",
+      "target": "archive/directory_cleanup_20261012/version_backups/exp_code_ljj/results/main_experiment_table_llama31.md.before_repaired192_20261007",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "417fcbf52e338177c3361c0b7e0d6cb32354de1a83b6c2157e8c0c3df8fb4d86"
+    },
+    {
+      "source": "exp_code_ljj/results/main_experiment_table_llama31.md.before_latentratt_scores_20261009",
+      "target": "archive/directory_cleanup_20261012/version_backups/exp_code_ljj/results/main_experiment_table_llama31.md.before_latentratt_scores_20261009",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "f67120558a3df96a2ea0fc3435e4ceb3c254f8c73d9d178f8a75e227d9872fb9"
+    },
+    {
+      "source": "baseline5_latentRATT/run_latent_ratt.py.before_fp32_rl_20261008",
+      "target": "archive/directory_cleanup_20261012/version_backups/baseline5_latentRATT/run_latent_ratt.py.before_fp32_rl_20261008",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "50cc0473f8ce55e073472aa90d1dc3af9fb2880f63d9533a75850f7349c4a451"
+    },
+    {
+      "source": "baseline5_latentRATT/run_latent_ratt.py.before_rl_accumulation_fix",
+      "target": "archive/directory_cleanup_20261012/version_backups/baseline5_latentRATT/run_latent_ratt.py.before_rl_accumulation_fix",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "0573c8b788ab1ba7b11584d615350117624d7bef7fd4b710afdefdccbf65ae5c"
+    },
+    {
+      "source": "baseline5_latentRATT/latent_model.py.before_rl_accumulation_fix",
+      "target": "archive/directory_cleanup_20261012/version_backups/baseline5_latentRATT/latent_model.py.before_rl_accumulation_fix",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "d822e47ea69c341976b27a2620f4b7c9f1e5ec92abd4f717d6b93214b56927b8"
+    },
+    {
+      "source": "my_eclp_final_20261003_165449.zip",
+      "target": "archive/directory_cleanup_20261012/historical_packages/my_eclp_final_20261003_165449.zip",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "49ef0d2bcf6b6bea36f508d2f4cbc4d54534d25cea1b173f63269a5d03a4ea3d"
+    },
+    {
+      "source": "run_post_b2_family.sh.rej",
+      "target": "archive/directory_cleanup_20261012/historical_packages/run_post_b2_family.sh.rej",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "25562f157901f862bfdb5d1e2c66102d1e47b93635d293259d33183257697772"
+    },
+    {
+      "source": "code_backups",
+      "target": "archive/directory_cleanup_20261012/code_backups/code_backups",
+      "compatibility": true,
+      "status": "complete"
+    },
+    {
+      "source": "exp_code_ljj/canonicalize_gemma4_joint_full.py",
+      "target": "archive/directory_cleanup_20261012/legacy_gemma/exp_code_ljj/canonicalize_gemma4_joint_full.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "11355485e300c6ae008d4e42b38b3df0b7f4e112b8a23472a826842e9a4d8881"
+    },
+    {
+      "source": "exp_code_ljj/evaluate_baseline3_gemma_v11.py",
+      "target": "archive/directory_cleanup_20261012/legacy_gemma/exp_code_ljj/evaluate_baseline3_gemma_v11.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "17fdbc88c939114347f1c879d03a4c6df1fa9353e4babeb82c723fa9bb0f14ad"
+    },
+    {
+      "source": "exp_code_ljj/organize_gemma4_artifacts.py",
+      "target": "archive/directory_cleanup_20261012/legacy_gemma/exp_code_ljj/organize_gemma4_artifacts.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "4ad270c13895e8e9504834d34f77a1d478e0cd1f88fc2fd4b6385e5ad4721118"
+    },
+    {
+      "source": "exp_code_ljj/resume_gemma4_joint_eval.py",
+      "target": "archive/directory_cleanup_20261012/legacy_gemma/exp_code_ljj/resume_gemma4_joint_eval.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "b01c11ee153cde651f30cf258a1f7672a3c273a9f84439d844db83a258beb7f7"
+    },
+    {
+      "source": "exp_code_ljj/update_baseline3_gemma_table.py",
+      "target": "archive/directory_cleanup_20261012/legacy_gemma/exp_code_ljj/update_baseline3_gemma_table.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "c8c57af86e3d515a61e5d0879e6918069083377f99c850c2a05a2acf5d2c6152"
+    },
+    {
+      "source": "baseline5_latentRATT/run_gemma4_shards.py",
+      "target": "archive/directory_cleanup_20261012/legacy_gemma/baseline5_latentRATT/run_gemma4_shards.py",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "6df0fcaadb3a8ff89867588572b36a2b23ccced8659258372ea0423e2928f123"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/train_meta_llama31.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/train_meta_llama31.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "8316b828c28a9a73488122a54abd05379da55ccb0bac019c57766b5815a51c75"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/evaluate_ready_gpu4.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/evaluate_ready_gpu4.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/evaluate_zero_meta_llama31.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/evaluate_zero_meta_llama31.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/watch_tables_nogoal.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/watch_tables_nogoal.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "12ef529275eb1f227dc4940dfe921a4a16a3288624ba50b5fa142d6e95c7bb31"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/reuse_eval_gpu4.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/reuse_eval_gpu4.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "b5f01246b60dd46b4d17363b765d03990165632e9dcf55c177c52c1d879de3b4"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/eval_selene8b.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/eval_selene8b.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/train_deepseek_r1_qwen14b.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/train_deepseek_r1_qwen14b.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/evaluate_zero_deepseek_r1_qwen14b.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/evaluate_zero_deepseek_r1_qwen14b.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/campaign_resume_gpu4.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/campaign_resume_gpu4.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/nested_llama.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/nested_llama.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "6f23e469310488a2349e6d7098a738a05013035db4f49940ac88bb8d0874ddc6"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/table_watch.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/table_watch.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "d1a3f2cb984a5c4c51da2e57b55b0f7bbd56675651e0b438e4f398f50b8d3c79"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/campaign.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/campaign.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "b783088fc79eedae6059588fa5449f243051545543a4a7b973ebd8a9eac5448c"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/llama_fresh_campaign_nogoal.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/llama_fresh_campaign_nogoal.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "5fb9c1b32887cc284f8e3c99945eab2afa9ec889eae73d55851e11c67b7ab90f"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/llama_fresh_campaign.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/llama_fresh_campaign.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "39b01861e71325abdf95e13d5e94b0ad367d021fb89c09c5e69f38de7cc25722"
+    },
+    {
+      "source": "my_eclp_final/model_family_jobs/eval_qwen3_14b.log",
+      "target": "exp_code_ljj/logs/organized/my_eclp_final/model_family_jobs/eval_qwen3_14b.log",
+      "compatibility": true,
+      "status": "complete",
+      "sha256": "869b3f8dd14cf12c0dfeec2e347f11c70325002f5edeac2ef158dc41380d2bcb"
+    }
+  ],
+  "policy": "No deletion. Canonical runtime, data, results and checkpoint paths retained."
+}

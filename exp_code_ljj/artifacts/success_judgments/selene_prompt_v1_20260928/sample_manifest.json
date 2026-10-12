@@ -1,0 +1,211 @@
+{
+  "description": "Seeded uniform diagnostic sample: the same 20 scenario indexes are evaluated under Zero-shot and Dialogue-SFT. Counts are prompt checks, not population-rate estimates.",
+  "seed": 20260928,
+  "trials": [
+    {
+      "trial": 1,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 32,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 96,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 200,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 219,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 286,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 360,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 455,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 562,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 637,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 703,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 705,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 725,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 774,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 805,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 807,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 854,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 922,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 936,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 969,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 986,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 32,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 96,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 200,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 219,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 286,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 360,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 455,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 562,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 637,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 703,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 705,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 725,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 774,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 805,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 807,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 854,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 922,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 936,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 969,
+          "stratum": "seeded_uniform_shared_index"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 986,
+          "stratum": "seeded_uniform_shared_index"
+        }
+      ]
+    }
+  ]
+}

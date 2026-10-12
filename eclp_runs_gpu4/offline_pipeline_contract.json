@@ -1,0 +1,53 @@
+{
+  "plan": {
+    "plan_version": "gpu4_eclp_offline_lpo_v1",
+    "physical_gpu": 4,
+    "expected_sft_sessions": 59868,
+    "sft_epochs": 1,
+    "sft_target_steps": 7484,
+    "expected_rl_scenarios": 1800,
+    "expected_dev_scenarios": 200,
+    "rl_epochs": 1,
+    "contexts_per_update": 64,
+    "candidates": 4,
+    "score_batch_size": 1,
+    "reward": "correction",
+    "correction_weight": 0.1,
+    "advantage_scale_floor": 0.001,
+    "advantage_clip": 10.0,
+    "policy_update_epochs": 2,
+    "policy_update_batch_size": 64,
+    "policy_learning_rate": 1e-05,
+    "max_lr_backoffs": 7,
+    "min_policy_learning_rate": 1e-07,
+    "online_training_calls": 0,
+    "dev_nll_tolerance": 0.05,
+    "final_checkpoint_rule": "last_committed_checkpoint_after_one_full_rl_data_pass; no_test_selection",
+    "test_method": "ECLP-Offline-LPO",
+    "test_scenarios": 1000,
+    "final_judges": [
+      "selene8b",
+      "qwen3_14b"
+    ]
+  },
+  "code_sha256": {
+    "eclp_elpo.py": "8c5402f92e5cbd8e1a7ed2e63fab175c5e00c91a983251fce4ddaadfde3b9d14",
+    "config_gpu4.json": "de3c445815b0d15830d0eab501e6fda166c6089f57cb5959c434d8f4c763cb44",
+    "training_plan.json": "51f5ffba8a8bcb73117e8bd42f52ecd37e34c84b152b0aa77e6f04f3a6b03fe4",
+    "run_main_experiment.py": "ba8babcac041f3be54e8cf6e58bc7d5a651d2c3db8897c6a89ff67cadc99bdbd",
+    "offline_latent_rl.py": "8a8e654ef55d065c77e833ecb1352e424b40a163334a2f160b63e06f6a8baf02",
+    "offline_training_plan.json": "66bd9986c4c2a9a176ce483d1735558ea29144ff66a9245a15e87506d9bd4a28",
+    "run_gpu4_offline_pipeline.py": "680f0efce066d2b04422e59a1e77cd37f3451b57e1f75abb9270ee4d3b24d137",
+    "experiment_io.py": "f20a31bfe014b6b51f5f02ef9d82accea4936bf60d1f5d6b7e4b994cb736e352",
+    "evaluate_our.py": "4814d5696e223858dc9d5a0fee71efa7387c9d0157b585b4c18935cb81e97891",
+    "update_our_table.py": "0f82740d6ea89604eed0a8d5355c8bc43f0786eb0d29e5800715701cee3f86fc",
+    "final_eval_protocol.py": "3f909a3dd64daed8dbff029114aa49cce8750d991c13980dbde5ebcf4c999cec",
+    "final_judge_prompts.json": "ac02126e1593ef25d4c07697b8b9de46f30d77fdd540d4c3237acaf1c554c093"
+  },
+  "original_pipeline_contract_hash": "aa42c4d59df418407fdeec4a850bf8ba728e3e1ea14d22060e4533b31a16f58d",
+  "protocol_lock_hash": "5a76467795195106bdef2e1ad8d0eb5d24a474a5efa34e5a79db1e5b870704be",
+  "physical_gpu": 4,
+  "training_dialogue_calls": 0,
+  "training_judge_calls": 0,
+  "python": "/app/hzj/anaconda3/envs/ljj/bin/python"
+}

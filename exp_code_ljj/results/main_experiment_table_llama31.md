@@ -1,30 +1,38 @@
-## Main experiment: latest target-grounded evaluation (192 scenarios)
+> 仅LatentRATT和Our重新评估，其他基线保留历史协议结果。新评估正在运行：旧Success提示词＋最新Win@1提示词；旧表暂留作历史记录。新结果见 [llama31_oldsuccess_newwin_192.md](llama31_oldsuccess_newwin_192.md)。GPT-luna新结果目录为 `gpt_luna_oldsuccess_newwin_192_20261010/`。
 
-Persuader: `Meta-Llama-3.1-8B-Instruct`. Persuadee: `/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged`. BF16, no quantization.
+## Llama-3.1-8B — two-stage Our + public repair v3, fixed192
 
-固定192条：原始 `target_turn == 1` 且 `history == []`，原始索引见 [test_selection_192.json](../data/test_selection_192.json)。初始历史为空，后续只保留本次公开生成历史。zero-shot仅输入背景与可观察历史，不输入目标、策略、心理标签或golden。Our使用对应骨干的完整ECLP checkpoint，公开只输出劝说语句。
+Our 与 PersuGPT使用原训练权重全新生成192条，Our先生成私有简短理由、再输出公开劝说话语；PersuGPT公开只输出劝说话语；其余已完成基线复用上一版本的原始对话。各方法共用不接收精确目标的模拟被劝说者与相同解码设置。zero-shot劝说者仍只接收背景与公开历史。
 
-生成：zero-shot、SFT、PersuGPT、MA2P、Our均在固定192条上全新生成，不复用旧对话；所有方法共用不接收精确目标的模拟劝说对象（仅背景和公开对话），并统一使用当前解码设置与输出边界。zero-shot劝说者不接收目标；SFT、PersuGPT、MA2P、Our仍按各自方法使用目标条件。Our保留完整ECLP隐式状态/策略和最新persuasion-only接口。LatentRATT待完整训练后再测。旧partial分数不进入此版本。
+所有方法统一使用llama_public_repair_v3中的成功判定与Win提示词。Success为五轮任一轮明确接受准确目标；Win@1对比首句、Win-Full对比全部可用对话，分别与同场景golden对比。换序credit取平均（胜1、平0.5、负0）；换序冲突率公开披露。格式缺失且无已确认成功的场景排除Success分母。
 
-评估：复用最新 `seven_methods_192/protocol.py` 与 `win_rules.json`，两位Judge完全相同的192个场景、golden和指标。Success要求当前被劝说者接受准确目标，五轮内任一轮成功；Win@1比较首条劝说语句，Win-Full比较全部生成对话与golden全部可用对话。A/B换序用于控制位置偏差，两次credit取平均（胜1、平0.5、负0），不声称为两个独立样本。
+结果与合同：`/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/llama_two_stage_pilot_20261009/meta_llama31`。本版本的Judge规则已修订，不能将旧Qwen2.5表直接作为相同评估版本的比较。
 
-一致性核查：当前成功提示词、Win规则、Judge模型文件及golden与Qwen2.5主表最新合同一致。已确认Selene在Llama SFT样本788第3轮将“认真考虑、稍后答复”误判为投资目标接受；保留原始判断，不单独修改该方法分数。旧复用场景的模拟器权重与当前权重是否完全相同尚未核实，高成功率暂不能直接视为模型提升。核查记录：[evaluation_consistency_audit_20261007.json](evaluation_consistency_audit_20261007.json)。
+| Judge | Method | N | Success (%) | Win@1 (%) | Win-Full (%) | Mean rounds (failure=5) | Success unresolved | Win@1 order conflict (%) | Win-Full order conflict (%) |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| selene8b | zero_shot_repaired | 192/192 | 45.31 | 46.22 | 5.47 | 4.40 | 1 | 67.19 | 12.50 |
+| selene8b | dialogue_sft | 192/192 | 41.67 | 49.48 | 4.30 | 4.71 | 0 | 77.08 | 8.33 |
+| selene8b | persugpt | 192/192 | 73.44 | 67.06 | 13.54 | 4.16 | 1 | 65.10 | 17.71 |
+| selene8b | ma2p_repaired | 192/192 | 50.79 | 55.34 | 9.51 | 4.41 | 1 | 68.75 | 16.15 |
+| selene8b | latentratt | 192/192 | 53.12 | 57.55 | 11.20 | 4.48 | 0 | 58.85 | 12.50 |
+| selene8b | our_direct | 192/192 | 56.25 | 60.55 | 12.50 | 4.31 | 0 | 56.25 | 14.58 |
+| qwen3_14b | zero_shot_repaired | 192/192 | 23.04 | 44.14 | 4.43 | 4.77 | 2 | 30.73 | 3.12 |
+| qwen3_14b | dialogue_sft | 192/192 | 21.88 | 48.83 | 4.82 | 4.89 | 0 | 40.10 | 5.21 |
+| qwen3_14b | persugpt | 192/192 | 46.35 | 87.76 | 27.73 | 4.49 | 0 | 21.88 | 26.04 |
+| qwen3_14b | ma2p_repaired | 192/192 | 27.60 | 58.07 | 14.58 | 4.76 | 0 | 25.52 | 13.02 |
+| qwen3_14b | latentratt | 192/192 | 34.38 | 56.12 | 12.50 | 4.71 | 0 | 49.48 | 20.31 |
+| qwen3_14b | our_direct | 192/192 | 37.50 | 64.32 | 11.98 | 4.62 | 0 | 29.17 | 17.19 |
 
-| Judge | Method | Persuader model | Parsed / selected N | Success within 5 rounds (%) | Win@1 (%) | Win-Full (%) | Mean rounds (failure=5) | Success format unresolved |
-| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 1: Zero-shot | Meta-Llama-3.1-8B-Instruct | 192/192 | 50.52 (97/192 evaluable) | 47.14 | 7.94 | 4.250 | 2 |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 2: Dialogue-SFT | Meta-Llama-3.1-8B-Instruct | 192/192 | 48.44 (93/192 evaluable) | 49.87 | 5.34 | 4.630 | 0 |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 3: ISR-SFT + SimDPO | Meta-Llama-3.1-8B-Instruct | 192/192 | 65.10 (125/192 evaluable) | 63.54 | 18.88 | 4.406 | 0 |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 4: MA2P | Meta-Llama-3.1-8B-Instruct | 192/192 | 59.69 (114/191 evaluable) | 54.04 | 10.42 | 4.288 | 2 |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 5: LatentRATT | Meta-Llama-3.1-8B-Instruct | SFT完整1轮已完成；待RL及生成完成；生成0/192 | - | - | - | - | - |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Our: persuasion only | Meta-Llama-3.1-8B-Instruct | 80/192 (partial) | 55.00 (44/80 evaluable) | 53.12 | 13.75 | 4.463 | 0 |
-| Qwen3-14B (BF16) | Baseline 1: Zero-shot | Meta-Llama-3.1-8B-Instruct | 192/192 | 23.04 (44/191 evaluable) | 44.27 | 4.69 | 4.759 | 2 |
-| Qwen3-14B (BF16) | Baseline 2: Dialogue-SFT | Meta-Llama-3.1-8B-Instruct | 192/192 | 22.92 (44/192 evaluable) | 48.70 | 3.78 | 4.891 | 0 |
-| Qwen3-14B (BF16) | Baseline 3: ISR-SFT + SimDPO | Meta-Llama-3.1-8B-Instruct | 192/192 | 38.54 (74/192 evaluable) | 81.90 | 26.56 | 4.703 | 0 |
-| Qwen3-14B (BF16) | Baseline 4: MA2P | Meta-Llama-3.1-8B-Instruct | 192/192 | 28.65 (55/192 evaluable) | 59.77 | 16.15 | 4.771 | 0 |
-| Qwen3-14B (BF16) | Baseline 5: LatentRATT | Meta-Llama-3.1-8B-Instruct | SFT完整1轮已完成；待RL及生成完成；生成0/192 | - | - | - | - | - |
-| Qwen3-14B (BF16) | Our: persuasion only | Meta-Llama-3.1-8B-Instruct | 待评估 / 192 (生成 192/192) | - | - | - | - | - |
+<!-- hybrid-latent-only-start -->
+# llama31: old Success + latest Win, fixed192
 
-平均轮数取首次成功轮，未成功且五轮判定完整的场景计5。若判定缺失且无已确认成功，Success及平均轮数分母排除该场景；Win两次换序均解析成功才计入各自分母。`Success format unresolved`为未解析的轮级成功判定数。完整192条才作为正式最终结果。标注partial的分数来自已审计可复用场景的最新评估，样本数不同，不能当作完整192条的横向比较。
+Success提示词精确复用seven_methods_192/protocol.py；Win@1及Win-Full使用当前位置中立规则。五轮任一轮成功；平均轮数失败计5；换序credit平均。仅重新评估既有公开对话，生成输入条件与方法接口不变。partial为临时结果。
 
-结果目录：`/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007/meta_llama31`。各行原始判断、提示词缓存、模型合同、生成来源哈希、换序冲突率及Win未解析数保存在对应Judge目录中；旧表备份为 `main_experiment_table_llama31.md.before_repaired192_20261007`。
+| Judge | Method | N | Success (%) | Win@1 (%) | Win-Full (%) | Mean rounds (failure=5) | Success unresolved |
+|---|---|---:|---:|---:|---:|---:|---:|
+| selene8b | latentratt | 192/192 | 59.90 | 57.55 | 11.20 | 4.427 | 1 |
+| selene8b | our_direct | 0/192 | - | - | - | - | - |
+| qwen3_14b | latentratt | 192/192 | 34.90 | 56.12 | 12.50 | 4.714 | 0 |
+| qwen3_14b | our_direct | 0/192 | - | - | - | - | - |
+
+<!-- hybrid-latent-only-end -->

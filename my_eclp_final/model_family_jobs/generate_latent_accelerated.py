@@ -5,6 +5,7 @@ CODE=Path(__file__).resolve().parents[1]
 sys.path[:0]=[str(CODE/'seven_methods_192'),str(CODE),str(CODE.parent/'baseline5_latentRATT'),str(CODE.parent/'exp_code_ljj')]
 from protocol import PUBLIC_RULE,speech_boundary,narration,public_point,DECODE
 from generate import sample_local
+from model_family_jobs.llama_public_repair_v3.public_speech import narration
 
 def main():
  p=argparse.ArgumentParser();p.add_argument('--repo-root',type=Path,required=True);p.add_argument('--output',type=Path,required=True);p.add_argument('--physical-gpu',type=int,required=True);p.add_argument('--smoke-two',action='store_true');p.add_argument('--family',choices=['meta_llama31','deepseek_r1_qwen14b'],required=True);p.add_argument('--checkpoint',type=Path,required=True);p.add_argument('--memory-cap-gib',type=float,default=54);p.add_argument('--persuadee-goal-blind',action='store_true');a=p.parse_args()
@@ -25,7 +26,7 @@ def main():
  assert digest(root/'exp_code_ljj/data/evaluation_points.jsonl')==selection['source_sha256']
  import hashlib
  order=sorted(selection['original_indexes'],key=lambda i:hashlib.sha256(('matched-v2-pilot-42:'+points[i]['scenario_id']).encode()).hexdigest())
- contract={'method':'latentratt','expected_indexes':order,'checkpoint':str(checkpoint),'adapter_sha256':digest(checkpoint/'adapter/adapter_model.safetensors'),'attention_sha256':digest(checkpoint/'attention.pt'),'training_config':train,'base':base,'persuadee':sim,'physical_gpu':a.physical_gpu,'persuadee_goal_blind':a.persuadee_goal_blind,'decode':DECODE,'seed':42,'max_prompt_tokens':1536,'history_policy':'drop oldest complete pairs only; preserve background, goal and latest pair','native_actor_batch_size':1,'source_sha256':digest(Path(__file__)),'protocol_sha256':digest(CODE/'seven_methods_192/protocol.py'),'native_source_sha256':digest(root/'baseline5_latentRATT/latent_model.py')}
+ contract={'method':'latentratt','expected_indexes':order,'checkpoint':str(checkpoint),'adapter_sha256':digest(checkpoint/'adapter/adapter_model.safetensors'),'attention_sha256':digest(checkpoint/'attention.pt'),'training_config':train,'base':base,'persuadee':sim,'physical_gpu':a.physical_gpu,'persuadee_goal_blind':a.persuadee_goal_blind,'decode':DECODE,'seed':42,'max_prompt_tokens':1536,'history_policy':'drop oldest complete pairs only; preserve background, goal and latest pair','native_actor_batch_size':1,'source_sha256':digest(Path(__file__)),'protocol_sha256':digest(CODE/'seven_methods_192/protocol.py'),'native_source_sha256':digest(root/'baseline5_latentRATT/latent_model.py'),'public_boundary_checker_sha256':digest(CODE/'model_family_jobs/llama_public_repair_v3/public_speech.py')}
  with writer_lock(a.output/'.generation.lock'):
   immutable_json(a.output/'generation_run.json',contract);run_hash=object_hash(contract)
   path=a.output/'generation/latentratt.jsonl';saved=read_jsonl(path) if path.exists() else [];existing={r['index']:r for r in saved};assert len(existing)==len(saved)

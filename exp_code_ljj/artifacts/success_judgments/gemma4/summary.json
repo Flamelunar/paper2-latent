@@ -1,0 +1,40 @@
+{
+  "judge_model": "/data1/liujianjian/model/gemma-4-E4B-it",
+  "judge_compute_dtype": "bfloat16",
+  "judge_quantization": "none",
+  "device_for_canonical_results": "cuda:1",
+  "prompt_version": "v11",
+  "prompt_revision": "joint_v2_r11",
+  "max_parse_retries": 3,
+  "generation_source": "artifacts/generation_5rounds",
+  "methods": {
+    "qwen25_zero_shot": {
+      "total": 1000,
+      "parsed": 969,
+      "unresolved": 31,
+      "parse_success_percent": 96.89999999999999,
+      "success_count": 516,
+      "success_percent_of_parsed": 53.25077399380805,
+      "win_rate_percent_of_parsed": 47.42002063983488,
+      "mean_rounds_success_else_5_among_parsed": 3.9896800825593397,
+      "rows_with_retries": 82
+    },
+    "qwen25_dialogue_sft": {
+      "total": 1000,
+      "parsed": 939,
+      "unresolved": 61,
+      "parse_success_percent": 93.89999999999999,
+      "success_count": 535,
+      "success_percent_of_parsed": 56.975505857295,
+      "win_rate_percent_of_parsed": 48.08306709265175,
+      "mean_rounds_success_else_5_among_parsed": 3.961661341853035,
+      "rows_with_retries": 141
+    }
+  },
+  "metric_denominators": {
+    "success_percent": "parsed records only",
+    "win_rate_percent": "parsed records only; two order-swapped decisions",
+    "mean_rounds": "parsed records only; no success counts as round 5",
+    "unresolved": "unparseable records out of 1,000"
+  }
+}

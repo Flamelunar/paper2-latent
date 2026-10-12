@@ -1,0 +1,11 @@
+{
+  "complete": true,
+  "epochs": 1,
+  "sessions": 59868,
+  "steps": 7484,
+  "checkpoint": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/sft/checkpoint-007484",
+  "training_seconds": 22572.48701319401,
+  "training_minutes": 376.20811688656687,
+  "load_seconds_this_invocation": 6.721706930082291,
+  "timing_scope": "training data processing, optimization and intermediate/final saves; excludes model load"
+}

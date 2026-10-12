@@ -1,0 +1,21 @@
+{
+  "n": 20,
+  "expected": 20,
+  "complete": true,
+  "success_count": 16,
+  "success_percent": 80.0,
+  "mean_rounds_fail5": 3.5,
+  "final_progress_0_to_3": 2.25,
+  "final_success_percent": 60.0,
+  "format_unresolved": 0,
+  "win1_percent": 63.74999999999999,
+  "win1_conflict_percent": 35.0,
+  "win1_tie_percent": 2.5,
+  "win_full_percent": 13.750000000000002,
+  "win_full_conflict_percent": 10.0,
+  "win_full_tie_percent": 2.5,
+  "method": "old_our",
+  "contract_hash": "ba5351c183155a558a56e033f15f68544357fdab5278761c9bedfba404f88612",
+  "judgments_sha256": "727eb98ff38655249041e13fab17e021b4358b1c16d82cc009fee93dbf55bafc",
+  "source_generation_sha256": "cea0982c76c7bf125cd0e2ecf775ece9c4a3130fd76981d8db8ce3a91f000ca6"
+}

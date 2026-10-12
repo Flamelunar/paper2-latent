@@ -1,0 +1,16 @@
+{
+  "time": 1791484462.8758354,
+  "baseline_implementation_unchanged": true,
+  "dispatch_only_method": "our_direct",
+  "two_stage_entrypoints": [
+    "generate_llama_two_stage.py",
+    "generate_qwen_two_stage.py",
+    "generate_deepseek_two_stage.py"
+  ],
+  "sha256": {
+    "generate_llama_two_stage.py": "ce56cf43c21a833de10f4312d1957727d37f79e137c07821c4b3c57f413af030",
+    "generate_qwen_two_stage.py": "0f7357f3c64b2f8de8cc6e80944b5883708eab30536d5c3cd5f16c66a05ab987",
+    "generate_deepseek_two_stage.py": "7d0c8d826fcd23dbedafc9a8339f23138ee83e2140cee4a83167be0c6cb830f2"
+  },
+  "training_files_modified_by_routing": false
+}

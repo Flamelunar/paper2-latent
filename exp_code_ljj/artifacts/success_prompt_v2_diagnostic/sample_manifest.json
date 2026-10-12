@@ -1,0 +1,321 @@
+{
+  "description": "Case-control diagnostic sample; trial 2 repeats trial 1, trial 3 uses disjoint cases. Counts are not population rates.",
+  "seed": 20260926,
+  "trials": [
+    {
+      "trial": 1,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 970,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 299,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 29,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 19,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 911,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 304,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 71,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 812,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 367,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 898,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 949,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 758,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 62,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 347,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 250,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 898,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 117,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 62,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 285,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 703,
+          "stratum": "both_v1_false"
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 970,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 299,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 29,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 19,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 911,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 304,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 71,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 812,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 367,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 898,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 949,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 758,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 62,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 347,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 250,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 898,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 117,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 62,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 285,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 703,
+          "stratum": "both_v1_false"
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 80,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 371,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 190,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 663,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 471,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 344,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 614,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 561,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 527,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 53,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 202,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 487,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 411,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 810,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 524,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 384,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 18,
+          "stratum": "both_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 185,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 790,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 623,
+          "stratum": "qwen_v1_true_llama_v1_false"
+        }
+      ]
+    }
+  ]
+}

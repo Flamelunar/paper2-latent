@@ -1,0 +1,33 @@
+{
+  "protocol": "qwen25_table2_fixed_qwen35_persuadee_5rounds_bf16_contextbatch2_v1",
+  "test_data": "/home1/liujianjian/2-paper-CoLING/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/paper10k/data/evaluation_points.jsonl",
+  "test_contexts": 1000,
+  "executed_contexts": 1,
+  "limit": 1,
+  "methods": [
+    {
+      "slug": "qwen25_dialogue_sft",
+      "display_name": "Qwen2.5-7B-Instruct Dialogue-SFT",
+      "model_path": "/data1/liujianjian/Persuader/qwen2.5-7b-instruct-dialogue-sft-paper10k",
+      "with_isr": false
+    }
+  ],
+  "persuadee_model": "/data1/liujianjian/Persuadee/Qwen3.5-9B-persuadee/merged",
+  "persuader_device": "cuda:1",
+  "persuadee_device": "cuda:0,cuda:2",
+  "persuader_quantization": "none",
+  "persuader_quantization_scheme": null,
+  "persuader_compute_dtype": "bfloat16",
+  "persuadee_compute_dtype": "bfloat16",
+  "bf16_autocast": true,
+  "persuader_double_quantization": false,
+  "final_output_directory_label": "persuadee_simulation",
+  "rounds": 5,
+  "temperature": 0.95,
+  "do_sample": true,
+  "top_p": 0.7,
+  "top_k": 50,
+  "max_new_tokens": 512,
+  "context_batch_size": 2,
+  "execution": "Methods run sequentially; independent contexts are decoded in batches, while each context preserves round order."
+}

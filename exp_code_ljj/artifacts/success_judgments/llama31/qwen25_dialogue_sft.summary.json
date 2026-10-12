@@ -1,0 +1,20 @@
+{
+  "n": 1000,
+  "judge_model": "/data1/liujianjian/model/Meta-Llama-3.1-8B-Instruct",
+  "judge_compute_dtype": "bfloat16",
+  "judge_quantization": "none",
+  "protocol": "strict_acceptance_five_rounds_v1",
+  "strict_success_count": 1,
+  "strict_success_within_5_rounds_percent": 0.1,
+  "mean_rounds_to_success_failures_count_as_5": 4.998,
+  "success_parse_unresolved": 0,
+  "strict_success_rate_by_round_percent": {
+    "1": 0.0,
+    "2": 0.0,
+    "3": 0.1,
+    "4": 0.0,
+    "5": 0.0
+  },
+  "method": "qwen25_dialogue_sft",
+  "completed_at_utc": "2026-09-25T21:33:09.376751+00:00"
+}

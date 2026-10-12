@@ -1,0 +1,44 @@
+{
+  "files": {
+    "eclp_elpo.py": {
+      "destination": "eclp_elpo.py",
+      "sha256": "8c5402f92e5cbd8e1a7ed2e63fab175c5e00c91a983251fce4ddaadfde3b9d14"
+    },
+    "config.json": {
+      "destination": "config.json",
+      "sha256": "5eaf4b9cfed1f11a1d096e14d92de3538f97430150a106a4d8bc3f331ea93421"
+    },
+    "config_gpu4.json": {
+      "destination": "config_gpu4.json",
+      "sha256": "de3c445815b0d15830d0eab501e6fda166c6089f57cb5959c434d8f4c763cb44"
+    },
+    "config_repair.json": {
+      "destination": "config_repair.json",
+      "sha256": "19a0778f42afe48dab7f0fbb9883dc93b5881ce27ded1d27afc67c8d830dc6cf"
+    },
+    "README.md": {
+      "destination": "README.md",
+      "sha256": "702a7978297b8c2e04ca6be6c86e0a8dc04aa9d96b1715c89843a4ccc4c2bd50"
+    },
+    "FINAL_PLAN.md": {
+      "destination": "references/FINAL_PLAN.md",
+      "sha256": "bc9a50d90f925e2bca140b929bafc8f81102ee96f0171e8fb1a2e1442f1ae843"
+    },
+    "VALIDATION_REPORT.md": {
+      "destination": "references/VALIDATION_REPORT.md",
+      "sha256": "0c564e4a289e40cf875e705ced0a35f734446c3627e0c50706e559fa3419d342"
+    },
+    "REPAIR_PLAN.md": {
+      "destination": "REPAIR_PLAN.md",
+      "sha256": "b88ab34cbd6b0a7258d98bd3dc5bec1b1edcccc450e840538b60ebdde341e079"
+    },
+    "check_eclp_mechanism.py": {
+      "destination": "check_eclp_mechanism.py",
+      "sha256": "7a682a0be93e1d14420313411b88c4cab7d4cfde856738d6f74170487fc6ab8c"
+    },
+    "run_repair_smoke.sh": {
+      "destination": "run_repair_smoke.sh",
+      "sha256": "ee7ab31ecbee3869efdd640d9ee51c3c03178bcef8cd11f02c5636dde3b0a87b"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "backbone": "Qwen2.5-7B-Instruct",
+  "physical_gpu": 4,
+  "seed": 42,
+  "main_table_source": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/results/main_experiment_table.md",
+  "historical_exact_generator": "/app/hzj/liujianjian/ljj-2-paper/my_eclp_final/seven_methods_192/generate_direct.py",
+  "generation_original_sha256": "0c513888e5f28dda939bc78b12ff92deaa6352f4ffce58323d329f6dadf2223c",
+  "simulator_change": "remove goal from user prompt; rerun full Ours under same ablation protocol",
+  "simulator_model": "/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged",
+  "train_context_cache": "policy-independent frozen executor inputs; exact hash validation against committed blocks",
+  "judges": [
+    "selene8b",
+    "qwen3_14b"
+  ],
+  "scoring": "original seven_methods_192 GOAL_RULE and win_rules; Win@1 only; all-scene Turn failure/missing=5 explicitly flagged",
+  "artifacts": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/qwen25_ablation_192_20261010",
+  "source_files": {
+    "evaluate.py": "5db11ab8e99fa750acd84c0c170c24f9fd0d82132738b19793f3a41a0d55978d",
+    "simulator_prompt.py": "3e8b9f926907616fe46a4b1c0f0296ac3430f0b418b9230a43ebd289b6aeb2dd",
+    "early_evaluate.py": "fcf100209f4572407089f21d10d5b3e68df1a9dbaa25b6077a90025fcc0dca19",
+    "protocol.py": "5c885402aaa016219651ec6205fd5ef9a2d4814424977e60e263bd9fac6c090b",
+    "win_rules.json": "dbec25f89a4f31575cc502f23f2ceaebb6f252d1f0c186b9f20136af7b335bfb",
+    "generate.py": "2941e566223fa3a16eb45e98d467edc5aebcac2207a375a6ca474d1682900fc2",
+    "batching.py": "169fd6d732c55c7c5a80b4bc8fb18c6292ccb0dd0b961d817be34062d99d6267",
+    "supervise.py": "23a468a2f105d009a6461aa3aa2a5b33a02e026542d7eddb84ef270333d7124a",
+    "kl_only.py": "878a7df85f7090f0233970399a0742bcaa35cc69155df432f847c013a08f46d9"
+  },
+  "failure_policy": "record raw attempts, partial public trajectory and reason; no fabricated replies; all selected scenarios in Success/Turn; Win@1 requires actual first utterance",
+  "training_sources": {
+    "rl_train_sha256": "916942d44271410c044b55ea3d7f5d228001c3922f6142772d52b1688c08238f",
+    "prepared_manifest_sha256": "f31255faca2808c69f2a79845a1398753f0f785310b4bdfd8c8d4fcfd9796115",
+    "train_contexts": 1800,
+    "cached_context_ids_match_rl_train": true,
+    "train_test_id_overlap_count": 0,
+    "sft_sha256": "9e2997da1f3a52c392c41eda0e2e72e8755f3da64e81546aa4131c8dbb6e6b86",
+    "sft_sessions": 59868,
+    "sft_scenarios": 10000,
+    "sft_test_id_overlap_count": 0,
+    "sft_test_overlapping_ids": []
+  },
+  "early_evaluation": "GPU4-only Selene then Qwen3 consumes committed scenes; main evaluator adopts live early worker before final completion",
+  "final_delivered_code_sha256": {
+    "audit.py": "a341cb88de853b3afba00cb9d0bd3decbf589ad4fa6c4ca1e70c1d7f210dfefe",
+    "batching.py": "169fd6d732c55c7c5a80b4bc8fb18c6292ccb0dd0b961d817be34062d99d6267",
+    "early_evaluate.py": "fcf100209f4572407089f21d10d5b3e68df1a9dbaa25b6077a90025fcc0dca19",
+    "evaluate.py": "5db11ab8e99fa750acd84c0c170c24f9fd0d82132738b19793f3a41a0d55978d",
+    "finalize.py": "f5cb99819873c48f952520860235ad7056a7b31ba2fec0c32fdb2d06e6345a6a",
+    "generate.py": "2941e566223fa3a16eb45e98d467edc5aebcac2207a375a6ca474d1682900fc2",
+    "kl_only.py": "878a7df85f7090f0233970399a0742bcaa35cc69155df432f847c013a08f46d9",
+    "protocol.py": "5c885402aaa016219651ec6205fd5ef9a2d4814424977e60e263bd9fac6c090b",
+    "simulator_prompt.py": "3e8b9f926907616fe46a4b1c0f0296ac3430f0b418b9230a43ebd289b6aeb2dd",
+    "supervise.py": "7d961d88f995e13eac3ee405fbdc8cd505d44bee271dc97e0a0c4efa25e8da31",
+    "win_rules.json": "dbec25f89a4f31575cc502f23f2ceaebb6f252d1f0c186b9f20136af7b335bfb"
+  },
+  "reporting_revision": "explicit effective denominators and KL-equivalence disclosure"
+}

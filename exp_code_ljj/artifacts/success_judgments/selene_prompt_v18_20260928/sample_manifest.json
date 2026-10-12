@@ -1,0 +1,210 @@
+{
+  "description": "Paired 20-context Selene prompt diagnostic, reusing the exact cases from the prior v17 smoke test for direct comparison. Not a population-rate estimate.",
+  "trials": [
+    {
+      "trial": 1,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 32,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 96,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 200,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 219,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 286,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 360,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 455,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 562,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 637,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 703,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 705,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 725,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 774,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 805,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 807,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 854,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 922,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 936,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 969,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 986,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 32,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 96,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 200,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 219,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 286,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 360,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 455,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 562,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 637,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 703,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 705,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 725,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 774,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 805,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 807,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 854,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 922,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 936,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 969,
+          "stratum": "paired_v17_diagnostic_reuse"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 986,
+          "stratum": "paired_v17_diagnostic_reuse"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,33 @@
+{
+  "protocol": "paper10k_common_prompt_fixed_qwen35_persuadee_5rounds_bf16_v1",
+  "test_data": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/data/evaluation_points.jsonl",
+  "test_contexts": 1000,
+  "executed_contexts": 1000,
+  "limit": null,
+  "methods": [
+    {
+      "slug": "baseline1_zero_shot",
+      "display_name": "Baseline 1: DeepSeek-R1-Distill-Qwen-14B Zero-shot",
+      "model_path": "/app/hzj/models/DeepSeek-R1-Distill-Qwen-14B",
+      "with_isr": false
+    }
+  ],
+  "persuadee_model": "/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged",
+  "persuader_device": "cuda:1",
+  "persuadee_device": "cuda:1",
+  "persuader_quantization": "none",
+  "persuader_quantization_scheme": null,
+  "persuader_compute_dtype": "bfloat16",
+  "persuadee_compute_dtype": "bfloat16",
+  "bf16_autocast": true,
+  "persuader_double_quantization": false,
+  "final_output_directory_label": "persuadee_simulation",
+  "rounds": 5,
+  "temperature": 0.95,
+  "do_sample": true,
+  "top_p": 0.7,
+  "top_k": 50,
+  "max_new_tokens": 512,
+  "context_batch_size": 2,
+  "execution": "Methods run sequentially; independent contexts are decoded in batches, while each context preserves round order."
+}

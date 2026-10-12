@@ -1,0 +1,101 @@
+"""Priority scheduling only: preserve every training worker and inference contract."""
+import importlib.util,json,os,subprocess,time,signal
+from pathlib import Path
+from concurrent.futures import ThreadPoolExecutor
+ROOT=Path('/app/hzj/liujianjian/ljj-2-paper'); JOB=ROOT/'my_eclp_final/model_family_jobs'
+PY='/app/hzj/anaconda3/envs/ljj/bin/python'
+OUT=ROOT/'exp_code_ljj/artifacts/priority_pending_20261009';OUT.mkdir(exist_ok=True)
+def load(name,file):
+ s=importlib.util.spec_from_file_location(name,JOB/file);m=importlib.util.module_from_spec(s);s.loader.exec_module(m);return m
+def read(p):return json.loads(p.read_text())
+def status(stage,**kw):
+ p=OUT/'status.json';t=p.with_suffix('.tmp');t.write_text(json.dumps(dict(stage=stage,pid=os.getpid(),time=time.time(),**kw),indent=2));t.replace(p)
+def complete(p):return p.exists() and read(p).get('complete') is True and read(p).get('n')==192
+def audit_method(module,work,method):
+ selection=read(ROOT/'exp_code_ljj/data/test_selection_192.json')['original_indexes']
+ rows=module.read_jsonl(work/'generation'/f'{method}.jsonl')
+ assert len(rows)==192 and len({r['index'] for r in rows})==192
+ assert {r['index'] for r in rows}==set(selection)
+ assert all(r['initial_history']==[] and r['compute_dtype']=='bfloat16' and r['quantization']=='none' for r in rows)
+ gold={r['index']:r for r in module.read_jsonl(ROOT/'eclp_runs_gpu4/evaluation_v2/golden/golden.jsonl')}
+ source={r['index']:r for r in rows};judges={}
+ for judge in ['selene8b','qwen3_14b']:
+  directory=work/'judges'/judge
+  contract=read(directory/'evaluation_run.json')
+  assert contract['compute_dtype']=='bfloat16' and contract['quantization']=='none'
+  assert contract['protocol_sha256']==module.digest(module.REPAIR/'protocol.py')
+  assert contract['win_rules_sha256']==module.digest(module.REPAIR/'win_rules.json')
+  records=module.read_jsonl(directory/'evaluation'/method/'judgments.jsonl')
+  assert len(records)==192 and {r['index'] for r in records}==set(selection)
+  for r in records:
+   assert r['source_row_hash']==module.object_hash(source[r['index']])
+   assert r['golden_row_hash']==module.object_hash(gold[r['index']])
+  judges[judge]=read(directory/'evaluation'/method/'summary.json')
+ module.atomic_json(OUT/f'{work.name}_{method}_completion_audit.json',dict(time=time.time(),fixed192_verified=True,bf16_verified=True,latest_protocol_verified=True,source_and_golden_hashes_verified=True,judges=judges))
+def wait_gpu(need):
+ while True:
+  free={g:int(subprocess.check_output(['nvidia-smi',f'--id={g}','--query-gpu=memory.free','--format=csv,noheader,nounits'],text=True).strip()) for g in (1,4)}
+  for g in (1,4):
+   if free[g]>=need*1024:return g
+  status('waiting_generation_capacity',required_gib=need,free_mib=free);time.sleep(30)
+def run(cmd,log,need):
+ gpu=wait_gpu(need)
+ cmd=list(cmd);cmd[cmd.index('--physical-gpu')+1]=str(gpu)
+ env=dict(os.environ,CUDA_VISIBLE_DEVICES=str(gpu),CUDA_DEVICE_ORDER='PCI_BUS_ID',PYTHONUNBUFFERED='1',TOKENIZERS_PARALLELISM='false')
+ with log.open('a') as f:
+  p=subprocess.Popen(cmd,cwd=ROOT,env=env,stdout=f,stderr=subprocess.STDOUT)
+  status('generating_priority_method',worker_pid=p.pid,command=cmd)
+  if p.wait():raise RuntimeError('Generation failed: '+str(log))
+def main():
+ llama=load('priority_llama','llama_latentratt_accelerated.py')
+ deep=load('priority_deep','supervise_deepseek_uniform_two_stage_eval.py');deep.prepare()
+ cp=llama.BASE/'rl_fp32_accum16_lr1e7_20261008'
+ while not (cp/'run_config.json').exists() or read(cp/'run_config.json').get('training_complete') is not True:
+  status('waiting_llama_latentratt_training');time.sleep(30)
+ llama.verify_latent_checkpoint(cp)
+ # Existing training parent is suspended; invoke only its unchanged generation routine.
+ llama.GPU=4;llama.JUDGES=()
+ with deep.inference_slot():
+  status('generating_llama_latentratt');llama.generate_and_evaluate(cp)
+ lwork=ROOT/'exp_code_ljj/artifacts/llama_two_stage_pilot_20261009/meta_llama31'
+ while not all(complete(lwork/'judges'/j/'evaluation/latentratt/summary.json') for j in ['selene8b','qwen3_14b']):
+  status('waiting_latest_llama_latentratt_dual_evaluation');time.sleep(30)
+ audit_method(deep,lwork,'latentratt')
+ remaining=['latentratt','our_direct'];deep.METHODS=remaining.copy()
+ while remaining:
+  moved=False
+  for method in remaining.copy():
+   old=deep.OLD;dest=old/'generators'/method
+   summary=dest/'generation'/f'{method}_summary.json'
+   if not complete(summary):
+    if method=='latentratt':
+     base=Path('/app/hzj/liujianjian/persuader_atapter_save/deepseek_r1_qwen14b/baseline5_latentratt')
+     candidates=[p.parent for p in base.glob('rl/**/run_config.json') if read(p).get('stage')=='rl' and read(p).get('training_complete') is True and read(p).get('train_rows')==59868]
+     if not candidates:continue
+     checkpoint=max(candidates,key=lambda p:(p/'run_config.json').stat().st_mtime)
+     cmd=[PY,'-u',str(JOB/'generate_latent_family.py'),'--repo-root',str(ROOT),'--output',str(dest),'--physical-gpu','4','--family','deepseek_r1_qwen14b','--checkpoint',str(checkpoint),'--memory-cap-gib','54']
+    else:
+     p=ROOT/'eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/summary.json'
+     if not p.exists() or read(p).get('complete') is not True:continue
+     cmd=[PY,'-u',str(JOB/'generate_deepseek_goal_strategy.py'),'--repo-root',str(ROOT),'--output',str(dest),'--physical-gpu','4','--family','deepseek_r1_qwen14b','--config',str(ROOT/'eclp_runs_deepseek_r1_qwen14b_20261007/config.json'),'--method',method,'--limit','192','--memory-cap-gib','54','--fresh-generation','--checkpoint',str(read(p)['checkpoint'])]
+    dest.mkdir(parents=True,exist_ok=True)
+    with deep.inference_slot():run(cmd,dest/'priority_worker.log',56)
+   assert complete(summary)
+   link=old/'generation'/f'{method}.jsonl';source=dest/'generation'/f'{method}.jsonl'
+   if not link.exists() and not link.is_symlink():link.symlink_to(source)
+   if method=='our_direct':
+    assert all(t.get('output_variant')=='two_stage_private_note_then_public_reply' and t.get('private_note_visible_to_simulator_or_judge') is False for r in deep.read_jsonl(source) for t in r['trajectory'] if t['role']=='persuader')
+   with deep.inference_slot():
+    status('evaluating_deepseek_priority',method=method)
+    with ThreadPoolExecutor(max_workers=2) as pool:
+     futures=[pool.submit(deep.evaluate_judge,j,g,[method],192) for j,g in [('selene8b',1),('qwen3_14b',4)]]
+     for f in futures:f.result()
+   assert all(complete(deep.WORK/'judges'/j/'evaluation'/method/'summary.json') for j in ['selene8b','qwen3_14b'])
+   audit_method(deep,deep.WORK,method)
+   remaining.remove(method);moved=True;deep.update_scores()
+  if not moved:status('waiting_deepseek_training',remaining=remaining);time.sleep(30)
+ deep.publish_final()
+ status('priority_generation_and_dual_evaluation_complete',deferred_methods=['qwen_remaining','deepseek_four_baseline_reevaluation'])
+if __name__=='__main__':
+ try:main()
+ except Exception as e:status('failed',error=repr(e));raise

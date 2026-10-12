@@ -1,0 +1,42 @@
+[
+  {
+    "baseline": "baseline1_zero_shot",
+    "metric": "win1",
+    "difference_pp": 2.083333333333333,
+    "paired_scenario_bootstrap_95_percentile": [
+      -4.166666666666666,
+      8.333333333333332
+    ],
+    "scope": "sampling uncertainty of saved judge credits only; excludes judge/model/provenance errors"
+  },
+  {
+    "baseline": "baseline1_zero_shot",
+    "metric": "win_full",
+    "difference_pp": 8.333333333333332,
+    "paired_scenario_bootstrap_95_percentile": [
+      1.8229166666666667,
+      14.583333333333334
+    ],
+    "scope": "sampling uncertainty of saved judge credits only; excludes judge/model/provenance errors"
+  },
+  {
+    "baseline": "baseline4_ma2p",
+    "metric": "win1",
+    "difference_pp": 18.75,
+    "paired_scenario_bootstrap_95_percentile": [
+      12.760416666666666,
+      24.739583333333336
+    ],
+    "scope": "sampling uncertainty of saved judge credits only; excludes judge/model/provenance errors"
+  },
+  {
+    "baseline": "baseline4_ma2p",
+    "metric": "win_full",
+    "difference_pp": 19.791666666666664,
+    "paired_scenario_bootstrap_95_percentile": [
+      13.541666666666666,
+      26.041666666666668
+    ],
+    "scope": "sampling uncertainty of saved judge credits only; excludes judge/model/provenance errors"
+  }
+]

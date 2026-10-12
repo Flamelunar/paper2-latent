@@ -1,0 +1,219 @@
+{
+  "sampling": {
+    "population": 1000,
+    "paired_contexts": 20,
+    "rows": 40,
+    "seed": 20260929,
+    "without_replacement": true,
+    "disjoint_from_initial_probe": true,
+    "disjoint_from_selene_v23_probe": true,
+    "not_population_rate_estimate": true
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 10,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 74,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 157,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 253,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 311,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 334,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 392,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 410,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 469,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 499,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 519,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 543,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 549,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 560,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 632,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 642,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 650,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 724,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 804,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 893,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 10,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 74,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 157,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 253,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 311,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 334,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 392,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 410,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 469,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 499,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 519,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 543,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 549,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 560,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 632,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 642,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 650,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 724,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 804,
+          "stratum": "random_20_paired_contexts_validation"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 893,
+          "stratum": "random_20_paired_contexts_validation"
+        }
+      ]
+    }
+  ]
+}

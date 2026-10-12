@@ -1,0 +1,27 @@
+{
+  "protocol": "dailypersuasion_fixed_qwen_persuadee_multiturn_v2_no_thinking",
+  "test_data": "data/small5000/test.jsonl",
+  "test_contexts": 500,
+  "executed_contexts": 500,
+  "limit": null,
+  "methods": [
+    {
+      "slug": "03_isr_sft",
+      "display_name": "03 ISR-SFT (Llama-3.1-8B-Instruct)",
+      "model_path": "/data1/liujianjian/Persuader/llama3.1-8B-Instruct-isr-merged",
+      "with_isr": true
+    }
+  ],
+  "persuadee_model": "/data1/liujianjian/Persuadee/Qwen3.5-9B-persuadee/merged",
+  "persuader_device": "cuda:2",
+  "persuadee_device": "cuda:1",
+  "persuader_quantization": "4bit",
+  "persuader_quantization_scheme": "NF4",
+  "persuader_compute_dtype": "bfloat16",
+  "persuader_double_quantization": true,
+  "final_output_directory_label": "persuadee_simulation-4-bit",
+  "rounds": 4,
+  "temperature": 0.0,
+  "max_new_tokens": 1024,
+  "execution": "Methods run sequentially; each context runs synchronously to preserve its dialogue history."
+}

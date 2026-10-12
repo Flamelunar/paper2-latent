@@ -1,0 +1,23 @@
+{
+  "family": "meta_llama31",
+  "fixed_test_n": 192,
+  "gpu": 0,
+  "generation_gpu": 4,
+  "prerequisite_methods": [
+    "zero_shot_repaired",
+    "dialogue_sft",
+    "persugpt",
+    "ma2p_repaired",
+    "our_direct"
+  ],
+  "prerequisite_judges": [
+    "selene8b",
+    "qwen3_14b"
+  ],
+  "train_rows": 59868,
+  "training": "resume one SFT epoch, then one LatentRATT LR-GRPO pass",
+  "generation": "fresh five-round dialogues, empty initial history, goal-blind persuadee",
+  "source_data_sha256": "0de302a33f3a0b4295821a97b003f6eaada9763045e242a39489b272574c926f",
+  "selection_sha256": "dc7f73bbaff4e56e71647fa1ac05556046e24e5df34e90a9c44f3ca3eb982e06",
+  "latent_generation_source_sha256": "048a6dee8ef323e2ef97d2fda51abbe101dca06375734ad3f698edc3a97cbd5e"
+}

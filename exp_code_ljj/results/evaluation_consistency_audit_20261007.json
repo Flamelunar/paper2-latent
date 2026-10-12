@@ -1,0 +1,32 @@
+{
+  "time": 1791339414.8763995,
+  "main_table": "exp_code_ljj/results/main_experiment_table.md",
+  "contracts_match": {
+    "revision": true,
+    "judge_model": true,
+    "model_files": true,
+    "protocol_sha256": true,
+    "win_rules_sha256": true,
+    "original_win_protocol_sha256": true,
+    "golden_sha256": true,
+    "goal_schema": true,
+    "success_rule": true,
+    "win_credit": true,
+    "temperature": true,
+    "compute_dtype": true,
+    "max_format_retries": true
+  },
+  "scope": "Llama SFT inherited clean subset 108, not full192",
+  "main_qwen_sft_same108_success_percent": 63.55140186915888,
+  "llama_sft_inherited108_success_percent": 84.11214953271028,
+  "confirmed_judge_false_positive": {
+    "index": 788,
+    "round": 3,
+    "goal": "persuade Jack to invest in the company producing reusable masks",
+    "reply": "You make a good point. I'll definitely give it some serious thought and get back to you soon.",
+    "judge_success": true,
+    "human_protocol_review": "This is consideration, not an investment decision; contradicts existing rubric."
+  },
+  "historical_simulator_weight_equivalence": "not established; Qwen historical path /data1/... differs from family /app/...",
+  "policy": "Keep existing scores reproducible; flag judge false positive, do not selectively overwrite or change rubric for one method."
+}

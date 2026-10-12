@@ -1,0 +1,18 @@
+{
+  "complete": true,
+  "n": 1000,
+  "generation_sha256": "cea0982c76c7bf125cd0e2ecf775ece9c4a3130fd76981d8db8ce3a91f000ca6",
+  "run_hash": "221e7d8076d14b9884f4283767cb2e47dfe1e89345f126cf77388de8d1d11a5b",
+  "private_marker_turns": 0,
+  "neural_dtype": "bfloat16",
+  "judge_calls": 0,
+  "request_ledger": {
+    "attempted": 5000,
+    "completed": 5000,
+    "failed": 0,
+    "unresolved_after_interruption": 0,
+    "by_kind": {
+      "persuadee": 5000
+    }
+  }
+}

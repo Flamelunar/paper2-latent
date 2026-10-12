@@ -1,0 +1,55 @@
+{
+  "protocol": "dailypersuasion_fixed_qwen_persuadee_paper_metrics_v1",
+  "judge": "Qwen3.5-9B (/data1/liujianjian/model/Qwen3.5-9B)",
+  "test_rows": 500,
+  "metrics": {
+    "01_zero_shot": {
+      "win_rate": 64.2,
+      "rouge_l": 42.831339,
+      "position_consistency": 76.0,
+      "mean_trajectory_turns": 8.0
+    },
+    "02_dialogue_sft": {
+      "win_rate": 39.900000000000006,
+      "rouge_l": 48.8303054,
+      "position_consistency": 73.4,
+      "mean_trajectory_turns": 8.0
+    },
+    "03_isr_sft": {
+      "win_rate": 31.5,
+      "rouge_l": 48.0209638,
+      "position_consistency": 74.2,
+      "mean_trajectory_turns": 8.0
+    }
+  },
+  "paper_targets": {
+    "Llama-3.1 Zero-shot": {
+      "paper_model": "LLaMA-2",
+      "icl": false,
+      "isr": false,
+      "win_rate": 20.1,
+      "rouge_l": 17.4
+    },
+    "Llama-3.1 Dialogue SFT": {
+      "paper_model": "LLaMA-2",
+      "icl": false,
+      "isr": false,
+      "win_rate": 46.7,
+      "rouge_l": 24.4
+    },
+    "Llama-3.1 ISR SFT": {
+      "paper_model": "LLaMA-2 + ISR",
+      "icl": false,
+      "isr": true,
+      "win_rate": 47.8,
+      "rouge_l": 25.6
+    },
+    "Ours (Llama-3.1) ISR-SFT + DPO": {
+      "paper_model": "Ours (LLaMA-2)",
+      "icl": false,
+      "isr": true,
+      "win_rate": 60.4,
+      "rouge_l": 25.2
+    }
+  }
+}

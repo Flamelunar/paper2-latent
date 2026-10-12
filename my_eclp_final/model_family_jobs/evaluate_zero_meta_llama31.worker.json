@@ -1,0 +1,14 @@
+{
+  "name": "evaluate-zero:meta_llama31",
+  "pid": 636075,
+  "gpu": 4,
+  "command": [
+    "/app/hzj/anaconda3/envs/ljj/bin/python",
+    "-u",
+    "/app/hzj/liujianjian/ljj-2-paper/my_eclp_final/model_family_jobs/supervise_campaign.py",
+    "--eval-zero",
+    "meta_llama31",
+    "4"
+  ],
+  "started": 1791317172.432002
+}

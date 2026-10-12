@@ -1,0 +1,1 @@
+旧Success精确复用seven_methods_192/protocol.py的GOAL_RULE；Win@1与Win-Full保持当前llama_public_repair_v3/win_rules.json。仅更新评估，生成、训练和五轮指标聚合不变。独立合同与缓存，禁止将旧v3 Success当作本版本Success。

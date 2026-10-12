@@ -1,0 +1,636 @@
+[
+  {
+    "name": "qwen25-joint_sft",
+    "source_checkpoint": "eclp_runs_gpu4/sft_full/checkpoint-007484",
+    "asset": "qwen25-joint_sft.tar.gz",
+    "files": [
+      {
+        "path": "eclp_runs_gpu4/sft_full/checkpoint-007484/adapter/README.md",
+        "bytes": 5224,
+        "sha256": "5aee676a18a87f5ecf2e825677505a2d0f399049f783bdab3329f73e1f524fc3"
+      },
+      {
+        "path": "eclp_runs_gpu4/sft_full/checkpoint-007484/adapter/adapter_config.json",
+        "bytes": 1113,
+        "sha256": "612fd571e78a30dbd0e522964179b2def5116c0506872c3d328591fefaee0d14"
+      },
+      {
+        "path": "eclp_runs_gpu4/sft_full/checkpoint-007484/adapter/adapter_model.safetensors",
+        "bytes": 80792880,
+        "sha256": "36b2c4dc74a329454dd79347c9cce7e48fd3f00f22aa3065395b98ada0b6b85e"
+      },
+      {
+        "path": "eclp_runs_gpu4/sft_full/checkpoint-007484/adapter/tokenizer.json",
+        "bytes": 11421892,
+        "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8"
+      },
+      {
+        "path": "eclp_runs_gpu4/sft_full/checkpoint-007484/adapter/tokenizer_config.json",
+        "bytes": 692,
+        "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95"
+      },
+      {
+        "path": "eclp_runs_gpu4/sft_full/checkpoint-007484/checkpoint.json",
+        "bytes": 334172,
+        "sha256": "6c13f6d3e3b1c2305826d73acb68b1823d798903ed9d9050f1d9a89df407487b"
+      },
+      {
+        "path": "eclp_runs_gpu4/sft_full/checkpoint-007484/heads.pt",
+        "bytes": 12048734,
+        "sha256": "729c8a4522a6bbd513809215f9e0be239e9c8e79423587f9dee62826590fbb26"
+      },
+      {
+        "path": "eclp_runs_gpu4/sft_full/checkpoint-007484/reference_policy.pt",
+        "bytes": 2962143,
+        "sha256": "fc6ae1b6fffcd983d821b834c2cdeea114a8e92b3afe37805852c72486fcd0bc"
+      }
+    ],
+    "asset_bytes": 79082401,
+    "asset_sha256": "79d37edefeec1ae4fc739c1cd487555d4377eb1ad315f79a98a39c87b5a7562b",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/qwen25-joint_sft.tar.gz"
+  },
+  {
+    "name": "qwen25-latent_rl",
+    "source_checkpoint": "eclp_runs_gpu4/offline_rl/checkpoint-001800",
+    "asset": "qwen25-latent_rl.tar.gz",
+    "files": [
+      {
+        "path": "eclp_runs_gpu4/offline_rl/checkpoint-001800/adapter/README.md",
+        "bytes": 5224,
+        "sha256": "5aee676a18a87f5ecf2e825677505a2d0f399049f783bdab3329f73e1f524fc3"
+      },
+      {
+        "path": "eclp_runs_gpu4/offline_rl/checkpoint-001800/adapter/adapter_config.json",
+        "bytes": 1113,
+        "sha256": "0b2f741fb2102833f10d210f4a03ef49decd1aa121ae4611f30fad55c2e87b3f"
+      },
+      {
+        "path": "eclp_runs_gpu4/offline_rl/checkpoint-001800/adapter/adapter_model.safetensors",
+        "bytes": 80792880,
+        "sha256": "36b2c4dc74a329454dd79347c9cce7e48fd3f00f22aa3065395b98ada0b6b85e"
+      },
+      {
+        "path": "eclp_runs_gpu4/offline_rl/checkpoint-001800/adapter/tokenizer.json",
+        "bytes": 11421892,
+        "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8"
+      },
+      {
+        "path": "eclp_runs_gpu4/offline_rl/checkpoint-001800/adapter/tokenizer_config.json",
+        "bytes": 692,
+        "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95"
+      },
+      {
+        "path": "eclp_runs_gpu4/offline_rl/checkpoint-001800/checkpoint.json",
+        "bytes": 3877,
+        "sha256": "6cae1d907242c96cd08d292b0b0b506cffc9643dbf20a6394bf020c24253686b"
+      },
+      {
+        "path": "eclp_runs_gpu4/offline_rl/checkpoint-001800/heads.pt",
+        "bytes": 12048734,
+        "sha256": "1d391a806c18ee2b815c7d785707bd5150ca0b99d69442617cd36ec9df0421e4"
+      },
+      {
+        "path": "eclp_runs_gpu4/offline_rl/checkpoint-001800/reference_policy.pt",
+        "bytes": 2962143,
+        "sha256": "fc6ae1b6fffcd983d821b834c2cdeea114a8e92b3afe37805852c72486fcd0bc"
+      }
+    ],
+    "asset_bytes": 78950917,
+    "asset_sha256": "d0de81ca2f188256436bf050ac84208230f107a8f925a05f49d7943cf98fac07",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/qwen25-latent_rl.tar.gz"
+  },
+  {
+    "name": "llama31-joint_sft",
+    "source_checkpoint": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484",
+    "asset": "llama31-joint_sft.tar.gz",
+    "files": [
+      {
+        "path": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/README.md",
+        "bytes": 5238,
+        "sha256": "dd0ad3edefa6c69f3023951ad0f85065346661461d3c65d9755108c5e2b2a104"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/adapter_config.json",
+        "bytes": 1120,
+        "sha256": "3b5fe012a489bf2067671adcda7ecc01cb0218a13502e90bbc6d0a90187fa02e"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/adapter_model.safetensors",
+        "bytes": 83946192,
+        "sha256": "7d02f5155470bee409b0dd03d133cd0da9d94b906ed6d6f0812a6909cf99d723"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/tokenizer.json",
+        "bytes": 17209920,
+        "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/tokenizer_config.json",
+        "bytes": 352,
+        "sha256": "b67f43d859deb5bda4f0d247a875476338aca0ef92cff4c3b1d2be3265cb59ac"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484/checkpoint.json",
+        "bytes": 334172,
+        "sha256": "f39c4b5c0557f957b8fc0a84c7eac375f5caf8758137c8033629de5da0d0c753"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484/heads.pt",
+        "bytes": 13099358,
+        "sha256": "a1a765e2531700426870aa120eb93c1da756306961fe1ea685df98123ab7279a"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/sft_full_retry_20261007/checkpoint-007484/reference_policy.pt",
+        "bytes": 3224287,
+        "sha256": "1539af0ae695e2631896918de833b248b706988a35e22e86dbb880a870cb0a44"
+      }
+    ],
+    "asset_bytes": 83141939,
+    "asset_sha256": "4dbd58cd190532ce6964a7400418406248e0b657a7e5842fa26d669f4fd2ec24",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/llama31-joint_sft.tar.gz"
+  },
+  {
+    "name": "llama31-latent_rl",
+    "source_checkpoint": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800",
+    "asset": "llama31-latent_rl.tar.gz",
+    "files": [
+      {
+        "path": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800/adapter/README.md",
+        "bytes": 5238,
+        "sha256": "dd0ad3edefa6c69f3023951ad0f85065346661461d3c65d9755108c5e2b2a104"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800/adapter/adapter_config.json",
+        "bytes": 1120,
+        "sha256": "ad28c3532446861ee9b012aa53d31a256b6355de3071fc67db84c6fb58838e9c"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800/adapter/adapter_model.safetensors",
+        "bytes": 83946192,
+        "sha256": "7d02f5155470bee409b0dd03d133cd0da9d94b906ed6d6f0812a6909cf99d723"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800/adapter/tokenizer.json",
+        "bytes": 17209920,
+        "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800/adapter/tokenizer_config.json",
+        "bytes": 352,
+        "sha256": "b67f43d859deb5bda4f0d247a875476338aca0ef92cff4c3b1d2be3265cb59ac"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800/checkpoint.json",
+        "bytes": 3893,
+        "sha256": "1a67a935285c5cdd50742de8996fc36ab9821c2ebee77385a2f087dd18b159d4"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800/heads.pt",
+        "bytes": 13099358,
+        "sha256": "e9a0d78019a268143a10fa53a72525a67d8b5bbf3937a0a8b216cf742a44a6df"
+      },
+      {
+        "path": "eclp_runs_meta_llama31_20261007/offline_rl/checkpoint-001800/reference_policy.pt",
+        "bytes": 3224287,
+        "sha256": "1539af0ae695e2631896918de833b248b706988a35e22e86dbb880a870cb0a44"
+      }
+    ],
+    "asset_bytes": 83009711,
+    "asset_sha256": "5c13612fb7cc7b31efce3a67f6391b621550634b4f30186cc11676ea7cb33820",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/llama31-latent_rl.tar.gz"
+  },
+  {
+    "name": "deepseek14b-joint_sft",
+    "source_checkpoint": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484",
+    "asset": "deepseek14b-joint_sft.tar.gz",
+    "files": [
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/README.md",
+        "bytes": 5242,
+        "sha256": "6f7effd00725d62efc06a73d3e798af4e38ddeffe12bd9a52d1549b64573d31f"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/adapter_config.json",
+        "bytes": 1122,
+        "sha256": "4ea7eda47d7a03eeb7cc4fdec87bfabfb3b62a27b542d13c2f534beebb35d801"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/adapter_model.safetensors",
+        "bytes": 137716248,
+        "sha256": "1df14e6a6dbb2b8d2d56b8fed461242f6b8275988f981325807fb0d629be8422"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/tokenizer.json",
+        "bytes": 11421907,
+        "sha256": "f624f8136bc57382156e7595e8ea404a66fbce12e3181b933ec2459bda3a71be"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484/adapter/tokenizer_config.json",
+        "bytes": 419,
+        "sha256": "997f53570233feda5579d5562dc5841185f9e6edf4f14774df38b245f249a43a"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484/checkpoint.json",
+        "bytes": 334391,
+        "sha256": "7fd0435669997ea8df7bde9bc6ff9b9255ccabc67ab5eae40293eff7bea481b5"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484/heads.pt",
+        "bytes": 15200606,
+        "sha256": "deb7685b54c7435bd9fb834f533a24bedfd3c362529b3e87bf7c35bfcb659911"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007/checkpoint-007484/reference_policy.pt",
+        "bytes": 3748575,
+        "sha256": "de5d48baee68af008a1c0552fce2702776c2949d738730ae07d15fa5f1f7552d"
+      }
+    ],
+    "asset_bytes": 127606318,
+    "asset_sha256": "d3ea09638822453bfee33bb36225b2dce8398c36ec22443edf778c2cb3d03efd",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/deepseek14b-joint_sft.tar.gz"
+  },
+  {
+    "name": "deepseek14b-latent_rl",
+    "source_checkpoint": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800",
+    "asset": "deepseek14b-latent_rl.tar.gz",
+    "files": [
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800/adapter/README.md",
+        "bytes": 5242,
+        "sha256": "6f7effd00725d62efc06a73d3e798af4e38ddeffe12bd9a52d1549b64573d31f"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800/adapter/adapter_config.json",
+        "bytes": 1122,
+        "sha256": "c7b20ccb039385e7f88d704fa55ad596cc527c84807139d0c09f3e6ac33a71e4"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800/adapter/adapter_model.safetensors",
+        "bytes": 137716248,
+        "sha256": "1df14e6a6dbb2b8d2d56b8fed461242f6b8275988f981325807fb0d629be8422"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800/adapter/tokenizer.json",
+        "bytes": 11421907,
+        "sha256": "f624f8136bc57382156e7595e8ea404a66fbce12e3181b933ec2459bda3a71be"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800/adapter/tokenizer_config.json",
+        "bytes": 419,
+        "sha256": "997f53570233feda5579d5562dc5841185f9e6edf4f14774df38b245f249a43a"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800/checkpoint.json",
+        "bytes": 3903,
+        "sha256": "7e3b8cffa0ad297f6231a9b283c19f95a87a034cd28e60745dd721ab3b3aac3f"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800/heads.pt",
+        "bytes": 15200606,
+        "sha256": "f343256f00c2574c7d4f614a1fe4709a53551eef59b83c6438e61c0ec7abbafc"
+      },
+      {
+        "path": "eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/checkpoint-001800/reference_policy.pt",
+        "bytes": 3748575,
+        "sha256": "de5d48baee68af008a1c0552fce2702776c2949d738730ae07d15fa5f1f7552d"
+      }
+    ],
+    "asset_bytes": 127474221,
+    "asset_sha256": "54b34e551919a33e3780a259f684853a7e89567a2c8e160383381dad23414588",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/deepseek14b-latent_rl.tar.gz"
+  },
+  {
+    "name": "qwen25-ordinary_sft",
+    "source_checkpoint": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/sft/checkpoint-007484",
+    "asset": "qwen25-ordinary_sft.tar.gz",
+    "files": [
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/sft/checkpoint-007484/adapter/README.md",
+        "bytes": 5224,
+        "sha256": "5aee676a18a87f5ecf2e825677505a2d0f399049f783bdab3329f73e1f524fc3"
+      },
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/sft/checkpoint-007484/adapter/adapter_config.json",
+        "bytes": 1113,
+        "sha256": "5e86d9001a05714f65e9d230beb966f475721cd3ac9abc612c02fd840951b77b"
+      },
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/sft/checkpoint-007484/adapter/adapter_model.safetensors",
+        "bytes": 80792880,
+        "sha256": "81fd2226580ae1b940105c64e462a01c8f0d9610dbc4c159918b36755091c809"
+      },
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/sft/checkpoint-007484/adapter/tokenizer.json",
+        "bytes": 11421892,
+        "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8"
+      },
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/sft/checkpoint-007484/adapter/tokenizer_config.json",
+        "bytes": 692,
+        "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95"
+      }
+    ],
+    "asset_bytes": 67101902,
+    "asset_sha256": "dc88ae4569da975b0480c4d2acf9ff19a9a3dd13960676c63ea86f90fb902733",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/qwen25-ordinary_sft.tar.gz"
+  },
+  {
+    "name": "qwen25-text_grpo",
+    "source_checkpoint": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/grpo/checkpoint-001800",
+    "asset": "qwen25-text_grpo.tar.gz",
+    "files": [
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/grpo/checkpoint-001800/adapter/README.md",
+        "bytes": 5224,
+        "sha256": "5aee676a18a87f5ecf2e825677505a2d0f399049f783bdab3329f73e1f524fc3"
+      },
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/grpo/checkpoint-001800/adapter/adapter_config.json",
+        "bytes": 1113,
+        "sha256": "61cf1f66ecbcc774e65a1848c7035ed34048a7773f78fe936db997755c2ea8eb"
+      },
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/grpo/checkpoint-001800/adapter/adapter_model.safetensors",
+        "bytes": 80792880,
+        "sha256": "2499f189ae83e609e530a190ccafad6638afe1009e21febe206c12ffcab3064d"
+      },
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/grpo/checkpoint-001800/adapter/tokenizer.json",
+        "bytes": 11421892,
+        "sha256": "3fd169731d2cbde95e10bf356d66d5997fd885dd8dbb6fb4684da3f23b2585d8"
+      },
+      {
+        "path": "exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/grpo/checkpoint-001800/adapter/tokenizer_config.json",
+        "bytes": 692,
+        "sha256": "1cc816812993bff176eb4f7495433b736f06fba9b6e7b05cac7b4a1780650c95"
+      }
+    ],
+    "asset_bytes": 67101636,
+    "asset_sha256": "e5f09eadbe0100f1b7937838eec265fa9df0a299f645135b9a29d944d4e67b56",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/qwen25-text_grpo.tar.gz"
+  },
+  {
+    "name": "isr_sft.jsonl",
+    "asset": "dataset-isr_sft.jsonl.tar.gz",
+    "files": [
+      {
+        "path": "exp_code_ljj/data/isr_sft.jsonl",
+        "bytes": 310951457,
+        "sha256": "0de302a33f3a0b4295821a97b003f6eaada9763045e242a39489b272574c926f"
+      }
+    ],
+    "asset_bytes": 68728760,
+    "asset_sha256": "742aba46d1af1021ca5a4d39ad6a06aed219c06b68b9a2e4132db8607069400c",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/dataset-isr_sft.jsonl.tar.gz"
+  },
+  {
+    "name": "meta_llama31-baseline2_dialogue_sft",
+    "source_checkpoint": "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline2_dialogue_sft",
+    "asset": "meta_llama31-baseline2_dialogue_sft.tar.gz",
+    "files": [
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline2_dialogue_sft/adapter_config.json",
+        "bytes": 1121,
+        "sha256": "488190126a1b43785e434e894016acd91483f0560b423e0760150e6e1826a147"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline2_dialogue_sft/README.md",
+        "bytes": 1493,
+        "sha256": "b659bf19f59dd3df608d3ce97b2ed4f15ea8112639e3c2ea56fee582c6084267"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline2_dialogue_sft/adapter_model.safetensors",
+        "bytes": 167832240,
+        "sha256": "70541d64c2ee7370c81f1f9d18e4532cb98c42ff3252625e255c0ab2c304da33"
+      }
+    ],
+    "asset_bytes": 155919938,
+    "asset_sha256": "30b90fc74ce1184d180d17ebe8dbd3291022855f63c8e1f82f8daa737b73b153",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/meta_llama31-baseline2_dialogue_sft.tar.gz"
+  },
+  {
+    "name": "meta_llama31-baseline3_isr_sft",
+    "source_checkpoint": "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline3_isr_sft",
+    "asset": "meta_llama31-baseline3_isr_sft.tar.gz",
+    "files": [
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline3_isr_sft/adapter_config.json",
+        "bytes": 1121,
+        "sha256": "2364875739b92d1253a93866ca303e13a7191c9f9ca8ba196238228911309384"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline3_isr_sft/README.md",
+        "bytes": 1483,
+        "sha256": "770cc178894339c803c06f1c71ba4e42a3fa0db9db44dd0ab6b5a8d437cc8f62"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline3_isr_sft/adapter_model.safetensors",
+        "bytes": 167832240,
+        "sha256": "24ef5b8397692d7674bd0dcaa6a23441b144c27689fd49a7d6486520352a9df0"
+      }
+    ],
+    "asset_bytes": 155929903,
+    "asset_sha256": "80f866f2d3329eea1340bca490f68d70c3d650f06a4f0d27058beda3a6462f9d",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/meta_llama31-baseline3_isr_sft.tar.gz"
+  },
+  {
+    "name": "meta_llama31-baseline3_simdpo",
+    "source_checkpoint": "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline3_simdpo",
+    "asset": "meta_llama31-baseline3_simdpo.tar.gz",
+    "files": [
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline3_simdpo/adapter_config.json",
+        "bytes": 1121,
+        "sha256": "eb960a6a97b381b1a6a15957a4f68ef514aae75e7542de1e6a6e33ac3c9a26ec"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline3_simdpo/README.md",
+        "bytes": 2407,
+        "sha256": "7444bbf0bad2f96b582fbf74c82c59c49cacfb8f62858d9e7ca76f5b00d368f6"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline3_simdpo/adapter_model.safetensors",
+        "bytes": 167832240,
+        "sha256": "c8c0892c3cbf7fac6b65dde60b168613223be6b8336f9a986477aaec22803b48"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-baseline3_simdpo/run_config.json",
+        "bytes": 1810,
+        "sha256": "8f26aa04872eabe94ade53ab84910e7ceb2c598b462a1a4debd75060cdfc3a77"
+      }
+    ],
+    "asset_bytes": 155930218,
+    "asset_sha256": "d163394d1bcc71f2ecae35032bcff008ce74b8297f5f9d438823c361314ab2d7",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/meta_llama31-baseline3_simdpo.tar.gz"
+  },
+  {
+    "name": "meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008",
+    "source_checkpoint": "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline5_latentratt/rl_fp32_accum16_lr1e7_20261008",
+    "asset": "meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008.tar.gz",
+    "files": [
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008/attention.pt",
+        "bytes": 201378268,
+        "sha256": "fdecc23b2aab7f8a685aedd5b66ed481b1515de31ba157e3fc097a6cab75373d"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008/run_config.json",
+        "bytes": 2014,
+        "sha256": "8ecb7fb3063e20a1a9efb4b152701edf204fa38eda97d155a74b836294e3af25"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008/adapter/adapter_config.json",
+        "bytes": 1121,
+        "sha256": "b092ace5a763360bf7d1f868551030b449882bbbd817a79c32932f2bc265a3fb"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008/adapter/README.md",
+        "bytes": 5238,
+        "sha256": "dd0ad3edefa6c69f3023951ad0f85065346661461d3c65d9755108c5e2b2a104"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008/adapter/adapter_model.safetensors",
+        "bytes": 167832240,
+        "sha256": "08cf4b96b3dd51bf08ac380c6cd05b4988cdbfe9d4614bfc8cac58cb7d899d03"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008/adapter/tokenizer_config.json",
+        "bytes": 324,
+        "sha256": "06cf8bb52c93bb82c7f8e416646cb1e01fe48e5df5ce509377637b9eca0037f5"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008/adapter/tokenizer.json",
+        "bytes": 17209920,
+        "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+      }
+    ],
+    "asset_bytes": 345434503,
+    "asset_sha256": "c695886964fc9beddf39a5b514a30bafbe8839cca06f56d89024970892b77743",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/meta_llama31-latentratt-rl_fp32_accum16_lr1e7_20261008.tar.gz"
+  },
+  {
+    "name": "meta_llama31-latentratt-sft",
+    "source_checkpoint": "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline5_latentratt/sft",
+    "asset": "meta_llama31-latentratt-sft.tar.gz",
+    "files": [
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-sft/attention.pt",
+        "bytes": 100690396,
+        "sha256": "c5d4d81465138db5c34e38a12398d75014b8857653833afbdf1b8922db931500"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-sft/run_config.json",
+        "bytes": 1915,
+        "sha256": "e82bf7b708bd7feb258866d5440d34084c304a5ad2eb2d597245d7871c505e0b"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-sft/adapter/adapter_config.json",
+        "bytes": 1121,
+        "sha256": "d8d58f49af010bab5abe6a50d60e4f48acb4b19d6f64174c349fd77d90b6ab87"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-sft/adapter/README.md",
+        "bytes": 5238,
+        "sha256": "dd0ad3edefa6c69f3023951ad0f85065346661461d3c65d9755108c5e2b2a104"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-sft/adapter/adapter_model.safetensors",
+        "bytes": 167832240,
+        "sha256": "08cf4b96b3dd51bf08ac380c6cd05b4988cdbfe9d4614bfc8cac58cb7d899d03"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-sft/adapter/tokenizer_config.json",
+        "bytes": 324,
+        "sha256": "06cf8bb52c93bb82c7f8e416646cb1e01fe48e5df5ce509377637b9eca0037f5"
+      },
+      {
+        "path": "fine_tuned_baselines/meta_llama31-latentratt-sft/adapter/tokenizer.json",
+        "bytes": 17209920,
+        "sha256": "6b9e4e7fb171f92fd137b777cc2714bf87d11576700a1dcd7a399e7bbe39537b"
+      }
+    ],
+    "asset_bytes": 238116715,
+    "asset_sha256": "720052d9cef8092df32822ed9331a2a30a1d962dba98621e1bb15cbaabbbf28a",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/meta_llama31-latentratt-sft.tar.gz"
+  },
+  {
+    "name": "deepseek_r1_qwen14b-baseline2_dialogue_sft",
+    "source_checkpoint": "/app/hzj/liujianjian/persuader_atapter_save/deepseek_r1_qwen14b/baseline2_dialogue_sft",
+    "asset": "deepseek_r1_qwen14b-baseline2_dialogue_sft.tar.gz",
+    "files": [
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline2_dialogue_sft/adapter_config.json",
+        "bytes": 1123,
+        "sha256": "ef6deb3ab29186ffe68b474f75c436b2bcc1a2ec48d6e238d71c14d5a7d469a4"
+      },
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline2_dialogue_sft/README.md",
+        "bytes": 1497,
+        "sha256": "e1d1abc946f83171180ea3f31ca041cc2c348fede12c4a3ead8669d1d73190a6"
+      },
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline2_dialogue_sft/adapter_model.safetensors",
+        "bytes": 275341720,
+        "sha256": "cb3e203e7712a71a4ccd8c28742ba0d5fdebf9b6983bc015722d946e1053df4b"
+      }
+    ],
+    "asset_bytes": 255928357,
+    "asset_sha256": "b41ec37978258ca4bbbe29c4e414f101995713de0fcc319a8a979dab4d787d22",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/deepseek_r1_qwen14b-baseline2_dialogue_sft.tar.gz"
+  },
+  {
+    "name": "deepseek_r1_qwen14b-baseline3_isr_sft",
+    "source_checkpoint": "/app/hzj/liujianjian/persuader_atapter_save/deepseek_r1_qwen14b/baseline3_isr_sft",
+    "asset": "deepseek_r1_qwen14b-baseline3_isr_sft.tar.gz",
+    "files": [
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline3_isr_sft/adapter_config.json",
+        "bytes": 1123,
+        "sha256": "d5c4da6edd315db25d285fd24e1a83ced567e4c51ec15fe8f84c4b76b154527e"
+      },
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline3_isr_sft/README.md",
+        "bytes": 1487,
+        "sha256": "be4c06a5f89eb2ffe10303c529e17eecca83ebbc70df46dea20edebd0c3ba6e9"
+      },
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline3_isr_sft/adapter_model.safetensors",
+        "bytes": 275341720,
+        "sha256": "7c768c005dbf81f8e9b04c443299fb5c9e510b9fb2cd61c105eea5788c82dbc1"
+      }
+    ],
+    "asset_bytes": 255954341,
+    "asset_sha256": "ee48d91c0033ceed4c9ba96499e2526f0adecc0a6f6e74d342023888aeedf1e7",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/deepseek_r1_qwen14b-baseline3_isr_sft.tar.gz"
+  },
+  {
+    "name": "deepseek_r1_qwen14b-baseline3_simdpo",
+    "source_checkpoint": "/app/hzj/liujianjian/persuader_atapter_save/deepseek_r1_qwen14b/baseline3_simdpo",
+    "asset": "deepseek_r1_qwen14b-baseline3_simdpo.tar.gz",
+    "files": [
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline3_simdpo/adapter_config.json",
+        "bytes": 1123,
+        "sha256": "b9c2219a794dd6db71ee203c56aca525b5d8b0e3ff553c8c14ecb3f931c2ca27"
+      },
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline3_simdpo/README.md",
+        "bytes": 2411,
+        "sha256": "fe228e73ddde6c79bc042ec2b11f3178eb09700b7e34843707261dafaf4b800d"
+      },
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline3_simdpo/adapter_model.safetensors",
+        "bytes": 275341720,
+        "sha256": "74278c75316c15d6ce6cc0a6ae6fc76f56a81695da91e3ac7d9bddae264a8e1d"
+      },
+      {
+        "path": "fine_tuned_baselines/deepseek_r1_qwen14b-baseline3_simdpo/run_config.json",
+        "bytes": 1840,
+        "sha256": "935dd8d598de6267923dce7001bcb6d5fa3385c1e107ba7164ec799f4d219952"
+      }
+    ],
+    "asset_bytes": 255955692,
+    "asset_sha256": "b274e52ab3cc3f26a7ed77d1dc2cb259a2b8a7a7ecf2ca9314c22caed608ad0f",
+    "download_url": "https://github.com/Flamelunar/paper2-latent/releases/download/snapshot-20261012/deepseek_r1_qwen14b-baseline3_simdpo.tar.gz"
+  }
+]

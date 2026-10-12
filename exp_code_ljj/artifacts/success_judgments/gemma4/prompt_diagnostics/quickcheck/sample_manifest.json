@@ -1,0 +1,265 @@
+{
+  "sampling": {
+    "population": 1000,
+    "sample_size": 25,
+    "seed": 20260926,
+    "paired_methods": true
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 16,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 36,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 47,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 53,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 74,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 117,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 131,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 189,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 231,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 234,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 252,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 380,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 418,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 507,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 517,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 600,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 642,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 705,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 719,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 737,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 766,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 786,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 863,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 870,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 874,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 16,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 36,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 47,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 53,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 74,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 117,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 131,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 189,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 231,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 234,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 252,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 380,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 418,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 507,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 517,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 600,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 642,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 705,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 719,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 737,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 766,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 786,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 863,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 870,
+          "stratum": "random_25_of_1000"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 874,
+          "stratum": "random_25_of_1000"
+        }
+      ]
+    }
+  ]
+}

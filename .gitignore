@@ -13,3 +13,5 @@ checkpoints/
 wandb/
 exp_code_ljj/data/isr_sft.jsonl
 *.restoring
+.weight-downloads/
+fine_tuned_baselines/

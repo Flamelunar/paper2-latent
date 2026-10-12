@@ -1,0 +1,13 @@
+{
+  "name": "train:meta_llama31",
+  "pid": 2029453,
+  "gpu": 4,
+  "command": [
+    "/app/hzj/anaconda3/envs/ljj/bin/python",
+    "-u",
+    "/app/hzj/liujianjian/ljj-2-paper/my_eclp_final/model_family_jobs/supervise_campaign.py",
+    "--train-only",
+    "meta_llama31"
+  ],
+  "started": 1791336469.653149
+}

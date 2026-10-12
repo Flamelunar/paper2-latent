@@ -1,0 +1,52 @@
+{
+  "revision": "matched_win1_winfull_success_v2_20261005",
+  "judge": "selene8b",
+  "judge_model": "/app/hzj/models/Selene-1-Mini-Llama-3.1-8B",
+  "method": "Baseline 4: MA2P",
+  "method_slug": "baseline4_ma2p",
+  "expected_count": 192,
+  "evaluated_count": 192,
+  "complete": true,
+  "pending_count": 0,
+  "success_count": 160,
+  "success_within5_percent": 83.33333333333333,
+  "final_round5_success_percent": 77.08333333333333,
+  "mean_rounds_or_cap5": 2.15625,
+  "win1_count": 192,
+  "win1_percent": 22.65625,
+  "win_full_count": 192,
+  "win_full_percent": 12.5,
+  "format_unresolved_completed_cases": 0,
+  "denominator": "all selected completed scenarios; Win@1 and Win-Full use identical scenarios",
+  "contract_hash": "cca41e73aaa2bf982d9eef8babd3c40326e0c63e649bf44a774969bfcb10006e",
+  "golden_persuadee_source": "original released dialogue; Our uses the fixed simulated Persuadee",
+  "win1_order_disagreement_count": 67,
+  "win1_explicit_tie_judgments": 0,
+  "win1_full_win_count": 10,
+  "win1_full_loss_count": 115,
+  "win_full_order_disagreement_count": 37,
+  "win_full_explicit_tie_judgments": 6,
+  "win_full_full_win_count": 7,
+  "win_full_full_loss_count": 148,
+  "golden_length_groups": {
+    "shorter_than_ours": {
+      "n": 38,
+      "win1_percent": 22.36842105263158,
+      "win_full_percent": 20.394736842105264
+    },
+    "same_number_of_persuader_replies": {
+      "n": 101,
+      "win1_percent": 17.326732673267326,
+      "win_full_percent": 9.158415841584159
+    },
+    "longer_than_ours": {
+      "n": 53,
+      "win1_percent": 33.0188679245283,
+      "win_full_percent": 13.20754716981132
+    }
+  },
+  "golden_without_final_persuadee_reply_count": 39,
+  "judgments_sha256": "d3f0aac5eeeaa08fe2db4e592f81fb1e9a0030c504ab126eac40d477b2cbc877",
+  "total_independent_requests": 1728,
+  "format_retry_count": 0
+}

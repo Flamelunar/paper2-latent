@@ -1,0 +1,28 @@
+{
+  "protocol": "full_scene_regeneration_for_history_mismatch_v1",
+  "indices": [
+    455,
+    478,
+    618
+  ],
+  "test_sha256": "3454f7be1246d6061865e69f153a53f9478a157978079fd70fef6ad010bb7acd",
+  "source_sha256": "8aaabdaaa0696e335483569c2301d4e95e1f3a0020e66dcb1a3f881f49950c07",
+  "persuader_model": "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline2_dialogue_sft",
+  "persuadee_model": "/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged",
+  "device": "cuda:0",
+  "cuda_visible_devices": "0",
+  "compute_dtype": "bfloat16",
+  "quantization": "none",
+  "seed": 42,
+  "rounds": 5,
+  "temperature": 0.95,
+  "top_p": 0.7,
+  "top_k": 50,
+  "max_new_tokens": 512,
+  "thinking_policy": "final_answer_only",
+  "original_row_sha256": {
+    "455": "1eca90b71226a41c09251a062c78339c8c0cc149b1fe3b866e659fdcb596592a",
+    "478": "b2c6d04069472eff86869314130961c622ce9e6bc6283efe8c1fff1c48308b24",
+    "618": "32ebf8615f6ce8eff1f9ef0ecd54a00edaacaa83dbe4e7dba2f300cf3fa82927"
+  }
+}

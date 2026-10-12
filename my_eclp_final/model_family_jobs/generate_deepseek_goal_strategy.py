@@ -1,3 +1,9 @@
+import sys as _dispatch_sys, runpy as _dispatch_runpy
+from pathlib import Path as _DispatchPath
+# TWO_STAGE_OUR_DISPATCH: baselines keep their original implementation.
+if '--method' in _dispatch_sys.argv and _dispatch_sys.argv[_dispatch_sys.argv.index('--method')+1]=='our_direct':
+    _dispatch_runpy.run_path(str(_DispatchPath(__file__).with_name('generate_deepseek_two_stage.py')),run_name='__main__')
+    raise SystemExit(0)
 """Three methods, one checkpoint/environment, fixed subset and public boundary."""
 import argparse
 import copy

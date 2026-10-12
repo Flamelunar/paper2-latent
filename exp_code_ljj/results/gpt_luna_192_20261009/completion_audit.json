@@ -1,0 +1,29 @@
+{
+  "request_count": 21504,
+  "scene_count": 3072,
+  "methods": 16,
+  "all_fixed192_complete": true,
+  "all_prompt_hashes_verified": true,
+  "returned_models": {
+    "gpt-6-luna-2026-09-22": 24806
+  },
+  "unresolved_requests": 9,
+  "success_denominators": {
+    "deepseek14b/dialogue_sft": 192,
+    "deepseek14b/ma2p_repaired": 192,
+    "deepseek14b/persugpt": 192,
+    "deepseek14b/zero_shot_repaired": 192,
+    "llama31/dialogue_sft": 190,
+    "llama31/latentratt": 192,
+    "llama31/ma2p_repaired": 191,
+    "llama31/our_direct": 192,
+    "llama31/persugpt": 191,
+    "llama31/zero_shot_repaired": 192,
+    "qwen25/dialogue_sft": 191,
+    "qwen25/latentratt": 192,
+    "qwen25/ma2p_repaired": 190,
+    "qwen25/our_direct": 192,
+    "qwen25/persugpt": 192,
+    "qwen25/zero_shot_repaired": 192
+  }
+}

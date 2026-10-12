@@ -1,0 +1,21 @@
+{
+  "n": 20,
+  "expected": 192,
+  "complete": false,
+  "success_count": 17,
+  "success_percent": 85.0,
+  "mean_rounds_fail5": 3.8,
+  "final_progress_0_to_3": 2.5,
+  "final_success_percent": 70.0,
+  "format_unresolved": 0,
+  "win1_percent": 80.0,
+  "win1_conflict_percent": 45.0,
+  "win1_tie_percent": 5.0,
+  "win_full_percent": 47.5,
+  "win_full_conflict_percent": 25.0,
+  "win_full_tie_percent": 5.0,
+  "method": "ma2p_repaired",
+  "contract_hash": "c58b7720ccdb4d8d63fc6220bc595a85dd99bb1dd9eb0d4850f100aee3af38d9",
+  "judgments_sha256": "8360d6f1f46f318a6b8d5adafbfb711c03552c56a0e64fd132c46e4ad7c4fc5e",
+  "source_generation_sha256": "5a87a7aff40abca46df53c3c2898c84f2cd53be5dca0cac274295cc859716b49"
+}

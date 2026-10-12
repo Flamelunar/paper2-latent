@@ -1,0 +1,17 @@
+{
+  "time": "2026-10-06T17:11:07.284521",
+  "identities": {
+    "1928731": "/app/hzj/anaconda3/envs/ljj/bin/python -u /app/hzj/liujianjian/ljj-2-paper/my_eclp_final/target_grounded_v4/supervise.py --repo-root /app/hzj/liujianjian/ljj-2-paper --output /app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/target_grounded_v4 ",
+    "1928972": "/app/hzj/anaconda3/envs/ljj/bin/python -u /app/hzj/liujianjian/ljj-2-paper/my_eclp_final/target_grounded_v4/generate.py --repo-root /app/hzj/liujianjian/ljj-2-paper --output /app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/target_grounded_v4 --limit 20 --physical-gpu 0 "
+  },
+  "saved_rows": {
+    "ma2p_repaired": 1,
+    "zero_shot_repaired": 20
+  },
+  "file_sha256": {
+    "ma2p_repaired.jsonl": "fc510312f0ad81b7d1bcf0bba931a7952242923c1edcdea3cc1fd1b7f15207ea",
+    "zero_shot_repaired.jsonl": "902045337ba38a49620263e4f7c6672dbd2ac1e0b917871831e45d27619ebe61"
+  },
+  "scope": "only serial target_grounded_v4 supervisor and child; original paused training untouched",
+  "successor": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/target_grounded_v4_batch2"
+}

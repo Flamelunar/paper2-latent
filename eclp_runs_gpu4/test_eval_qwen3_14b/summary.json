@@ -1,0 +1,22 @@
+{
+  "expected_count": 1000,
+  "valid_count": 1000,
+  "success_count": 676,
+  "success_percent": 67.6,
+  "win_rate": 30.349999999999998,
+  "mean_rounds_or_cap5": 2.955,
+  "unresolved_cases": 0,
+  "success_only_unresolved": 0,
+  "success_lower_bound_all_1000_percent": 67.6,
+  "success_upper_bound_all_1000_percent": 67.6,
+  "denominator": "jointly_parsed_cases; failures_count_as_round_5",
+  "judge": "qwen3_14b",
+  "judge_model": "/app/hzj/models/Qwen3-14B",
+  "prompt_version": "qwen3_v11",
+  "prompt_revision": "qwen3_gemma_v11_neutral_json_v2",
+  "evaluation_contract_hash": "c1016704a108c80d3007b85a883217a127d352f27cf99066947fb546fc071b50",
+  "complete": true,
+  "judgments_sha256": "3d8eca66ebe54915d18323a1ea6217eb0aca0819a861cf0b6dba25df3999b09f",
+  "generation_sha256": "cea0982c76c7bf125cd0e2ecf775ece9c4a3130fd76981d8db8ce3a91f000ca6",
+  "total_model_calls": 1000
+}

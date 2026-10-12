@@ -1,0 +1,23 @@
+{
+  "judge": "gpt-6-luna",
+  "updated": 1791569310.145115,
+  "completed_requests": 1344,
+  "total_requests": 1344,
+  "methods": [
+    {
+      "family": "deepseek14b",
+      "method": "our_direct",
+      "n": 192,
+      "expected": 192,
+      "complete": true,
+      "success_evaluable_n": 192,
+      "success_count": 77,
+      "success_percent": 40.104166666666664,
+      "win1_evaluable_n": 192,
+      "win1_percent": 57.8125,
+      "mean_rounds_fail5": 4.40625,
+      "format_unresolved": 1,
+      "win1_order_conflict_percent": 11.979166666666666
+    }
+  ]
+}

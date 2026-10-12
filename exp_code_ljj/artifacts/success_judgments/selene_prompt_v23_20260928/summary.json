@@ -1,0 +1,70 @@
+{
+  "prompt_version": "selene_v23",
+  "prompt_revision": "joint_selene_full_context_single_pass_win_v1",
+  "judge_model": "/data1/liujianjian/model/Selene-1-Mini-Llama-3.1-8B",
+  "judge_compute_dtype": "bfloat16",
+  "judge_quantization": "none",
+  "judge_device": "cuda:0,cuda:1,cuda:2",
+  "sampling": {
+    "paired_contexts": 40,
+    "rows": 80,
+    "seeds": [
+      20260929,
+      20260930
+    ],
+    "without_replacement": true,
+    "disjoint_from_previous_v17_v18_probe": true,
+    "not_population_rate_estimate": true
+  },
+  "methods": {
+    "qwen25_zero_shot": {
+      "attempted": 40,
+      "parsed": 40,
+      "success_count": 38,
+      "success_rate_pct": 95.0,
+      "win_credit": 28.0,
+      "win_rate_pct": 70.0,
+      "mean_rounds_success_else_5": 2.2,
+      "parse_failures": 0,
+      "model_calls": 40
+    },
+    "qwen25_dialogue_sft": {
+      "attempted": 40,
+      "parsed": 40,
+      "success_count": 36,
+      "success_rate_pct": 90.0,
+      "win_credit": 28.0,
+      "win_rate_pct": 70.0,
+      "mean_rounds_success_else_5": 2.5,
+      "parse_failures": 0,
+      "model_calls": 40
+    }
+  },
+  "v17_same_contexts": {
+    "qwen25_zero_shot": {
+      "parsed": 40,
+      "success_count": 24,
+      "success_rate_pct": 60.0,
+      "win_credit": 9.0,
+      "win_rate_pct": 22.5
+    },
+    "qwen25_dialogue_sft": {
+      "parsed": 40,
+      "success_count": 20,
+      "success_rate_pct": 50.0,
+      "win_credit": 8.5,
+      "win_rate_pct": 21.25
+    }
+  },
+  "margins_sft_minus_zero_shot": {
+    "success_rate_pp": -5.0,
+    "win_rate_pp": 0.0
+  },
+  "metric_denominators": {
+    "success_rate": "parsed records only; success within five generated rounds",
+    "win_rate": "parsed records only; two order-swapped judgments and split vote gets 0.5",
+    "mean_rounds": "parsed records only; failures count as round 5",
+    "parse_failures": "unresolved out of 40 per method"
+  },
+  "result_file": "artifacts/success_judgments/selene_prompt_v23_20260928/selene1_joint_selene_full_context_single_pass_win_v1.jsonl"
+}

@@ -1,30 +1,18 @@
-## Main experiment: latest target-grounded evaluation (192 scenarios)
 
-Persuader: `DeepSeek-R1-Distill-Qwen-14B`. Persuadee: `/app/hzj/liujianjian/Qwen3.5-9B-persuadee/merged`. BF16, no quantization.
 
-固定192条：target_turn==1且原始history为空。所有方法的劝说方和模拟被劝说者均接收精确目标；仅Our额外接收场景候选策略列表，不提供gold已选策略、ISR或未来回复。基线可自行规划策略，MA2P保留三角色K=0流程。
+<!-- deepseek-hybrid-protocol-note -->
+Selene和Qwen3的Our行现更新为旧Success＋最新Win@1/Win-Full，其他基线分数保留。partial仅表示当前进度。Our生成192/192完成，私有理由不进入Judge。
 
-本版本六种方法全部重新生成192条，不复用旧对话。生成使用GPU0，评估使用GPU0或GPU1，训练使用GPU1（2026-10-08用户新增授权）；BF16，训练数据不变。Qwen和Llama保持各自现有设置。Only-Our strategy access是本实验的额外输入条件，跨方法和跨模型对比须明确这一差异。
+<!-- hybrid-latent-only-start -->
+# deepseek14b: old Success + latest Win, fixed192
 
-评估：复用最新 `seven_methods_192/protocol.py` 与 `win_rules.json`，两位Judge完全相同的192个场景、golden和指标。Success要求当前被劝说者接受准确目标，五轮内任一轮成功；Win@1比较首条劝说语句，Win-Full比较全部生成对话与golden全部可用对话。A/B换序用于控制位置偏差，两次credit取平均（胜1、平0.5、负0），不声称为两个独立样本。
+Success提示词精确复用seven_methods_192/protocol.py；Win@1及Win-Full使用当前位置中立规则。五轮任一轮成功；平均轮数失败计5；换序credit平均。仅重新评估既有公开对话，生成输入条件与方法接口不变。partial为临时结果。
 
-本表只读取DeepSeek 20261008新输入合同对应的对话与评估，不合并旧目标不可见或不含候选策略版本。Judge使用现有统一协议。
+| Judge | Method | N | Success (%) | Win@1 (%) | Win-Full (%) | Mean rounds (failure=5) | Success unresolved |
+|---|---|---:|---:|---:|---:|---:|---:|
+| selene8b | latentratt | 0/192 | - | - | - | - | - |
+| selene8b | our_direct | 192/192 | 65.45 | 61.20 | 14.06 | 4.236 | 3 |
+| qwen3_14b | latentratt | 0/192 | - | - | - | - | - |
+| qwen3_14b | our_direct | 180/192 (partial) | 40.56 | 62.64 | 11.25 | 4.628 | 0 |
 
-| Judge | Method | Persuader model | Parsed / selected N | Success within 5 rounds (%) | Win@1 (%) | Win-Full (%) | Mean rounds (failure=5) | Success format unresolved |
-| --- | --- | --- | ---: | ---: | ---: | ---: | ---: | ---: |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 1: Zero-shot | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 55.50 (106/191 evaluable) | 67.32 | 16.93 | 4.393 | 2 |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 2: Dialogue-SFT | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 73.68 (140/190 evaluable) | 76.82 | 20.96 | 4.221 | 6 |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 3: ISR-SFT + SimDPO | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 72.11 (137/190 evaluable) | 64.71 | 11.46 | 4.184 | 2 |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 4: MA2P | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 63.68 (121/190 evaluable) | 66.28 | 23.96 | 4.132 | 2 |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Baseline 5: LatentRATT | DeepSeek-R1-Distill-Qwen-14B | 待对应骨干正式训练；生成0/192 | - | - | - | - | - |
-| Selene-1-Mini-Llama-3.1-8B (BF16) | Our: persuasion only | DeepSeek-R1-Distill-Qwen-14B | 待训练完成（SFT已保存第1550步；生成0/192） | - | - | - | - | - |
-| Qwen3-14B (BF16) | Baseline 1: Zero-shot | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 35.94 (69/192 evaluable) | 76.43 | 9.90 | 4.703 | 0 |
-| Qwen3-14B (BF16) | Baseline 2: Dialogue-SFT | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 53.12 (102/192 evaluable) | 92.19 | 19.66 | 4.510 | 0 |
-| Qwen3-14B (BF16) | Baseline 3: ISR-SFT + SimDPO | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 46.35 (89/192 evaluable) | 83.98 | 15.49 | 4.557 | 0 |
-| Qwen3-14B (BF16) | Baseline 4: MA2P | DeepSeek-R1-Distill-Qwen-14B | 192/192 | 40.10 (77/192 evaluable) | 79.17 | 16.41 | 4.552 | 0 |
-| Qwen3-14B (BF16) | Baseline 5: LatentRATT | DeepSeek-R1-Distill-Qwen-14B | 待对应骨干正式训练；生成0/192 | - | - | - | - | - |
-| Qwen3-14B (BF16) | Our: persuasion only | DeepSeek-R1-Distill-Qwen-14B | 待训练完成（SFT已保存第1550步；生成0/192） | - | - | - | - | - |
-
-平均轮数取首次成功轮，未成功且五轮判定完整的场景计5。若判定缺失且无已确认成功，Success及平均轮数分母排除该场景；Win两次换序均解析成功才计入各自分母。`Success format unresolved`为未解析的轮级成功判定数。完整192条才作为正式最终结果。标注partial的分数来自已审计可复用场景的最新评估，样本数不同，不能当作完整192条的横向比较。
-
-结果目录：`/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/deepseek_goal_strategy_192_20261008/deepseek_r1_qwen14b`。各行原始判断、提示词缓存、模型合同、生成来源哈希、换序冲突率及Win未解析数保存在对应Judge目录中；旧表备份为 `main_experiment_table_deepseek14b.md.before_repaired192_20261007`。
+<!-- hybrid-latent-only-end -->

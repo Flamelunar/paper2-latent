@@ -1,0 +1,9 @@
+{
+  "time": 1791485733.687527,
+  "old_evaluator_sha256": "929dfe91cf7f129ee85078e186c0a7cf70e303df87926dc6ec884bc3d58fa708",
+  "new_evaluator_sha256": "a489b7fce500e3e40f57297f7f8c678eedd47edde80d3c3b7ea7240f4aa2036e",
+  "change": "wait for BF16 model capacity before model loading",
+  "protocol_sha256": "2e093939f4d5a145ad2168be85501b2ad9ef30762e1f838f587e21324e6510c3",
+  "win_rules_sha256": "93c3c310e949aebd190b15d6f7b068a742dbc88df7f8f58139e3bc9307058a66",
+  "prompts_schemas_metrics_and_precision_unchanged": true
+}

@@ -1,0 +1,319 @@
+{
+  "sampling": {
+    "population": 1000,
+    "sample_size": 20,
+    "seed": 2026092901,
+    "paired_methods": true,
+    "prior_selene_probe_indices_excluded": 100,
+    "selection": "uniform random sample from generation indexes not used by prior Selene prompt probes",
+    "excluded_prior_selene_probe_indices": [
+      9,
+      10,
+      23,
+      25,
+      32,
+      53,
+      56,
+      70,
+      74,
+      96,
+      152,
+      157,
+      200,
+      219,
+      234,
+      240,
+      246,
+      253,
+      286,
+      292,
+      300,
+      302,
+      311,
+      323,
+      326,
+      334,
+      337,
+      360,
+      380,
+      392,
+      397,
+      410,
+      429,
+      442,
+      444,
+      452,
+      455,
+      459,
+      469,
+      481,
+      490,
+      499,
+      500,
+      509,
+      519,
+      520,
+      526,
+      533,
+      537,
+      543,
+      549,
+      556,
+      560,
+      562,
+      602,
+      605,
+      614,
+      622,
+      629,
+      632,
+      637,
+      642,
+      650,
+      671,
+      681,
+      685,
+      690,
+      702,
+      703,
+      705,
+      714,
+      718,
+      720,
+      724,
+      725,
+      753,
+      754,
+      759,
+      765,
+      767,
+      774,
+      779,
+      792,
+      797,
+      800,
+      804,
+      805,
+      807,
+      808,
+      819,
+      840,
+      852,
+      854,
+      877,
+      893,
+      917,
+      922,
+      936,
+      969,
+      986
+    ]
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 63,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 63,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 215,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 215,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 229,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 229,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 238,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 238,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 247,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 247,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 255,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 255,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 324,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 324,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 332,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 332,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 352,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 352,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 427,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 427,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 566,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 566,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 624,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 624,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 657,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 657,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 659,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 659,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 737,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 737,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 798,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 798,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 876,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 876,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 912,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 912,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 965,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 965,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 971,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 971,
+          "stratum": "random_20_unused_paired_contexts_seed_2026092901"
+        }
+      ]
+    }
+  ]
+}

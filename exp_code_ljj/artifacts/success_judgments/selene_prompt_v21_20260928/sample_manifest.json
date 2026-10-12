@@ -1,0 +1,482 @@
+{
+  "description": "Paired fixed-seed random 40-context Selene V20 diagnostic. Two batches of 20 were sampled without replacement from indexes not used in the earlier v17/v18 prompt test; selection did not use judge results. Not a population-rate estimate.",
+  "seeds": [
+    20260929,
+    20260930
+  ],
+  "excluded_prior_diagnostic_indexes": [
+    32,
+    96,
+    200,
+    219,
+    286,
+    360,
+    455,
+    562,
+    637,
+    703,
+    705,
+    725,
+    774,
+    805,
+    807,
+    854,
+    922,
+    936,
+    969,
+    986
+  ],
+  "batches": {
+    "20260929": [
+      9,
+      70,
+      152,
+      246,
+      302,
+      323,
+      380,
+      397,
+      452,
+      481,
+      500,
+      520,
+      526,
+      537,
+      605,
+      614,
+      622,
+      690,
+      765,
+      852
+    ],
+    "20260930": [
+      23,
+      53,
+      234,
+      292,
+      326,
+      429,
+      442,
+      490,
+      533,
+      602,
+      671,
+      681,
+      685,
+      720,
+      754,
+      759,
+      767,
+      779,
+      800,
+      877
+    ]
+  },
+  "trials": [
+    {
+      "trial": 1,
+      "samples": [
+        {
+          "method": "qwen25_zero_shot",
+          "index": 9,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 70,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 152,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 246,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 302,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 323,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 380,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 397,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 452,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 481,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 500,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 520,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 526,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 537,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 605,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 614,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 622,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 690,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 765,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 852,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 23,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 53,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 234,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 292,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 326,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 429,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 442,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 490,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 533,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 602,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 671,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 681,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 685,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 720,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 754,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 759,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 767,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 779,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 800,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_zero_shot",
+          "index": 877,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 9,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 70,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 152,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 246,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 302,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 323,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 380,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 397,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 452,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 481,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 500,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 520,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 526,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 537,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 605,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 614,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 622,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 690,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 765,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 852,
+          "stratum": "paired_fixed_seed_batch_1"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 23,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 53,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 234,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 292,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 326,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 429,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 442,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 490,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 533,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 602,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 671,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 681,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 685,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 720,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 754,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 759,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 767,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 779,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 800,
+          "stratum": "paired_fixed_seed_batch_2"
+        },
+        {
+          "method": "qwen25_dialogue_sft",
+          "index": 877,
+          "stratum": "paired_fixed_seed_batch_2"
+        }
+      ]
+    }
+  ]
+}

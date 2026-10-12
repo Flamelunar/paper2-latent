@@ -1,0 +1,30 @@
+{
+  "qwen25_zero_shot": {
+    "parsed": 20,
+    "attempted": 20,
+    "success_count": 20,
+    "success_rate": 100.0,
+    "win_credit": 20.0,
+    "win_rate": 100.0,
+    "mean_rounds_or_cap5": 2.3,
+    "parse_failures": 0,
+    "previous_v17_success_count": 11,
+    "previous_v17_success_rate": 55.00000000000001,
+    "previous_v17_win_credit": 5.0,
+    "previous_v17_win_rate": 25.0
+  },
+  "qwen25_dialogue_sft": {
+    "parsed": 20,
+    "attempted": 20,
+    "success_count": 19,
+    "success_rate": 95.0,
+    "win_credit": 17.0,
+    "win_rate": 85.0,
+    "mean_rounds_or_cap5": 2.65,
+    "parse_failures": 0,
+    "previous_v17_success_count": 12,
+    "previous_v17_success_rate": 60.0,
+    "previous_v17_win_credit": 6.0,
+    "previous_v17_win_rate": 30.0
+  }
+}

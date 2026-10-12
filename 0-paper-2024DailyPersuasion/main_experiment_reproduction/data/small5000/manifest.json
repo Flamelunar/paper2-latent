@@ -1,0 +1,38 @@
+{
+  "seed": 42,
+  "profile": "small5000",
+  "scenario_split": {
+    "sft": 5000,
+    "preference": 1000,
+    "test": 500
+  },
+  "source_note": "The paper does not release original split IDs or seed. The paper profile uses the project's seeded reconstruction; small5000 records its own quality-selection manifest beside the source subset.",
+  "identity_note": "The released id field is not unique. Leakage checks and resumable jobs therefore use a SHA-256 fingerprint of the public scenario fields.",
+  "files": {
+    "dialogue_sft": {
+      "path": "/home1/liujianjian/2-paper-CoLING/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/small5000/data/sft_dialogue.jsonl",
+      "rows": 5000,
+      "sha256": "640808e6e26935d26cdf942c4b6042bc4a8485bce08123f8a1b1b257c32c016c"
+    },
+    "isr_sft": {
+      "path": "/home1/liujianjian/2-paper-CoLING/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/small5000/data/sft_add_isr.jsonl",
+      "rows": 5000,
+      "sha256": "5d011bc41784b63a47a73959cb5bb882e7fd2c448a4b00c7e477df3d7858c2df"
+    },
+    "user_model_sft": {
+      "path": "/home1/liujianjian/2-paper-CoLING/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/small5000/data/sft_persuadee.jsonl",
+      "rows": 5000,
+      "sha256": "28f53c0dd3ec01508d492fd57d809597ef0b4d390477610a784839ea214798ff"
+    },
+    "preference_seeds": {
+      "path": "/home1/liujianjian/2-paper-CoLING/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/small5000/data/preference_seed.jsonl",
+      "rows": 1000,
+      "sha256": "9bd2b5d288582e09bf98f9e3a2f589b877b2d2f75806d0b1d42db01c4e44b000"
+    },
+    "evaluation_points": {
+      "path": "/home1/liujianjian/2-paper-CoLING/0-paper-2024DailyPersuasion/main_experiment_reproduction/runs/small5000/data/test.jsonl",
+      "rows": 500,
+      "sha256": "3a025caa93a95913e7b87f95f7f9fd80fcb770a693823d7f93a61e48bd8ae4d0"
+    }
+  }
+}

@@ -1,3 +1,5 @@
+> 仅LatentRATT和Our重新评估，其他基线保留历史协议结果。新评估正在运行：旧Success提示词＋最新Win@1提示词；旧表暂留作历史记录。新结果见 [qwen25_oldsuccess_newwin_192.md](qwen25_oldsuccess_newwin_192.md)。GPT-luna新结果目录为 `gpt_luna_oldsuccess_newwin_192_20261010/`。
+
 # Qwen2.5-7B — fixed 192 scenarios, new evaluation
 
 All prior scores are invalid for this run and archived. The fixed subset has target_turn = 1 and empty initial history. Maximum five rounds; success means exact goal acceptance in any round; failures count as five rounds.

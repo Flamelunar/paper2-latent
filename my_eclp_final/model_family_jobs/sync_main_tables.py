@@ -1,0 +1,75 @@
+import json,time,os
+from pathlib import Path
+R=Path('/app/hzj/liujianjian/ljj-2-paper'); D=R/'exp_code_ljj/results'
+MARK='\n<!-- latest-live-results -->\n'
+def load(p):
+    return json.loads(p.read_text()) if p.exists() else {}
+def update():
+    deep_table=D/'main_experiment_table_deepseek14b.md'
+    gpt_fragment=D/'gpt_luna_192_20261009/deepseek_table_section.md'
+    if deep_table.exists() and gpt_fragment.exists():
+        current=deep_table.read_text()
+        if '<!-- gpt-luna-results-start -->' not in current:
+            deep_table.write_text(current.rstrip()+'\n\n'+gpt_fragment.read_text())
+    p=D/'main_experiment_table_llama31.md'
+    pilot=D/'llama_two_stage_full192_live.md'
+    if not pilot.exists():pilot=D/'llama_two_stage_pilot_comparison.md'
+    if pilot.exists() and not (R/'exp_code_ljj/artifacts/llama_two_stage_pilot_20261009/meta_llama31/PUBLISHED.json').exists():
+        base=p.read_text().split(MARK)[0]
+        section='\n## 最新生成接口与实时诊断结果\n\n上方192条Our分数属于旧的单阶段接口，不代表当前两阶段版本。当前Our先生成私有简短理由，再生成公开劝说回复；私有内容不进入模拟器、公开历史或Judge。以下使用修复后的成功判定与位置中立提示词，不能与上方旧协议分数直接混比；完整192条完成后再替换对应正式行。\n\n'+pilot.read_text()
+        text=base+MARK+section
+        if p.read_text()!=text:p.write_text(text)
+    if (R/'exp_code_ljj/artifacts/deepseek_two_stage_eval_v3_192_20261009/deepseek_r1_qwen14b/PUBLISHED.json').exists():return
+    p=D/'main_experiment_table_deepseek14b.md'
+    checkpoints=R/'eclp_runs_deepseek_r1_qwen14b_20261007/sft_full_retry_20261007'
+    steps=[int(x.name.split('-')[-1]) for x in checkpoints.glob('checkpoint-*') if x.is_dir()]
+    step=max(steps,default=0)
+    previous=p.read_text()
+    start='<!-- gpt-luna-results-start -->';end='<!-- gpt-luna-results-end -->'
+    gpt_section=previous[previous.index(start):previous.index(end)+len(end)] if start in previous and end in previous else ''
+    text=previous.split(MARK)[0]
+    import re
+    text=re.sub(r'待训练完成（SFT已保存第\d+步；生成0/192）',f'待训练完成（SFT已保存第{step}步；生成0/192）',text)
+    text+=MARK+'\n## 当前结果更新状态\n\n已完成的四个基线分数保留在上方正式192条表中。Our与LatentRATT尚无完整生成和评估结果，暂不填入分数。Our后续采用两阶段接口：私有简短理由→公开劝说回复，基线保持各自接口；训练权重不因本次接口修改而改变。\n'
+    live=D/'deepseek_two_stage_full192_live.md'
+    generation_root=R/'exp_code_ljj/artifacts/deepseek_goal_strategy_192_20261008/deepseek_r1_qwen14b'
+    counts={}
+    for method in ['zero_shot_repaired','dialogue_sft','persugpt','ma2p_repaired','latentratt','our_direct']:
+        source=generation_root/'generators'/method/'generation'/f'{method}.jsonl'
+        if not source.exists():source=generation_root/'generation'/f'{method}.jsonl'
+        counts[method]=sum(bool(line.strip()) for line in source.read_text().splitlines()) if source.exists() else 0
+    rl=load(R/'eclp_runs_deepseek_r1_qwen14b_20261007/offline_rl/summary.json')
+    if rl.get('complete'):
+        text=re.sub(r'待训练完成（SFT已保存第\d+步；生成0/192）',f'训练完成；生成{counts["our_direct"]}/192；待最新评估',text)
+        text=re.sub(r'训练完成；生成\d+/192；待最新评估',f'训练完成；生成{counts["our_direct"]}/192；待最新评估',text)
+    if live.exists():
+        rows=live.read_text().replace('# Llama：Our / PersuGPT 实时进度','# DeepSeek：最新v3 Selene / Qwen3评估进度').splitlines()
+        for i,line in enumerate(rows):
+            fields=line.split('|')
+            if len(fields)>4 and fields[1].strip() in ['selene8b','qwen3_14b']:
+                method=fields[2].strip()
+                if method in counts:
+                    fields[3]=f' {counts[method]}/192 '
+                    judge=fields[1].strip()
+                    canonical=R/'exp_code_ljj/artifacts/deepseek_two_stage_eval_v3_192_20261009/deepseek_r1_qwen14b/judges'/judge/'evaluation'/method/'summary.json'
+                    candidates=[load(canonical)]
+                    if judge in ['selene8b','qwen3_14b'] and method=='our_direct':
+                        early=R/'exp_code_ljj/artifacts/deepseek_our_selene_early_gpu0_20261010/deepseek_r1_qwen14b/judges'/judge/'evaluation/our_direct/summary.json'
+                        candidates.append(load(early))
+                    score=max(candidates,key=lambda x:x.get('n',0))
+                    if score.get('n',0)>0:
+                        fields[4]=f' {score["n"]}/192'+(' (partial) ' if score['n']<192 else ' ')
+                        for column,key in [(5,'success_percent'),(6,'win1_percent'),(7,'win_full_percent'),(8,'mean_rounds_fail5'),(9,'win1_conflict_percent')]:
+                            value=score.get(key)
+                            fields[column]=' - ' if value is None else f' {value:.3f} ' if column==8 else f' {value:.2f} '
+                    rows[i]='|'.join(fields)
+
+        text+='\n'+'\n'.join(rows)+'\n'
+
+    if gpt_section:text+='\n\n'+gpt_section+'\n'
+    if p.read_text()!=text:p.write_text(text)
+if __name__=='__main__':
+    update()
+    if '--watch' in __import__('sys').argv:
+        while True:
+            time.sleep(30);update()

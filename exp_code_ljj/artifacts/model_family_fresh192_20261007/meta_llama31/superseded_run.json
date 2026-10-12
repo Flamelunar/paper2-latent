@@ -1,0 +1,6 @@
+{
+  "superseded": true,
+  "reason": "simulated persuadee was shown the exact persuasion goal",
+  "replacement": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007/meta_llama31",
+  "policy": "preserve old partial rows for audit; do not evaluate or merge them"
+}

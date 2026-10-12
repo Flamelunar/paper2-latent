@@ -1,0 +1,35 @@
+{
+  "n": 1000,
+  "win1_eligible": 1000,
+  "win_full_eligible": 1000,
+  "golden_persuader_turns_distribution": {
+    "1": 178,
+    "2": 199,
+    "3": 236,
+    "4": 186,
+    "5": 142,
+    "6": 48,
+    "7": 9,
+    "8": 2
+  },
+  "golden_ends_after_persuader_count": 199,
+  "golden_remaining_rounds_distribution": {
+    "0": 33,
+    "1": 188,
+    "2": 194,
+    "3": 223,
+    "4": 200,
+    "5": 121,
+    "6": 33,
+    "7": 6,
+    "8": 2
+  },
+  "matching": "exact_public_scenario_session_history_reference",
+  "padding_or_synthetic_golden": false,
+  "golden_persuadee_source": "original_released_dialogue; differs from current simulated_persuadee",
+  "source": "/app/hzj/liujianjian/ljj-2-paper/0-paper-2024DailyPersuasion/data/DailyPersuasion_full_version.json",
+  "source_sha256": "6d6329006b3721e4b9fa7f2526cb6053fbb8eef45100818b1167651f79f89132",
+  "points": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/data/evaluation_points.jsonl",
+  "points_sha256": "3454f7be1246d6061865e69f153a53f9478a157978079fd70fef6ad010bb7acd",
+  "golden_sha256": "6e1b9c7c4c0d4f5dfdc91faa4a1721594c1e65c13cd4f7c9b117a82480b58562"
+}

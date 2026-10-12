@@ -1,0 +1,9 @@
+{
+  "time": 1791469346.5904064,
+  "controller_pid": 2999979,
+  "campaign_hash_restored": "fc20245ee23c906e7d2b7f7070182b7650d57260024be3f4c2ae08614b66e4b8",
+  "generation_sha256": "da886514814f93314eea2a9c1a1656169081848d4d225194b4097744e9cd3d74",
+  "existing_baseline_scores_preserved": true,
+  "judge_code_and_prompts_changed": false,
+  "per_method_recovery_provenance": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007/meta_llama31/generators/our_direct/public_retry_recovery.json"
+}

@@ -12,6 +12,13 @@ def render(selected_families=None):
  selection=read_json(ROOT/'exp_code_ljj/data/test_selection_192.json')['original_indexes'];gold={r['index']:r for r in read_jsonl(ROOT/'eclp_runs_gpu4/evaluation_v2/golden/golden.jsonl')};audits={};fresh_audits={}
  for family,(model,filename) in FAMILIES.items():
   if selected_families and family not in selected_families:continue
+  # two_stage_report_guard: current campaign publishes its own verified table.
+  if family=='meta_llama31' and (ROOT/'exp_code_ljj/artifacts/llama_two_stage_pilot_20261009/meta_llama31/generation_run.json').exists():
+   atomic_json(ROOT/'exp_code_ljj/results/llama_legacy_report_deferred.json',{'time':time.time(),'reason':'two-stage campaign owns current table publication'})
+   continue
+  # deepseek_two_stage_report_guard
+  if family=='deepseek_r1_qwen14b' and (ROOT/'exp_code_ljj/artifacts/deepseek_two_stage_eval_v3_192_20261009/deepseek_r1_qwen14b/PUBLISHED.json').exists():
+   continue
   work=WORK/family
   fresh=ROOT/'exp_code_ljj/artifacts/model_family_fresh192_nogoal_20261007'/family
   new_deepseek=ROOT/'exp_code_ljj/artifacts/deepseek_goal_strategy_192_20261008'/family

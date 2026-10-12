@@ -1,0 +1,103 @@
+{
+  "requested_by_user": "pause all experiments on physical GPU 0 before current fixes",
+  "created_at": "2026-10-06T16:19:15+0800",
+  "processes": [
+    {
+      "pid": 1803697,
+      "argv": [
+        "/app/hzj/anaconda3/envs/ljj/bin/python",
+        "-u",
+        "/app/hzj/liujianjian/ljj-2-paper/baseline5_latentRATT/run_latent_ratt.py",
+        "sft",
+        "--model",
+        "/app/hzj/models/Meta-Llama-3.1-8B-Instruct",
+        "--device",
+        "cuda:0",
+        "--train-file",
+        "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/data/isr_sft.jsonl",
+        "--output",
+        "/app/hzj/liujianjian/persuader_atapter_save/meta_llama31/baseline5_latentratt/sft",
+        "--epochs",
+        "1",
+        "--batch-size",
+        "2",
+        "--gradient-accumulation",
+        "16",
+        "--save-steps",
+        "100"
+      ],
+      "cwd": "/app/hzj",
+      "stdout": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/logs/new_experiments/meta_llama31_baseline5_sft.log",
+      "pause_mode": "SIGSTOP_preserve_live_training",
+      "state_after": "State:\tT (stopped)"
+    },
+    {
+      "pid": 16000,
+      "argv": [
+        "/app/hzj/anaconda3/envs/ljj/bin/python",
+        "train_standard_grpo.py",
+        "--init-model",
+        "/app/hzj/models/Meta-Llama-3.1-8B-Instruct",
+        "--init-mode",
+        "base",
+        "--train-file",
+        "data/revision_strategy_baselines/structured_strategy_train.jsonl",
+        "--output-dir",
+        "runs/main_strategy_baselines_v2/llama31/grpo_only_adapter",
+        "--merged-output",
+        "runs/main_strategy_baselines_v2/llama31/grpo_only_merged",
+        "--learning-rate",
+        "5e-06",
+        "--batch-size",
+        "1",
+        "--grad-accum",
+        "8",
+        "--num-generations",
+        "8",
+        "--max-completion-length",
+        "512",
+        "--seed",
+        "2026",
+        "--lora-rank",
+        "32",
+        "--lora-alpha",
+        "64",
+        "--lora-dropout",
+        "0.1",
+        "--precision",
+        "bf16",
+        "--epochs",
+        "1"
+      ],
+      "cwd": "/app/hzj/liujianjian/ljj-1-paper/AAAIpersuasion-codedata",
+      "stdout": "/app/hzj/liujianjian/ljj-1-paper/AAAI_main_results_strategy_v2/supervisor/logs/train/llama31-grpo_only-grpo.log",
+      "pause_mode": "SIGSTOP_preserve_live_training",
+      "state_after": "State:\tT (stopped)"
+    },
+    {
+      "pid": 1733722,
+      "argv": [
+        "/app/hzj/anaconda3/envs/ljj/bin/python",
+        "-u",
+        "/app/hzj/liujianjian/ljj-2-paper/baseline4_from_start192.py",
+        "--generation-dir",
+        "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/generation_from_start192/deepseek_r1_qwen14b",
+        "--persuader-model",
+        "/app/hzj/models/DeepSeek-R1-Distill-Qwen-14B",
+        "--device",
+        "cuda:0,cuda:1"
+      ],
+      "cwd": "/app/hzj/liujianjian/ljj-2-paper",
+      "stdout": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/logs/new_experiments/deepseek_r1_qwen14b_baseline4_from_start192_multigpu01.log",
+      "pause_mode": "saved_scenario_resume",
+      "state_after": "exited"
+    }
+  ],
+  "generation_snapshot": {
+    "source": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/generation_from_start192/deepseek_r1_qwen14b/baseline4_ma2p.jsonl",
+    "saved_rows": 35,
+    "sha256": "61d4fc4146cd71189d1c21214a43f08b02bd1ca4aede3486e327be29b75c818d"
+  },
+  "resume_training": "Send SIGCONT to 1803697 and 16000 after identity check. Do not restart duplicate training while these processes are stopped.",
+  "resume_generation": "Relaunch the recorded DeepSeek command from its cwd; complete saved indexes will be skipped. No stored outputs were deleted."
+}

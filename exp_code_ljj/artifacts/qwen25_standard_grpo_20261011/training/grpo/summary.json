@@ -1,0 +1,12 @@
+{
+  "complete": true,
+  "epochs": 1,
+  "contexts": 1800,
+  "optimizer_updates": 223,
+  "checkpoint": "/app/hzj/liujianjian/ljj-2-paper/exp_code_ljj/artifacts/qwen25_standard_grpo_20261011/training/grpo/checkpoint-001800",
+  "training_seconds": 35058.30756066507,
+  "training_minutes": 584.3051260110844,
+  "load_seconds_this_invocation": 56.111976609099656,
+  "reference_unchanged": true,
+  "timing_scope": "actor sampling, simulator, reward judge, token log probabilities, optimizer and checkpoints; excludes initial model loads"
+}

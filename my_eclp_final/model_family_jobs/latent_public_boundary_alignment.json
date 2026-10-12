@@ -1,0 +1,25 @@
+{
+  "time": 1791486915.979203,
+  "generation_targets_empty": true,
+  "change": "shared expanded narration rejection for spoken persuader output",
+  "changed_files": {
+    "generate_latent_family.py": {
+      "old_sha256": "9e3381eeb8031a1d89ff6c123cd39c27b82c4e9c3159ed6897925a9edf004b7c",
+      "new_sha256": "eeb9031dfbe57cbe4d573d3b9cd36563b48ec8caaa9bbbb2d4f4a1c0d2024088"
+    },
+    "generate_latent_accelerated.py": {
+      "old_sha256": "048a6dee8ef323e2ef97d2fda51abbe101dca06375734ad3f698edc3a97cbd5e",
+      "new_sha256": "23a0e193e7b8e3837207a55c710d8ea901409cd50fea483c843e7a81e10488ae"
+    }
+  },
+  "native_latent_reasoning_unchanged": true,
+  "training_and_weights_unchanged": true,
+  "prompts_sampling_context_limit_and_retry_budget_unchanged": true,
+  "two_stage_added": false,
+  "input_policy": {
+    "llama": "actor receives goal; simulator goal blind",
+    "deepseek": "actor and simulator receive goal; no candidate strategies for LatentRATT"
+  },
+  "native_context_limit": 1536,
+  "native_history_policy": "drop oldest complete pairs; preserve background, goal and latest pair"
+}

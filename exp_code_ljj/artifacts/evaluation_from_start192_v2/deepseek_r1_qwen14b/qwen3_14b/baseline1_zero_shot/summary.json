@@ -1,0 +1,49 @@
+{
+  "revision": "matched_win1_winfull_success_v2_20261005",
+  "judge": "qwen3_14b",
+  "judge_model": "/app/hzj/models/Qwen3-14B",
+  "method": "Baseline 1: Zero-shot",
+  "method_slug": "baseline1_zero_shot",
+  "expected_count": 192,
+  "evaluated_count": 24,
+  "complete": false,
+  "pending_count": 168,
+  "success_count": 16,
+  "success_within5_percent": 66.66666666666667,
+  "final_round5_success_percent": 62.5,
+  "mean_rounds_or_cap5": 2.9583333333333335,
+  "win1_count": 24,
+  "win1_percent": 64.58333333333334,
+  "win_full_count": 24,
+  "win_full_percent": 8.333333333333332,
+  "format_unresolved_completed_cases": 0,
+  "denominator": "all selected completed scenarios; Win@1 and Win-Full use identical scenarios",
+  "contract_hash": "24a94d33b94207f480e1dcee7708544954f59e82f99474e14ee2a394f5ee5259",
+  "golden_persuadee_source": "original released dialogue; Our uses the fixed simulated Persuadee",
+  "win1_order_disagreement_count": 6,
+  "win1_explicit_tie_judgments": 2,
+  "win1_full_win_count": 13,
+  "win1_full_loss_count": 5,
+  "win_full_order_disagreement_count": 0,
+  "win_full_explicit_tie_judgments": 0,
+  "win_full_full_win_count": 2,
+  "win_full_full_loss_count": 22,
+  "golden_length_groups": {
+    "shorter_than_ours": {
+      "n": 5,
+      "win1_percent": 70.0,
+      "win_full_percent": 0.0
+    },
+    "same_number_of_persuader_replies": {
+      "n": 11,
+      "win1_percent": 45.45454545454545,
+      "win_full_percent": 9.090909090909092
+    },
+    "longer_than_ours": {
+      "n": 8,
+      "win1_percent": 87.5,
+      "win_full_percent": 12.5
+    }
+  },
+  "golden_without_final_persuadee_reply_count": 5
+}

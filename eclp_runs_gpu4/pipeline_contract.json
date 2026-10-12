@@ -1,0 +1,56 @@
+{
+  "plan": {
+    "plan_version": "gpu4_eclp_elpo_full_v2.1",
+    "physical_gpu": 4,
+    "expected_sft_sessions": 59868,
+    "expected_sft_scenarios": 10000,
+    "sft_epochs": 1,
+    "sft_accumulation": 8,
+    "sft_target_steps": 7484,
+    "sft_learning_rate": 0.0001,
+    "sft_save_every": 500,
+    "dev_scenarios": 200,
+    "probe_offset": 0,
+    "probe_contexts": 256,
+    "probe_horizon": 1,
+    "holdout_offset": 256,
+    "holdout_contexts": 64,
+    "candidates": 4,
+    "repeats": 2,
+    "effect_epochs": 30,
+    "effect_batch_size": 32,
+    "effect_learning_rate": 0.001,
+    "elpo_offsets": [
+      512,
+      768,
+      1024
+    ],
+    "elpo_contexts": 256,
+    "elpo_horizon": 3,
+    "elpo_epochs": 2,
+    "elpo_batch_size": 1,
+    "elpo_learning_rate": 1e-05,
+    "test_scenarios": 1000,
+    "final_checkpoint_rule": "final_committed_checkpoint_of_ELPO_round_2; no_test_selection",
+    "final_judges": [
+      "selene8b",
+      "qwen3_14b"
+    ]
+  },
+  "python": "/app/hzj/anaconda3/envs/ljj/bin/python",
+  "code_sha256": {
+    "eclp_elpo.py": "8c5402f92e5cbd8e1a7ed2e63fab175c5e00c91a983251fce4ddaadfde3b9d14",
+    "check_eclp_mechanism.py": "7a682a0be93e1d14420313411b88c4cab7d4cfde856738d6f74170487fc6ab8c",
+    "run_main_experiment.py": "ba8babcac041f3be54e8cf6e58bc7d5a651d2c3db8897c6a89ff67cadc99bdbd",
+    "config_gpu4.json": "de3c445815b0d15830d0eab501e6fda166c6089f57cb5959c434d8f4c763cb44",
+    "training_plan.json": "51f5ffba8a8bcb73117e8bd42f52ecd37e34c84b152b0aa77e6f04f3a6b03fe4",
+    "experiment_io.py": "f20a31bfe014b6b51f5f02ef9d82accea4936bf60d1f5d6b7e4b994cb736e352",
+    "run_gpu4_pipeline.py": "a481c20b8ab3d57938e57fadce4567837407b63669e32ba88796e17ca2fa742d",
+    "evaluate_our.py": "7ddeed2ab92a1b2addb059e58056bd611e230d40c73b77b5d7b64e8724c905d4",
+    "update_our_table.py": "0f82740d6ea89604eed0a8d5355c8bc43f0786eb0d29e5800715701cee3f86fc",
+    "final_eval_protocol.py": "3f909a3dd64daed8dbff029114aa49cce8750d991c13980dbde5ebcf4c999cec",
+    "final_judge_prompts.json": "ac02126e1593ef25d4c07697b8b9de46f30d77fdd540d4c3237acaf1c554c093"
+  },
+  "physical_gpu": 4,
+  "visible_devices": "4"
+}

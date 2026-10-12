@@ -1,0 +1,68 @@
+{
+  "judge": "gpt-6-luna",
+  "updated": 1791567073.9571311,
+  "completed_requests": 5376,
+  "total_requests": 5376,
+  "methods": [
+    {
+      "family": "llama31",
+      "method": "latentratt",
+      "n": 192,
+      "expected": 192,
+      "complete": true,
+      "success_evaluable_n": 192,
+      "success_count": 64,
+      "success_percent": 33.333333333333336,
+      "win1_evaluable_n": 192,
+      "win1_percent": 47.65625,
+      "mean_rounds_fail5": 4.546875,
+      "format_unresolved": 0,
+      "win1_order_conflict_percent": 15.625
+    },
+    {
+      "family": "llama31",
+      "method": "our_direct",
+      "n": 192,
+      "expected": 192,
+      "complete": true,
+      "success_evaluable_n": 192,
+      "success_count": 74,
+      "success_percent": 38.541666666666664,
+      "win1_evaluable_n": 192,
+      "win1_percent": 64.32291666666666,
+      "mean_rounds_fail5": 4.34375,
+      "format_unresolved": 0,
+      "win1_order_conflict_percent": 15.625
+    },
+    {
+      "family": "qwen25",
+      "method": "latentratt",
+      "n": 192,
+      "expected": 192,
+      "complete": true,
+      "success_evaluable_n": 192,
+      "success_count": 68,
+      "success_percent": 35.416666666666664,
+      "win1_evaluable_n": 192,
+      "win1_percent": 42.44791666666667,
+      "mean_rounds_fail5": 4.53125,
+      "format_unresolved": 0,
+      "win1_order_conflict_percent": 10.416666666666666
+    },
+    {
+      "family": "qwen25",
+      "method": "our_direct",
+      "n": 192,
+      "expected": 192,
+      "complete": true,
+      "success_evaluable_n": 190,
+      "success_count": 72,
+      "success_percent": 37.89473684210526,
+      "win1_evaluable_n": 192,
+      "win1_percent": 56.770833333333336,
+      "mean_rounds_fail5": 4.552631578947368,
+      "format_unresolved": 2,
+      "win1_order_conflict_percent": 11.458333333333334
+    }
+  ]
+}

@@ -1,0 +1,238 @@
+{
+  "complete": true,
+  "n": 20,
+  "results": [
+    {
+      "method": "baseline1_zero_shot",
+      "n": 20,
+      "success_percent": 60.0,
+      "old": {
+        "win1": {
+          "score_percent": 62.5,
+          "order_conflict_percent": 55.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 22.5
+        },
+        "win_full": {
+          "score_percent": 27.500000000000004,
+          "order_conflict_percent": 45.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 72.5
+        }
+      },
+      "new": {
+        "win1": {
+          "score_percent": 68.75,
+          "order_conflict_percent": 55.0,
+          "explicit_tie_percent": 2.5,
+          "position_A_percent": 22.5
+        },
+        "win_full": {
+          "score_percent": 32.5,
+          "order_conflict_percent": 40.0,
+          "explicit_tie_percent": 5.0,
+          "position_A_percent": 32.5
+        }
+      }
+    },
+    {
+      "method": "baseline2_dialogue_sft",
+      "n": 20,
+      "success_percent": 65.0,
+      "old": {
+        "win1": {
+          "score_percent": 45.0,
+          "order_conflict_percent": 50.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 30.0
+        },
+        "win_full": {
+          "score_percent": 15.0,
+          "order_conflict_percent": 30.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 65.0
+        }
+      },
+      "new": {
+        "win1": {
+          "score_percent": 48.75,
+          "order_conflict_percent": 70.0,
+          "explicit_tie_percent": 7.5,
+          "position_A_percent": 20.0
+        },
+        "win_full": {
+          "score_percent": 15.0,
+          "order_conflict_percent": 25.0,
+          "explicit_tie_percent": 5.0,
+          "position_A_percent": 42.5
+        }
+      }
+    },
+    {
+      "method": "baseline3_isr_simdpo",
+      "n": 20,
+      "success_percent": 55.0,
+      "old": {
+        "win1": {
+          "score_percent": 77.5,
+          "order_conflict_percent": 35.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 32.5
+        },
+        "win_full": {
+          "score_percent": 20.0,
+          "order_conflict_percent": 40.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 70.0
+        }
+      },
+      "new": {
+        "win1": {
+          "score_percent": 75.0,
+          "order_conflict_percent": 40.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 35.0
+        },
+        "win_full": {
+          "score_percent": 20.0,
+          "order_conflict_percent": 35.0,
+          "explicit_tie_percent": 5.0,
+          "position_A_percent": 32.5
+        }
+      }
+    },
+    {
+      "method": "baseline4_ma2p",
+      "n": 20,
+      "success_percent": 90.0,
+      "old": {
+        "win1": {
+          "score_percent": 72.5,
+          "order_conflict_percent": 45.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 27.5
+        },
+        "win_full": {
+          "score_percent": 50.0,
+          "order_conflict_percent": 40.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 70.0
+        }
+      },
+      "new": {
+        "win1": {
+          "score_percent": 71.25,
+          "order_conflict_percent": 50.0,
+          "explicit_tie_percent": 2.5,
+          "position_A_percent": 25.0
+        },
+        "win_full": {
+          "score_percent": 58.75,
+          "order_conflict_percent": 40.0,
+          "explicit_tie_percent": 2.5,
+          "position_A_percent": 35.0
+        }
+      }
+    },
+    {
+      "method": "baseline5_latentratt",
+      "n": 20,
+      "success_percent": 60.0,
+      "old": {
+        "win1": {
+          "score_percent": 57.49999999999999,
+          "order_conflict_percent": 45.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 27.5
+        },
+        "win_full": {
+          "score_percent": 15.0,
+          "order_conflict_percent": 20.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 60.0
+        }
+      },
+      "new": {
+        "win1": {
+          "score_percent": 60.0,
+          "order_conflict_percent": 50.0,
+          "explicit_tie_percent": 15.0,
+          "position_A_percent": 22.5
+        },
+        "win_full": {
+          "score_percent": 11.25,
+          "order_conflict_percent": 5.0,
+          "explicit_tie_percent": 2.5,
+          "position_A_percent": 47.5
+        }
+      }
+    },
+    {
+      "method": "our_eclp_offline_lpo",
+      "n": 20,
+      "success_percent": 85.0,
+      "old": {
+        "win1": {
+          "score_percent": 62.5,
+          "order_conflict_percent": 15.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 42.5
+        },
+        "win_full": {
+          "score_percent": 27.500000000000004,
+          "order_conflict_percent": 45.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 67.5
+        }
+      },
+      "new": {
+        "win1": {
+          "score_percent": 63.74999999999999,
+          "order_conflict_percent": 15.0,
+          "explicit_tie_percent": 2.5,
+          "position_A_percent": 42.5
+        },
+        "win_full": {
+          "score_percent": 20.0,
+          "order_conflict_percent": 15.0,
+          "explicit_tie_percent": 5.0,
+          "position_A_percent": 40.0
+        }
+      }
+    },
+    {
+      "method": "our_ma2p",
+      "n": 20,
+      "success_percent": 75.0,
+      "old": {
+        "win1": {
+          "score_percent": 65.0,
+          "order_conflict_percent": 50.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 25.0
+        },
+        "win_full": {
+          "score_percent": 25.0,
+          "order_conflict_percent": 40.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 70.0
+        }
+      },
+      "new": {
+        "win1": {
+          "score_percent": 61.25000000000001,
+          "order_conflict_percent": 60.0,
+          "explicit_tie_percent": 12.5,
+          "position_A_percent": 17.5
+        },
+        "win_full": {
+          "score_percent": 22.5,
+          "order_conflict_percent": 15.0,
+          "explicit_tie_percent": 0.0,
+          "position_A_percent": 42.5
+        }
+      }
+    }
+  ],
+  "contract_hash": "8afe5170cacf95a1813df2fb32429848f42b274a69e9de5883f03037eda67ebb"
+}
